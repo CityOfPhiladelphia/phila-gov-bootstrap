@@ -23,7 +23,7 @@ Template Name: Home Page Template
                         <!-- mayor box and calendar -->
                             <?php $args = array(
                                 'posts_per_page'   => 1,
-                                'category__and' => array(7,8),
+                                'category__and' => array(12,22),
                                 'orderby'          => 'post_date',
                                 'order'            => 'DESC',
                                 'post_type'        => 'post',
