@@ -241,7 +241,7 @@ function remove_thumbnail_dimensions( $html ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
-
+/*
 // Add the Meta Box to the homepage template
 function add_homepage_meta_box() {  
 	global $post;
@@ -263,6 +263,7 @@ function add_homepage_meta_box() {
 }
 
 add_action( 'add_meta_boxes', 'add_homepage_meta_box' );
+*/
 
 // Field Array  
 $prefix = 'custom_';  

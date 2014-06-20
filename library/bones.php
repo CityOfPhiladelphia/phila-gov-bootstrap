@@ -65,9 +65,7 @@ function wp_bootstrap_theme_support() {
 			'image',   // an image
 			'quote',   // a quick quote
 			'status',  // a Facebook like status update
-			'video',   // video 
-			'audio',   // audio
-			'chat'     // chat transcript 
+			'video'   // video 
 		)
 	);	
 	add_theme_support( 'menus' );            // wp menus

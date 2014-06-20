@@ -101,47 +101,6 @@ jQuery(document).ready(function($) {
 	$('.alert-message').alert();
 	
 	$('.dropdown-toggle').dropdown();
- 
 });
 
-   function updateClock(){
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var month_name=new Array(12);
-         month_name[0]="January"
-         month_name[1]="February"
-         month_name[2]="March"
-         month_name[3]="April"
-         month_name[4]="May"
-         month_name[5]="June"
-         month_name[6]="July"
-         month_name[7]="August"
-         month_name[8]="September"
-         month_name[9]="October"
-         month_name[10]="November"     
-         month_name[11]="December";
-
-        //add 0 to beginning of minutes/seconds
-        // ? - returns value before before : if true or after : if false (if statement shorthand)
-        minutes = ( minutes < 10 ? "0" : "" ) + minutes;
-
-        var timeOfDay = ( hours < 12 ) ? "AM" : "PM";
-        //make 12 hour day
-        hours = ( hours > 12 ) ? hours - 12 : hours;
-        //show "12" instead of "0" at midnight
-        hours = ( hours == 0 ) ? 12 : hours;
-
-        //stick it all together
-        var currentTimeString = hours + ":" + minutes + " " + timeOfDay;
-        var currentDateString = month_name[currentTime.getMonth()]+" "+currentTime.getDate()+", "+currentTime.getFullYear();
-
-        //add the clock to the ID this needs the &nbsp; to work - not sure why
-        document.getElementById("clock").firstChild.nodeValue = currentTimeString;
-        document.getElementById("date").firstChild.nodeValue = currentDateString;
-}
-
-jQuery(document).ready(function($) {
-   setInterval('updateClock()', 1000);
-});
 
