@@ -1,20 +1,15 @@
 			<footer role="contentinfo">
 			
 				<div id="inner-footer" class="clearfix">
-		          <hr />
 		          <div id="widget-footer" class="clearfix row">
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-links') ) : ?>
-		            <?php endif; ?>
-		          </div>
-					
-					<nav class="clearfix">
+                    <div class="col-lg-12">					
+					   <nav>
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-					</nav>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-				
-				</div> <!-- end #inner-footer -->
-				
+					   </nav>
+                        <p class="attribution">&copy; <?php bloginfo('name'); ?></p>
+                         </div>
+				    </div> <!-- end #inner-footer -->
+                </div>
 			</footer> <!-- end footer -->
 		
 		</div> <!-- end #container -->
@@ -25,6 +20,8 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+        <script src="<?php echo get_stylesheet_directory_uri()?>/library/js/libs/jquery.velocity.min.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri()?>/library/js/libs/velocity.ui.js"></script>
 
 	</body>
 

@@ -1,0 +1,134 @@
+@import "variables.less";
+
+//custom phila.gov stuffs
+@import "phila-widgets.less"; 
+@import "phila-nav.less";
+@import "phila-typography.less";
+@import "phila-forms.less";  // mixins etc
+@import "phila-variables.less";
+
+@media(min-width:1200px){
+    body{
+        padding-top:170px;
+    }
+}
+.navbar-responsive-collapse.col-md-5.collapse {
+    width: 41.66666667%;
+}
+.navbar-toggle{
+    z-index:10000;
+}
+
+.navbar-default {
+    background-color:#fff @imp;
+    border-color:transparent @imp;
+}
+.trending .row {
+    margin-bottom: 20px;
+}
+.accessibility {
+    float:right;
+}
+
+/*TRENDING SEARCHES*/
+#trending-searches{
+    background:@master-blue;
+    padding:20px;
+}
+#trending-searches h1 {
+    color:@white;
+    margin:0;
+    padding:0;
+    text-transform: uppercase;
+    font-size:14px;
+}
+
+#trending-searches a{
+    color:@white;
+}
+#trending-searches ul{
+    margin-bottom: 0;
+}
+#trending-searches .list-inline{
+    margin-left: 0;
+}
+
+
+/*mayor events*/
+.mayor {
+    margin-bottom:10px;
+}
+.overlay-box, .need-to {
+    position: relative;
+    min-height: 173px;
+}
+.overlay-box.mayor h1{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0, .5);
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    font-size:28px;
+}
+
+/*calendar*/
+.home-events {
+    position: relative;
+    border:1px solid #ccc;
+    padding:30px 10px 10px 10px;
+}
+.ko_calendar{
+    position: relative;
+}
+.phila-entry-data{
+    background: #ccc;
+    position: absolute;
+    top: -28px;
+    padding: 20px;
+    border: 1px solid #000;
+    z-index: 10000;
+    width: 107%;
+    min-height: 250px;
+    overflow: auto;
+    left: -10px;
+    max-height: 275px;
+}
+.close{
+    position:absolute;
+    top:0;
+    right:0;
+    padding: 10px !important;
+}
+
+/*footer*/
+.footer-links {
+    float:left;
+}
+footer{
+    background:#ccc;
+    margin:50px 0 0 0;
+}
+
+/*general overrides*/
+.row.no-gutter {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row.small-gutter {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.row.small-gutter [class*='col-']:not(:first-child),
+.row.small-gutter [class*='col-']:not(:last-child) {
+  padding-right: 5px;
+  padding-left: 5px;
+}

@@ -26,6 +26,9 @@
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
+        
+        <link rel='stylesheet' type='text/css' href='<?php echo get_stylesheet_directory_uri() ?>/phila-styles.css'>
+
 		<!-- end of wordpress head -->
 				
 	</head>
@@ -36,24 +39,44 @@
 				
 			<div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
-          
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
+                    <div class="row">
 
-						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-					</div>
+                            <!-- hanburger button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                          <div class="col-lg-2">
+                                <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You.">
+                                <h1 class="hide"><?php bloginfo('name'); ?></h1>
+                            </a>
+                         </div>
+                            <div class="collapse navbar-collapse navbar-responsive-collapse col-md-5">
+                                    <?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 
-					<div class="collapse navbar-collapse navbar-responsive-collapse col-md-6">
-						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+                            </div>
 
-					</div>
-                    <!-- home search area -->
-                    <?php get_search_form(); ?>
-
+                        <!-- home search area -->
+                        <div class="col-lg-5 search-box">
+                            <div class="clearfix">
+                                <div class="accessibility">
+                                    Text size ++ / Language
+                                </div>
+                            </div>
+                                <?php get_search_form(); ?>
+                                <div id="trending-searches">
+                                <h1>Trending Searches:</h1>
+                                    <ul class="list-inline">
+                                        <li><a href="#">Health Clinics</a></li>
+                                        <li><a href="#">Inmate Location</a></li>
+                                        <li><a href="#">Taxes</a></li>
+                                        <li><a href="#">Property</a></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div><!-- end .row -->
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 		

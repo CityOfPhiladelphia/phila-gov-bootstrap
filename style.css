@@ -1,76 +1,13 @@
 /*
-Theme Name: wp-bootstrap
-Theme URI: http://320press.com/wpbs
-Description: A simple responsive theme based on the Bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
-Version: 3.0
-Author: 320press
-Author URI: http://320press.com
+Theme Name: Phila.gov
+Theme URI: http://phila.gov
+Description: A responsive theme based on the Bootstrap framework for Phila.gov. Includes multiple page templates, two different sidebars and a theme options panel.
+Version: 1.0
+Author: Karissa Demi
+Author URI: http://karissademi.com
 Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
 License: GNU General Public License v2.0 & Apache License 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
 */
 
-/* HEADS UP: Everything that you will normally find here can be found in the library/less/wp.less */
-
-#PhilaAlertsWidget{
-    background:#000;
-    padding:20px;
-    color:#fff;
-    margin-bottom: 20px;
-}
-
-.PhilaWidget{
-    background:#ccc;
-    padding:20px;
-}
-.important-info{
-    float:right;
-}
-#PhilaAlertsDateTimeBlock{
-    float:left;
-    width:81%; /*CHANGE BEFORE PROD */
-}
-
-.PhilaWidget {
-    min-height:200px; /*CHANGE BEFORE PROD */
-}
-
-.navbar-default {
-    background-color:#fff;
-    border-color:transparent;
-}
-.footer-links {
-    float:left;
-}
-.mayor-events {
-    position: relative;
-}
-.mayor-events h1{
-    position: absolute;
-    bottom: 0;
-    background: #ccc;
-    padding: 10px;
-    width: 100%;
-    margin: 0;
-}
-
-.alpha{
-    padding:0;
-}
-.omega {
-    margin:0;
-}
-.ko_calendar{
-    position: relative;
-}
-.phila-entry-data{
-    background:#ccc;
-    position:absolute;
-    top:0px; 
-    padding:20px;
-}
-.hide-div{
-    position:absolute;
-    top:0;
-    right:0;
-}
+/* HEADS UP: Everything that you will normally find here can be found in the /library/less/phila-styles.less that all gets compiled down to phila-styles.less and all phila-specific theme stuff is prepended with phila- */

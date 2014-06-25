@@ -101,6 +101,8 @@ jQuery(document).ready(function($) {
 	$('.alert-message').alert();
 	
 	$('.dropdown-toggle').dropdown();
-});
+    
+    
+    });
 
 
