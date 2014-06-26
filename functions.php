@@ -449,13 +449,18 @@ if( !function_exists("theme_styles") ) {
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'bootstrap' );
-
-        // For phila.gov theme
-        wp_register_style( 'phila-style', get_stylesheet_directory_uri() . '/phila-style.css', array(), '1.0', 'all' );
-        wp_enqueue_style( 'phila-style' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
+
+function add_styles() {
+    // this if statement will insure the following code only gets added to your wp site and not the admin page cause your code has no business in the admin page right unless that's your intentions
+	// your own script
+		wp_register_style('phila-style',  get_stylesheet_directory_uri() . '/phila-style.css', false); //first register your custom script
+		wp_enqueue_style('phila-style'); // then let wp insert it for you or just delete this and add it directly to your template
+        // just in case your also interested
+}
+add_action( 'wp_enqueue_scripts', 'add_styles'); // now just run the function
 
 // enqueue javascript
 if( !function_exists( "theme_js" ) ) {  
