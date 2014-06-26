@@ -20,9 +20,6 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
-        <script src="<?php echo get_stylesheet_directory_uri()?>/library/js/libs/jquery.velocity.min.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri()?>/library/js/libs/velocity.ui.js"></script>
-
 	</body>
 
 </html>

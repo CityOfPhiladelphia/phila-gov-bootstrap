@@ -23,11 +23,8 @@
 		<![endif]-->
 		
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-		<!-- wordpress head functions -->
+        <!-- wordpress head functions -->
 		<?php wp_head(); ?>
-        
-        <link rel='stylesheet' type='text/css' href='<?php echo get_stylesheet_directory_uri() ?>/phila-styles.css'>
 
 		<!-- end of wordpress head -->
 				
@@ -35,11 +32,16 @@
 	
 	<body <?php body_class(); ?>>
 				
-		<header role="banner">
+		<header role="banner" class="header header-fixed animated" id="header">
 				
-			<div class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar navbar-default">
 				<div class="container">
-                    <div class="row">
+                        <div class="row accessibility visible-lg">
+                            <div class="col-lg-12">
+                                <p> Text size ++ / Language</p>
+                            </div>
+                    </div>
+                    <section class="row">
 
                             <!-- hanburger button -->
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -47,26 +49,22 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                          <div class="col-lg-2">
+                          <div class="col-sm-2 col-xs-4">
                                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You.">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="hidden-xs">
+                                    
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final-sm.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="visible-xs">
                                 <h1 class="hide"><?php bloginfo('name'); ?></h1>
                             </a>
                          </div>
-                            <div class="collapse navbar-collapse navbar-responsive-collapse col-md-5">
+                            <div class="collapse navbar-collapse navbar-responsive-collapse col-md-5 col-sm-3">
                                     <?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-
                             </div>
 
                         <!-- home search area -->
-                        <div class="col-lg-5 search-box">
-                            <div class="clearfix">
-                                <div class="accessibility">
-                                    Text size ++ / Language
-                                </div>
-                            </div>
+                        <div class="col-sm-5 col-xs-12 col-search-box">
                                 <?php get_search_form(); ?>
-                                <div id="trending-searches">
+                                <div id="trending-searches" class="hidden-xs">
                                 <h1>Trending Searches:</h1>
                                     <ul class="list-inline">
                                         <li><a href="#">Health Clinics</a></li>
@@ -76,7 +74,7 @@
                                     </ul>
                             </div>
                         </div>
-                    </div><!-- end .row -->
+                    </section><!-- end .row -->
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 		

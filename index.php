@@ -12,7 +12,7 @@ Template Name: Home Page Template
                             <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
                           <!-- slideshow large screens-->
                             <div class="visible-lg visible-md">
-                                <?php echo slider_pro(2); //two on prod
+                                <?php echo slider_pro(1); //two on prod
                                 ?>
                             </div>
                         </div>

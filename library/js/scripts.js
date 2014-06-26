@@ -72,7 +72,7 @@ jQuery(document).ready(function($) {
 	//   var input = $(this);
 	//   if (input.val() == '' || input.val() == input.attr('placeholder')) {
 	// 	input.addClass('placeholder');
-	// 	input.val(input.attr('placeholder'));
+	// 	input.val(input.attr('placeholder')); 
 	//   }
 	// }).blur();
 	
@@ -102,7 +102,16 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
     
-    
-    });
+  $("header").headroom({
+      "tolerance": 0,
+      "offset": 100,
+      "classes": {
+        "initial": "animated",
+        "pinned": "slideDown",
+        "unpinned": "slideUp",
+        "top": "headroom--top",
+        "notTop": "headroom--not-top"
+      }
+});
 
-
+});

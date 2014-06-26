@@ -6,12 +6,43 @@
 @import "phila-typography.less";
 @import "phila-forms.less";  // mixins etc
 @import "phila-variables.less";
+@import "phila-animate.less";
 
-@media(min-width:1200px){
-    body{
-        padding-top:170px;
+body {
+    padding-top: 150px @imp;
+}
+
+@media(min-width:980px){
+    body {
+        padding-top: 150px @imp;
     }
 }
+@media(min-width:1200px){
+    body{
+        padding-top:180px @imp;
+    }
+    .container {
+        width: 1200px @imp;
+    }
+}
+#content {
+    padding: 0;
+}
+.headroom {
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.header-fixed {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0; 
+}
+
 .navbar-responsive-collapse.col-md-5.collapse {
     width: 41.66666667%;
 }
@@ -26,7 +57,7 @@
 .trending .row {
     margin-bottom: 20px;
 }
-.accessibility {
+.accessibility p{
     float:right;
 }
 
@@ -48,11 +79,11 @@
 }
 #trending-searches ul{
     margin-bottom: 0;
+    font-size:89%;
 }
 #trending-searches .list-inline{
     margin-left: 0;
 }
-
 
 /*mayor events*/
 .mayor {
@@ -75,8 +106,9 @@
 /*calendar*/
 .home-events {
     position: relative;
-    border:1px solid #ccc;
+    border:1px solid @dark-gray;
     padding:30px 10px 10px 10px;
+    background:@light-gray;
 }
 .ko_calendar{
     position: relative;

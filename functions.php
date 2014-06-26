@@ -450,9 +450,9 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'bootstrap' );
 
-        // For child themes
-        wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
-        wp_enqueue_style( 'wpbs-style' );
+        // For phila.gov theme
+        wp_register_style( 'phila-style', get_stylesheet_directory_uri() . '/phila-style.css', array(), '1.0', 'all' );
+        wp_enqueue_style( 'phila-style' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -466,24 +466,49 @@ if( !function_exists( "theme_js" ) ) {
       array('jquery'), 
       '1.2' );
   
-    wp_register_script( 'wpbs-scripts', 
-      get_template_directory_uri() . '/library/js/scripts.js', 
-      array('jquery'), 
-      '1.2' );
-  
     wp_register_script(  'modernizr', 
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
       array('jquery'), 
       '1.2' );
+
+    wp_register_script(  'headroom', 
+      get_template_directory_uri() . '/library/js/headroom.js', 
+      array('jquery'), 
+      '1.2' );
+    wp_register_script(  'jquery_headroom', 
+      get_template_directory_uri() . '/library/js/jquery.headroom.js', 
+      array('jquery'), 
+      '1.2' );
+    
+    wp_register_script(  'velocity', 
+      get_template_directory_uri() . '/library/js/jquery.velocity.min.js', 
+      array('jquery'), 
+      '1.2' );
+    
+    wp_register_script(  'velocity_ui', 
+      get_template_directory_uri() . '/library/js/velocity.ui.js', 
+      array('jquery'), 
+      '1.2' );
+
+    wp_register_script( 'phila-scripts', 
+      get_template_directory_uri() . '/library/js/scripts.js', 
+      array('jquery'), 
+      '1.2' );
+
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
   
     wp_enqueue_script('bootstrap');
-    wp_enqueue_script('wpbs-scripts');
     wp_enqueue_script('modernizr');
+    wp_enqueue_script('headroom');
+    wp_enqueue_script('jquery_headroom');
+    wp_enqueue_script('phila-scripts');
+    // wp_enqueue_script('velocity');
+    //wp_enqueue_script('velocity_ui');
     
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
-
+add_filter('stylesheet_uri','wpi_stylesheet_uri',10,2);
 
 
 ?>
