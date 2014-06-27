@@ -17,27 +17,29 @@ h1.break{
     background:#fff;
     color:#fff;
     font-family: 'Marvel', sans-serif !important;
-}
-
-h1.break span{
-    background: #000;
-    padding: 0 10px 3px 8px;
-}
-
-.cat-label {
-    position:absolute;
-    background:@master-blue;
-    bottom:0px;
-    right:0px;
-    padding:5px;
-    color:#fff;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700; 
+    font-size:22px;
+    width:100%;
 }
-.cat-label-top {
+
+.section-header {
     position:absolute;
-    background:rgba(36, 84, 138, 1);
+    background:@dark-green;
+    top:0px;
+    left:0px;
+    width:100%;
+    padding:5px;
+    color:@white;
+    text-transform: uppercase;
+    font-family: 'Marvel', sans-serif @imp;
+    font-size: 24px;
+    margin:0;
+    z-index:10;
+}
+
+.cat-label-top, .cat-label, .PhilaWidgetTitle  {
+    position:absolute;
+    background:@dark-green;
     top:0px;
     left:0px;
     padding:5px;
@@ -45,6 +47,10 @@ h1.break span{
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; 
+    font-size: 14px;
+}
+h1.cat-label-top, h1.cat-label, h1.PhilaWidgetTitle {
+    margin:0;
 }
 .trending-headline {
     position: absolute;

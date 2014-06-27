@@ -64,11 +64,32 @@ body {
 .accessibility p{
     float:right;
 }
+/*MAKE SEARCH LOOK GOOD */
+
+#search.form-control{
+    padding:20px 20px 20px 55px;
+}
+
+.left-inner-addon{
+    position:relative;   
+}
+
+.left-inner-addon input {
+    padding-left: 55px;    
+}
+.left-inner-addon span {
+    position: absolute;
+    padding: 8px 12px;
+    pointer-events: none;
+    font-size:24px;
+    color:@light-gray;
+}
 
 /*TRENDING SEARCHES*/
+
 #trending-searches{
-    background:@master-blue;
-    padding:20px;
+    background:url(../phila-gov-bootstrap/images/icons/trending.gif) no-repeat 5px @master-blue;
+    padding:20px 20px 20px 55px;
 }
 #trending-searches h1 {
     color:@white;
@@ -97,7 +118,7 @@ body {
     position: relative;
     min-height: 173px;
 }
-.overlay-box.mayor h1{
+.overlay-box.mayor h2{
     position: absolute;
     bottom: 0;
     background: rgba(0,0,0, .5);
@@ -110,15 +131,15 @@ body {
 /*calendar*/
 .home-events {
     position: relative;
-    border:1px solid @dark-gray;
+    border:1px solid @dark-green;
     padding:30px 10px 10px 10px;
-    background:@light-gray;
+    background:fade(@light-gray, 50%);
 }
 .ko_calendar{
     position: relative;
 }
 .phila-entry-data{
-    background: #ccc;
+    background: #fff;
     position: absolute;
     top: -28px;
     padding: 20px;

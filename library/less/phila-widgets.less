@@ -1,5 +1,26 @@
 @import "phila-variables.less";
 
+/*general styles*/
+.PhilaWidget{
+    padding:30px 10px 10px;
+    position:relative;
+}
+.PhilaWidget a{
+    color:@white;
+}
+
+#PhilaPropSearchWidget, #PhilaPayWidget, #PhilaReportWidget{
+    background:#fff;
+    border:1px solid @dark-green;
+}
+    
+.PhilaWidget {
+    min-height:200px; /*CHANGE BEFORE PROD */
+}
+.PhilaWidget h2{
+    font-size:20px;
+}
+
 /*alerts widgets*/
 #PhilaAlertsWidget{
     background:@master-yellow;
@@ -8,10 +29,6 @@
     margin-bottom: 20px;/*CHANGE BEFORE PROD */
 }
 
-.PhilaWidget{
-    background:#ccc;
-    padding:10px;
-}
 .important-info{
     float:right;
 }
@@ -19,10 +36,46 @@
     float:left;
     width:81%; /*CHANGE BEFORE PROD */
 }
-/*general widget stuff*/
-.PhilaWidget h1 {
-    font-size:28px;
+
+/*311*/
+#Phila311Widget{
+    background:fade(@dark-green, 15%);
 }
-.PhilaWidget {
-    min-height:200px; /*CHANGE BEFORE PROD */
+
+#Phila311LinkBlock a, #PhilaReportWidget a {
+    display:block;
+    width:100%;
+    padding:5px;
+    background: @dark-green-50;
+    margin-bottom:5px;
+}
+
+#Phila311LinkBlock a:hover, #PhilaReportWidget a:hover{
+    background:fade(@dark-green-50, 20%);
+}
+
+#Phila311Widget .recent-requests{
+    background:@white;
+    padding:0 5px 5px 5px;
+}
+/*property search*/
+
+#PhilaPropSearchInputFields input[type="text"] {
+    width: 100%;
+    background: #fff;
+    padding: 5px;
+    margin-bottom: 10px;
+    border:1px solid @dark-green;
+}
+
+.PhilaFindDropDown, .PhilaObtainDropDown,.PhilaPayDropDown {
+    padding:  0 0 10px 0;
+    width:100%;
+}
+
+#PhilaFindJumpMenu, #PhilaObtainJumpMenu, #PhilaPayJumpMenu{
+    border:1px solid @dark-green;
+    width:100%;
+    padding:10px;
+    
 }

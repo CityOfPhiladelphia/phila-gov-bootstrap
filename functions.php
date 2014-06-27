@@ -444,64 +444,53 @@ function add_active_class($classes, $item) {
 }
 
 // enqueue styles
-if( !function_exists("theme_styles") ) {  
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css' );
+        wp_register_style('phila-style',  get_template_directory_uri() . '/phila-style.css'); //first register your custom script
+    
+        
         wp_enqueue_style( 'bootstrap' );
+        wp_enqueue_style('phila-style');
     }
-}
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
-
-function add_styles() {
-    // this if statement will insure the following code only gets added to your wp site and not the admin page cause your code has no business in the admin page right unless that's your intentions
-	// your own script
-		wp_register_style('phila-style',  get_stylesheet_directory_uri() . '/phila-style.css', false); //first register your custom script
-		wp_enqueue_style('phila-style'); // then let wp insert it for you or just delete this and add it directly to your template
-        // just in case your also interested
-}
-add_action( 'wp_enqueue_scripts', 'add_styles'); // now just run the function
 
 // enqueue javascript
 if( !function_exists( "theme_js" ) ) {  
   function theme_js(){
   
+
+        
     wp_register_script( 'bootstrap', 
       get_template_directory_uri() . '/library/js/bootstrap.min.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery'));
   
     wp_register_script(  'modernizr', 
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery'));
 
     wp_register_script(  'headroom', 
       get_template_directory_uri() . '/library/js/headroom.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery') );
     wp_register_script(  'jquery_headroom', 
       get_template_directory_uri() . '/library/js/jquery.headroom.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery'));
     
     wp_register_script(  'velocity', 
       get_template_directory_uri() . '/library/js/jquery.velocity.min.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery') );
     
     wp_register_script(  'velocity_ui', 
       get_template_directory_uri() . '/library/js/velocity.ui.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery') );
 
     wp_register_script( 'phila-scripts', 
       get_template_directory_uri() . '/library/js/scripts.js', 
-      array('jquery'), 
-      '1.2' );
+      array('jquery'));
 
 add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
   
+    wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('modernizr');
     wp_enqueue_script('headroom');
