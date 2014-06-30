@@ -62,7 +62,7 @@ Template Name: Home Page Template
                             <?php if ( is_active_sidebar('home-first-row') ) {
                                  echo '<div class="home-events clearfix"><h1 class="section-header">Events</h1>' ;
                                  dynamic_sidebar('home-first-row');
-                                 echo '<a href="#" class="tiny-text">More events &raquo;</a>
+                                 echo '<a href="#" class="tiny-text more-events">More events &raquo;</a>
                                  </div>' ;
                                 } ?>
                          </div>
@@ -70,7 +70,7 @@ Template Name: Home Page Template
                         
                     </section><!--end top row -->
                     <section class="services row">
-                        <div class="col-lg-24"><h1 class="break dark-green">Online Services</h1></div>
+                        <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
                         <div class="col-md-6">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
                         </div>
@@ -149,7 +149,7 @@ Template Name: Home Page Template
                     </section>
                     <section class="trending row">
                         <div class="col-sm-24">
-                            <h1 class="break light-green">Trending</h1>
+                            <h1 class="break">Trending</h1>
                             <div class="row">  
                                 <?php $args_trending = array(
                                         'posts_per_page'   => 4,

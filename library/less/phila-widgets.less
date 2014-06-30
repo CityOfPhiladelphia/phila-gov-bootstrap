@@ -11,7 +11,7 @@
 
 #PhilaPropSearchWidget, #PhilaPayWidget, #PhilaReportWidget{
     background:#fff;
-    border:1px solid @dark-green;
+    border:1px solid @dark-blue-green;
 }
     
 .PhilaWidget {
@@ -23,35 +23,78 @@
 
 /*alerts widgets*/
 #PhilaAlertsWidget{
-    background:@master-yellow;
-    padding:10px;
+    background:@orange;
+    padding:5px;
     color:#fff;
     margin-bottom: 20px;/*CHANGE BEFORE PROD */
 }
-
+#PhilaAlertsWidget #date{
+    font-family: 'Marvel', sans-serif !important;
+    font-style: italic;
+    font-size: 18px;
+}
+#PhilaAlertsWidget #time{
+    font-weight: 700;
+}
 .important-info{
     float:right;
 }
 #PhilaAlertsDateTimeBlock{
     float:left;
-    width:81%; /*CHANGE BEFORE PROD */
+}
+#PhilaAlertsIconsBlock {
+    float:right;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+#PhilaAlertsIconsBlock .weather-alert{
+    background:url(../phila-gov-bootstrap/images/icons/weather-alerts.png) no-repeat 0 0;
+}
+#PhilaAlertsIconsBlock .transit-alert{
+    background:url(../phila-gov-bootstrap/images/icons/transit.png) no-repeat 0 0;
+}
+#PhilaAlertsIconsBlock .trash-alert{
+    background:url(../phila-gov-bootstrap/images/icons/trash.png) no-repeat 0 0;
+}
+#PhilaAlertsIconsBlock .street-alert{
+    background:url(../phila-gov-bootstrap/images/icons/street-closures.png) no-repeat 0 0;
+}
+
+#PhilaAlertsIconsBlock .weather-alert, 
+#PhilaAlertsIconsBlock .transit-alert, 
+#PhilaAlertsIconsBlock .trash-alert,
+#PhilaAlertsIconsBlock .street-alert{
+    display: inline-block;
+    height: 25px;
+    margin: 0 50px 0 0;
+    padding: 0 0 0 32px;
+}
+#PhilaAlertsIconsBlock a{
+    color:@white;
+}
+
+#PhilaAlertsIconsBlock .weather-alert:hover, 
+#PhilaAlertsIconsBlock .transit-alert:hover, 
+#PhilaAlertsIconsBlock .trash-alert:hover,
+#PhilaAlertsIconsBlock .street-alert:hover{
+    opacity: .8;
 }
 
 /*311*/
 #Phila311Widget{
-    background:fade(@dark-green, 15%);
+    background:fade(@dark-blue-green, 15%);
 }
 
 #Phila311LinkBlock a, #PhilaReportWidget a {
     display:block;
     width:100%;
     padding:5px;
-    background: @dark-green-50;
+    background: @dark-blue-green-50;
     margin-bottom:5px;
 }
 
 #Phila311LinkBlock a:hover, #PhilaReportWidget a:hover{
-    background:fade(@dark-green-50, 20%);
+    background:fade(@dark-blue-green-50, 20%);
 }
 
 #Phila311Widget .recent-requests{
@@ -65,7 +108,7 @@
     background: #fff;
     padding: 5px;
     margin-bottom: 10px;
-    border:1px solid @dark-green;
+    border:1px solid @dark-blue-green;
 }
 
 .PhilaFindDropDown, .PhilaObtainDropDown,.PhilaPayDropDown {
@@ -74,7 +117,7 @@
 }
 
 #PhilaFindJumpMenu, #PhilaObtainJumpMenu, #PhilaPayJumpMenu{
-    border:1px solid @dark-green;
+    border:1px solid @dark-blue-green;
     width:100%;
     padding:5px;
     

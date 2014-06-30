@@ -112,6 +112,6 @@ jQuery(document).ready(function($) {
         "top": "headroom--top",
         "notTop": "headroom--not-top"
       }
-});
+  });
 
 });

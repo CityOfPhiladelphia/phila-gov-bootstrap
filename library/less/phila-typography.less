@@ -19,17 +19,10 @@ h1.break{
     width:100%;
     color:@white;
     padding:5px;
-}
-h1.break.dark-green{
-    background:@dark-green;
-}
-
-h1.break.light-green{
-    background:@light-green;
+    margin-top:20px;
 }
 .section-header {
     position:absolute;
-    background:@dark-green;
     top:0px;
     left:0px;
     width:100%;
@@ -40,11 +33,21 @@ h1.break.light-green{
     font-size: 24px;
     margin:0;
     z-index:10;
+    font-style: italic;
+}
+.top-annoucements .section-header {
+    background:@dark-green;
+}
+
+.services .break {
+    background:@dark-blue-green;
+}
+.trending .break {
+    background:@master-yellow;
 }
 
 .cat-label-top, .cat-label, .PhilaWidgetTitle  {
     position:absolute;
-    background:@dark-green;
     top:0px;
     left:0px;
     padding:5px;
@@ -54,6 +57,14 @@ h1.break.light-green{
     font-weight: 700; 
     font-size: 14px;
 }
+
+.services .PhilaWidgetTitle {
+    background:@dark-blue-green;
+}
+.trending .cat-label-top, .trending .cat-label {
+    background:@master-yellow;
+}
+
 h1.cat-label-top, h1.cat-label, h1.PhilaWidgetTitle {
     margin:0;
 }
