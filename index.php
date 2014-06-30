@@ -7,14 +7,14 @@ Template Name: Home Page Template
 			<div id="content" class="clearfix">
 				<div id="main" class="clearfix" role="main">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-24">
                              <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
                         </div>
                     </div>
                     
                     <section class="top-annoucements row">
                         <!--Date/time -->
-                        <div class="col-lg-8">
+                        <div class="col-md-16">
                           <!-- slideshow large screens-->
                             <div class="visible-lg visible-md">
                                 <div class="overlay-box">
@@ -25,7 +25,7 @@ Template Name: Home Page Template
                             </div>
                         </div>
                         
-                        <div class="col-lg-4">
+                        <div class="col-md-8">
                             <section class="overlay-box mayor">
                         <!-- mayor box and calendar -->
                             <?php $args_mayor = array(
@@ -70,11 +70,11 @@ Template Name: Home Page Template
                         
                     </section><!--end top row -->
                     <section class="services row">
-                        <div class="col-lg-12"><h1 class="break dark-green">Online Services</h1></div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-24"><h1 class="break dark-green">Online Services</h1></div>
+                        <div class="col-md-6">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-md-6">
                             <?php $args_services = array(
                                 'posts_per_page'   => 2,
                                 'category_name' =>    'frontpage+online-services',//homepage & online services only
@@ -105,7 +105,7 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-md-6">
                             <?php echo do_shortcode('[PhilaPropSearch]'); ?>
                            <?php $args_services_single = array(
                                 'posts_per_page'   => 1,
@@ -138,7 +138,7 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-md-6">
                             <div class="need-to">
                                 <div class="cat-label-top">I need to</div>
                                 <?php echo do_shortcode('[PhilaPay]'); ?>
@@ -148,65 +148,101 @@ Template Name: Home Page Template
                         
                     </section>
                     <section class="trending row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-24">
                             <h1 class="break light-green">Trending</h1>
                             <div class="row">  
                                 <?php $args_trending = array(
                                         'posts_per_page'   => 4,
-                                        //'category_name'    => 'revenue,health+',     
+                                        'category_name'    => 'frontpage',     
                                         'orderby'          => 'post_date',
                                         'order'            => 'DESC',
                                         'post_type'        => 'post',
                                         'post_status'      => 'publish',
-                                        'meta_key'         => '_thumbnail_id'
+                                        'tag'              => 'trending'
                                     ); 
-                                   // $omit = array ('cat' => -7);
-
                                     $trending_query = new WP_Query( $args_trending ); 
                                     // The Loop
                                         if ( $trending_query->have_posts() ) {
                                             while ( $trending_query->have_posts() ) {
                                                 $trending_query->the_post();
-
                                                 $category = get_the_category(); 
-                                                echo '<div class="col-md-3"><div class="overlay-box">';
-                                                echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
-                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                echo '</a>';
-                                                echo '</div></div>';
-                                            }
-                                        } else {
-                                            // no posts found
-                                            ?><p>There are no trending news stories!</p> <?php
-                                        } 
+                                                
+                                                    if ( '' != get_the_post_thumbnail() ) { //only display images with posts that have a featured image
+                                                        echo '<div class="col-md-6">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                    } else {
+                                                        echo '<div class="col-md-6">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
+                                                        echo '<a href="' . get_permalink() .'">';
+                                                        echo get_the_content();
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                        
+                                            
+                                                       
+                                                    }                                               
+                                                }//close while
+                                            } else {
+                                                // no posts found
+                                                ?><p>There are no trending news stories!</p> <?php
+                                            } 
                                         /* Restore original Post Data */
                                         wp_reset_postdata();
                                     ?>
                                 </div><!--end first row of trending -->
                             </div>
                         <div class="row">  
-                            <div class="col-sm-12">
+                            <div class="col-sm-24">
                                 <?php 
-                                    $trending_query = new WP_Query( $args_trending ); 
+                                    $args_trending_2 = array(
+                                        'posts_per_page'   => 4,
+                                        'category_name'    => 'frontpage',     
+                                        'orderby'          => 'post_date',
+                                        'order'            => 'DESC',
+                                        'post_type'        => 'post',
+                                        'post_status'      => 'publish',
+                                        'tag'              => 'trending',
+                                        'offset'           => '4'
+                                    ); 
+                                    $trending_query = new WP_Query( $args_trending_2 ); 
                                     // The Loop
                                         if ( $trending_query->have_posts() ) {
                                             while ( $trending_query->have_posts() ) {
                                                 $trending_query->the_post();
-
                                                 $category = get_the_category(); 
-                                                echo '<div class="col-md-3"><div class="overlay-box">';
-                                                echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
-                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                echo '</a>';
-                                                echo '</div></div>';
+                                                    if ( '' != get_the_post_thumbnail() ) { //only display images with posts that have a featured image
+                                                        echo '<div class="col-md-6">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                    } else {
+                                                        echo '<div class="col-md-6">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<div class="dummy-div">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo '<p>' . the_content('&raquo;') .'</p>';
+                                                        echo '</div>';
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                    }  
                                             }
                                         } else {
                                             // no posts found
-                                            ?><p>There are no trending news stories!</p> <?php
+                                            ?><div class="col-lg-12">Bogus! There are no more trending news stories!</div> <?php
                                         } 
                                         /* Restore original Post Data */
                                         wp_reset_postdata();

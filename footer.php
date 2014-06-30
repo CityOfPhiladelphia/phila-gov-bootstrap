@@ -2,7 +2,7 @@
 			
 				<div id="inner-footer" class="clearfix">
 		          <div id="widget-footer" class="clearfix row">
-                    <div class="col-lg-12">					
+                    <div class="col-lg-24">					
 					   <nav>
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					   </nav>

@@ -12,22 +12,19 @@
 @import "phila-variables.less";
 @import "phila-animate.less";
 
-body {
-    padding-top: 150px @imp;
+@media (min-width: 991px){
+    .navbar-collapse {
+        overflow-x: visible @imp;
+        padding-right: 5px @imp;
+        padding-left: 5px @imp;
+        border-top: 1px solid transparent @imp;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1) @imp;
+        -webkit-overflow-scrolling: touch @imp;
 }
 
-@media(min-width:980px){
-    body {
-        padding-top: 150px @imp;
-    }
 }
-@media(min-width:1200px){
-    body{
-        padding-top:180px @imp;
-    }
-    .container {
-        width: 1200px @imp;
-    }
+body {
+    padding-top: 160px @imp;
 }
 #content {
     padding: 0;
@@ -46,10 +43,18 @@ body {
     left: 0;
     top: 0; 
 }
-
-.navbar-responsive-collapse.col-md-5.collapse {
-    width: 41.66666667%;
+//override baked in menu style
+@media (min-width: 992px) {
+    .navbar-responsive-collapse.col-md-8.collapse {
+        width: 33.3333%;
+    }
 }
+@media (min-width: 1200px) {
+    .navbar-responsive-collapse.col-lg-9.collapse {
+        width: 37.5%;
+    }
+}
+
 .navbar-toggle{
     z-index:10000;
 }
@@ -60,6 +65,9 @@ body {
 }
 .trending .row {
     margin-bottom: 20px;
+}
+.accessibility {
+    height:39px;   
 }
 .accessibility p{
     float:right;
@@ -89,7 +97,7 @@ body {
 
 #trending-searches{
     background:url(../phila-gov-bootstrap/images/icons/trending.png) no-repeat 5px @master-blue;
-    padding:20px 20px 20px 55px;
+    padding:10px 20px 10px 55px;
 }
 #trending-searches h1 {
     color:@white;
@@ -108,6 +116,7 @@ body {
 }
 #trending-searches .list-inline{
     margin-left: 0;
+    padding-top:5px;
 }
 
 /*mayor events*/

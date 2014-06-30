@@ -8,7 +8,7 @@ Template Name: Homepage
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-12 clearfix" role="main">
+				<div id="main" class="col-sm-24 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -33,7 +33,7 @@ Template Name: Homepage
 						
 						<section class="row post_content">
 						
-							<div class="col-sm-8">
+							<div class="col-sm-16">
 						
 								<?php the_content(); ?>
 								
