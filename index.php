@@ -141,9 +141,8 @@ Template Name: Home Page Template
                         <div class="col-md-6">
                             <div class="need-to">
                                 <div class="cat-label-top">I need to</div>
-                                <?php echo do_shortcode('[PhilaPay]'); ?>
+                                <?php echo do_shortcode('[PhilaActionWidget]'); ?>
                             </div>
-                            <?php echo do_shortcode('[PhilaReportWidget]'); ?>
                         </div>
                         
                     </section>

@@ -131,7 +131,8 @@ body {
 }
 .overlay-box, .need-to {
     position: relative;
-    min-height: 173px;
+    margin-bottom: 10px;
+    min-height:195px;
 }
 .overlay-box.mayor h2{
     position: absolute;
@@ -141,8 +142,12 @@ body {
     width: 100%;
     margin: 0;
     font-size:28px;
+    height:auto @imp;
 }
 
+.services .overlay-box, .trending overlay-box{ //break out from mayor's overlay box
+    height: 195px;
+}
 /*calendar*/
 .home-events {
     position: relative;
@@ -184,7 +189,7 @@ body {
 }
 .more-events{
     position: absolute;
-    z-index:11;
+    z-index:10;
     top:7px;
     right:15px;
 }
@@ -201,6 +206,15 @@ a.more-events{
     padding: 10px !important;
 }
 
+/*ONLINE SERVICES*/
+.services .overlay-box img {
+    opacity: .5;
+    width:100%;
+    height:195px;
+}
+.services .overlay-box a{
+    color:@white;
+}
 /*footer*/
 .footer-links {
     float:left;
