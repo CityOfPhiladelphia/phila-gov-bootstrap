@@ -36,6 +36,11 @@
 				
 			<div class="navbar navbar-default">
 				<div class="container"> 
+                    <div class="row">
+                            <div class="accessibility visible-lg visible-md clearfix col-lg-24">
+                             <p> Text size ++ / <span class="glyphicon glyphicon-globe"></span> Translate</p>
+                            </div>
+                    </div>
                     <section class="row">
 
                             <!-- hanburger button -->
@@ -46,7 +51,7 @@
                             </button>
                           <div class="col-sm-4 col-xs-6 col-md-4 col-lg-3">
                                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="hidden-xs">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="hidden-xs">
                                     
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final-sm.gif" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="visible-xs">
                                 <h1 class="hide"><?php bloginfo('name'); ?></h1>
@@ -58,9 +63,6 @@
 
                         <!-- home search area -->
                         <div class="col-sm-12 col-xs-24 col-search-box">
-                            <div class="accessibility visible-lg visible-md clearfix">
-                             <p> Text size ++ / <span class="glyphicon glyphicon-globe"></span> Translate</p>
-                            </div>
                                 <?php get_search_form(); ?>
                                 <div id="trending-searches" class="hidden-xs">
                                 <h1>Trending Searches:</h1>
