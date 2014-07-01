@@ -32,7 +32,7 @@
 	
 	<body <?php body_class(); ?>>
 				
-		<header role="banner" class="header header-fixed animated" id="header">
+		<header role="banner" class="header animated" id="header">
 				
 			<div class="navbar navbar-default">
 				<div class="container"> 
