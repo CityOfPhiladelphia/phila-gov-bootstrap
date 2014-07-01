@@ -2,15 +2,16 @@
 
 /*general styles*/
 .PhilaWidget{
-    padding:30px 10px 10px;
-    position:relative;
+    padding: 30px 10px 10px;
+    position: relative;
+    margin-bottom: 10px;
 }
 .home .PhilaWidget a{
     color:@white;
 }
     
 .PhilaWidget {
-    min-height:200px; /*CHANGE BEFORE PROD */
+    min-height:195px; /*CHANGE BEFORE PROD */
 }
 .home .PhilaWidget h2{
     font-size:20px;
@@ -104,16 +105,23 @@
     border:1px solid @dark-blue-green;
 }
 
-#PhilaActionWidget{
-    height:400px;
+#PhilaPropSearchInputFields .left-inner-addon span{
+    position: absolute;
+    padding: 3px 8px;
+    pointer-events: none;
+    font-size: 24px;
+    color: #b9b9b9;
 }
-
 .home #PhilaPropSearchInputFields input[type="text"] {
     width: 100%;
     background: #fff;
-    padding: 5px;
+    padding: 5px 5px 5px 40px;
     margin-bottom: 10px;
     border:1px solid @dark-blue-green;
+}
+
+#PhilaActionWidget{
+    height:400px;
 }
 
 .home .PhilaFindDropDown, .home .PhilaObtainDropDown, .home .PhilaPayDropDown {
