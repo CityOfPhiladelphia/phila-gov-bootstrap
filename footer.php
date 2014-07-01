@@ -2,12 +2,17 @@
 			
 				<div id="inner-footer" class="clearfix">
 		          <div id="widget-footer" class="clearfix row">
-                    <div class="col-lg-24">					
+                    <div class="col-lg-24">
+                        <span class="footer-logo"></span>
 					   <nav>
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					   </nav>
-                        <p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-                         </div>
+                        <div class="footer-right">
+                            <span class="email"><a href="mailto:webissues@phila.gov">webissues@phila.gov</a></span>
+                            <div class="social-media">social media icons</div>
+                        </div>
+                      </div>
+                    </div>
 				    </div> <!-- end #inner-footer -->
                 </div>
 			</footer> <!-- end footer -->

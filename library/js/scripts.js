@@ -102,7 +102,8 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
     
-  $("header").headroom({
+ /*no longer using headroom - commented out for now. 
+ $("header").headroom({
       "tolerance": 0,
       "offset": 100,
       "classes": {
@@ -112,6 +113,6 @@ jQuery(document).ready(function($) {
         "top": "headroom--top",
         "notTop": "headroom--not-top"
       }
-  });
+  });*/
 
 });

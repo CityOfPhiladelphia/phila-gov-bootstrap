@@ -37,7 +37,7 @@
 			<div class="navbar navbar-default">
 				<div class="container"> 
                     <div class="row">
-                            <div class="accessibility visible-lg visible-md clearfix col-lg-24">
+                            <div class="accessibility visible-lg visible-md col-lg-24">
                              <p> Text size ++ / <span class="glyphicon glyphicon-globe"></span> Translate</p>
                             </div>
                     </div>

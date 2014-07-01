@@ -11,6 +11,7 @@
 @import "phila-forms.less";  // mixins etc
 @import "phila-variables.less";
 @import "phila-animate.less";
+@import "phila-mixins.less";
 
 @media (min-width: 991px){
     .navbar-collapse {
@@ -25,6 +26,10 @@
 }
 body {
     padding-top: 140px @imp;
+    line-height: 1.2;
+}
+a:hover {
+    text-decoration:none @imp;
 }
 #content {
     padding: 0;
@@ -42,6 +47,7 @@ body {
     right: 0;
     left: 0;
     top: 0; 
+    font-size: 11px;
 }
 //override baked in menu style
 @media (min-width: 992px) {
@@ -68,6 +74,7 @@ body {
 }
 .accessibility {
     height:25px;   
+    .clearfix();
 }
 .accessibility p{
     float:right;
@@ -138,12 +145,15 @@ body {
 .overlay-box.mayor h2{
     position: absolute;
     bottom: 0;
-    background: rgba(0,0,0, .5);
     padding: 10px;
     width: 100%;
     margin: 0;
-    font-size:28px;
+    font-size:24px;
     height:auto @imp;
+    .gradient();
+}
+.overlay-box.mayor a{
+    color:@white;
 }
 
 .services .overlay-box, .trending overlay-box{ //break out from mayor's overlay box
@@ -155,6 +165,7 @@ body {
     border:1px solid @dark-green;
     padding:35px 10px 10px 10px;
     background:@off-white;
+    font-size:12px;
 }
 .home-events{
     color:@charcoal;
@@ -213,17 +224,66 @@ a.more-events{
     width:100%;
     height:195px;
 }
+.services .overlay-box img:hover {
+    opacity: 1;
+}
 .services .overlay-box a{
     color:@white;
 }
+
+/*TRENIDNG HEADLINES*/
+.trending-headline {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 24px;
+    padding: 10px;
+    margin: 0;
+    z-index: 1;
+    .gradient();
+}
+
+.trending .overlay-box{
+    border:1px solid @master-yellow;
+    background:@off-white;
+}
+
+.trending .cat-label-top, .trending .cat-label {
+    background:@master-yellow;
+}
+
 /*footer*/
+footer{
+    background:@light-purple;
+    margin:50px 0 0 0;
+    padding:20px;
+    position:relative;
+    font-size:12px;
+}
+footer ul {
+    margin-bottom:0;
+    padding:0;
+}
+footer .footer-logo{
+    position: absolute;
+    background: url('../phila-gov-bootstrap/images/footer-bell.png') no-repeat scroll 0% 0% transparent;
+    height: 51px;
+    width: 44px;
+    top: -52px;
+    right: 50%;
+    left: 50%;
+}
+.footer-right{
+    float:right;
+}
 .footer-links {
     float:left;
+    color:@white;
 }
-footer{
-    background:#ccc;
-    margin:50px 0 0 0;
+.footer-links ul li {  
+    display:inline-block;
 }
+
 
 /*general overrides*/
 .row.no-gutter {

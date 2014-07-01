@@ -1,5 +1,6 @@
 @import "phila-variables.less";
 
+
 /*general styles*/
 .PhilaWidget{
     padding: 30px 10px 10px;
@@ -26,6 +27,7 @@
     padding:5px;
     color:#fff;
     margin-bottom: 20px;/*CHANGE BEFORE PROD */
+    .clearfix();
 }
 .home #PhilaAlertsWidget #date{
     font-family: 'Marvel', sans-serif !important;
@@ -43,7 +45,7 @@
 }
 .home #PhilaAlertsIconsBlock {
     float:right;
-    margin-top: 12px;
+    margin-top: 8px;
     text-transform: uppercase;
 }
 .home #PhilaAlertsIconsBlock .weather-alert{
@@ -87,10 +89,10 @@
 .home #Phila311LinkBlock{
     margin-top:200px;
 }
-.home #Phila311LinkBlock a, .home #PhilaReportMainWindow a {
+.home #Phila311LinkBlock a{
     display:block;
     width:100%;
-    padding:5px;
+    padding:10px;
     background: @dark-blue-green;
     margin-bottom:5px;
 }
@@ -100,11 +102,13 @@
 }
 
 /*property search*/
-#PhilaPropSearchWidget, #PhilaActionWidget{
-    background:#fff;
+#PhilaPropSearchWidget{
+    background:url(../phila-gov-bootstrap/images/home-property-bg.png) no-repeat;
     border:1px solid @dark-blue-green;
 }
-
+#PhilaPropSearchWidget a {
+    color:@dark-blue-green;
+}
 #PhilaPropSearchInputFields .left-inner-addon span{
     position: absolute;
     padding: 3px 8px;
@@ -114,14 +118,22 @@
 }
 .home #PhilaPropSearchInputFields input[type="text"] {
     width: 100%;
-    background: #fff;
-    padding: 5px 5px 5px 40px;
+    background: fade(@white,90%);
+    padding: 9px 5px 5px 40px;
     margin-bottom: 10px;
     border:1px solid @dark-blue-green;
 }
 
 #PhilaActionWidget{
     height:400px;
+    background:@light-purple;
+}
+.home #PhilaActionWidget a{
+    display:block;
+    width:100%;
+    padding:10px;
+    background: @light-blue;
+    margin-bottom:5px;
 }
 
 .home .PhilaFindDropDown, .home .PhilaObtainDropDown, .home .PhilaPayDropDown {
