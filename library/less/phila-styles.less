@@ -40,7 +40,7 @@ body {
 }
 a:hover {
     text-decoration:none @imp;
-    .fade-in-out(.6);
+    .transition;
 }
 #content {
     padding: 0;
@@ -217,8 +217,11 @@ a.more-events{
 }
 
 /*ONLINE SERVICES*/
+.services .overlay-box{
+    .transition;
+}
 
-.services .overlay-box img:hover {
+.services .overlay-box:hover {
     .fade-in-out (.6);
 }
 .services .overlay-box a{
@@ -238,6 +241,7 @@ a.more-events{
 }
 .trending .overlay-box{
     background:@off-white;
+    .transition;
 }
 .trending .cat-label-top, .trending .cat-label {
     background:@master-yellow;
