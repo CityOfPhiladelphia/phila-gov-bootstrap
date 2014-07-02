@@ -56,12 +56,12 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </section><!--end overlaybox-->
-                            <?php if ( is_active_sidebar('home-first-row') ) {
-                                 echo '<div class="home-events clearfix"><h1 class="section-header">Events</h1>' ;
-                                 dynamic_sidebar('home-first-row');
-                                 echo '<a href="#" class="tiny-text more-events">More events &raquo;</a>
-                                 </div>' ;
-                                } ?>
+                            <div class="home-events clearfix">
+                                <h1 class="section-header">Events</h1>
+                                <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
+                                <a href="#" class="tiny-text more-events">More events &raquo;</a>
+                               
+                            </div>
                          </div>
                                               
                         
