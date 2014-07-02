@@ -16,7 +16,7 @@ Template Name: Home Page Template
                         <!--Date/time -->
                         <div class="col-md-16">
                           <!-- slideshow large screens-->
-                            <div class="visible-lg visible-md">
+                            <div class="visible-lg visible-md visible-sm">
                                 <div class="overlay-box">
                                     <h1 class="section-header">Headlines</h1>
                                     <?php echo slider_pro(2); //two on prod
@@ -71,10 +71,10 @@ Template Name: Home Page Template
                     </section><!--end top row -->
                     <section class="services row">
                         <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-8">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-8">
                             <?php $args_services = array(
                                 'posts_per_page'   => 2,
                                 'category_name' =>    'frontpage+online-services',//homepage & online services only
@@ -105,7 +105,7 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-8">
                             <?php echo do_shortcode('[PhilaPropSearch]'); ?>
                            <?php $args_services_single = array(
                                 'posts_per_page'   => 1,
@@ -138,7 +138,7 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-24">
                             <div class="need-to">
                                 <div class="cat-label-top">I need to</div>
                                 <?php echo do_shortcode('[PhilaActionWidget]'); ?>
@@ -167,7 +167,7 @@ Template Name: Home Page Template
                                                 $category = get_the_category(); 
                                                 
                                                     if ( '' != get_the_post_thumbnail() ) { //only display images with posts that have a featured image
-                                                        echo '<div class="col-md-6">
+                                                        echo '<div class="col-md-6 col-sm-8">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
@@ -176,12 +176,11 @@ Template Name: Home Page Template
                                                         echo '</a>';
                                                         echo '</div></div>';
                                                     } else {
-                                                        echo '<div class="col-md-6">
-                                                                <div class="overlay-box">';
+                                                        echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
-                                                        echo get_the_content();
-                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
                                                         echo '</a>';
                                                         echo '</div></div>';
                                                         
@@ -218,7 +217,7 @@ Template Name: Home Page Template
                                                 $trending_query->the_post();
                                                 $category = get_the_category(); 
                                                     if ( '' != get_the_post_thumbnail() ) { //only display images with posts that have a featured image
-                                                        echo '<div class="col-md-6">
+                                                        echo '<div class="col-md-6 col-sm-8">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
@@ -227,13 +226,13 @@ Template Name: Home Page Template
                                                         echo '</a>';
                                                         echo '</div></div>';
                                                     } else {
-                                                        echo '<div class="col-md-6">
-                                                                <div class="overlay-box">';
+                                                        echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $category[0]->cat_name . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
                                                         echo '<div class="dummy-div">';
                                                         echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                        echo '<p>' . the_content('&raquo;') .'</p>';
+                                                        echo '<div class="tile-text">' . get_the_content() . '</div>';
                                                         echo '</div>';
                                                         echo '</a>';
                                                         echo '</div></div>';
@@ -248,10 +247,11 @@ Template Name: Home Page Template
                                 ?>
                             </div><!--end second row of trending -->
                         </div>
-                        <!-- slideshow mobile only-->
+                        <!-- slideshow mobile only
                         <div class="visible-sm visible-xs">
                             <?php echo slider_pro(3); ?>
                         </div>
+                    -->
                     </section>
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->

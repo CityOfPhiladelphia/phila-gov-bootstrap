@@ -11,8 +11,33 @@
 .navbar-default .navbar-nav>li>a {
     color: @master-blue !important;
 }
-.navbar-nav {
-    margin: 0 0 0 25px;
+
+
+@media (min-width: @screen-sm-min) {
+    .navbar-collapse{
+        width:33% @imp;
+    }
+    .navbar-nav>li >a {
+        padding:0;
+    }   
+    .navbar-nav > li {
+        width: 102px;
+    }
+    .navbar-nav > li:nth-child(4), .navbar-nav > li:nth-child(5), .navbar-nav > li:nth-child(6) {
+       float:right;
+    }
+}
+
+@media (min-width: @screen-md-min) {
+    .navbar-nav>li >a {
+        padding:0;
+    }   
+    .navbar-nav > li {
+        width: 139px;
+    }
+    .navbar-nav > li:nth-child(4), .navbar-nav > li:nth-child(5), .navbar-nav > li:nth-child(6) {
+       float:right;
+    }
 }
 
 @media (min-width: @screen-lg-min) {
@@ -63,16 +88,4 @@
         width: auto @imp;
     }
     
-}
-
-@media (min-width: @screen-md-min) {
-    .navbar-nav>li >a {
-        padding:0;
-    }   
-    .navbar-nav > li {
-        width: 153px;
-    }
-    .navbar-nav > li:nth-child(4), .navbar-nav > li:nth-child(5), .navbar-nav > li:nth-child(6) {
-       float:right;
-    }
 }

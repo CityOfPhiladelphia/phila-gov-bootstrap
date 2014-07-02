@@ -12,7 +12,7 @@
 }
     
 .PhilaWidget {
-    min-height:195px; /*CHANGE BEFORE PROD */
+    min-height:210px; /*CHANGE BEFORE PROD */
 }
 .home .PhilaWidget h2{
     font-size:20px;
@@ -83,11 +83,14 @@
 
 /*311*/
 .home #Phila311Widget{
-    background:url(../phila-gov-bootstrap/images/philly-311-home-bg.jpg) no-repeat fade(@dark-blue-green-50, 20%);
-    min-height:400px;
+    background:url(../phila-gov-bootstrap/images/philly-311-home-bg.jpg) no-repeat center top fade(@dark-blue-green-50, 20%);
+    min-height:430px;
 }
 .home #Phila311LinkBlock{
-    margin-top:200px;
+    padding-top:200px;
+}
+.home #Phila311LinkBlock {
+    background:url(../phila-gov-bootstrap/images/philly-311-logo.png) no-repeat center top transparent;
 }
 .home #Phila311LinkBlock a{
     display:block;
@@ -123,19 +126,26 @@
     margin-bottom: 10px;
     border:1px solid @dark-blue-green;
 }
-
+/*ACTION */
 #PhilaActionWidget{
-    height:400px;
+    height:430px;
     background:@light-purple;
 }
 .home #PhilaActionWidget a{
     display:block;
     width:100%;
-    padding:10px;
-    background: @light-blue;
     margin-bottom:5px;
 }
 
+.home .PhilaFindDropDown{
+    background:url(../phila-gov-bootstrap/images/icons/find.png) no-repeat 5px 4px;
+}
+.home .PhilaObtainDropDown{
+    background:url(../phila-gov-bootstrap/images/icons/obtain.png) no-repeat 5px 5px;
+}
+.home .PhilaPayDropDown{
+    background:url(../phila-gov-bootstrap/images/icons/pay-online.png) no-repeat 5px 6px;
+}
 .home .PhilaFindDropDown, .home .PhilaObtainDropDown, .home .PhilaPayDropDown {
     padding:  0 0 10px 0;
     width:100%;
@@ -144,6 +154,19 @@
 .home #PhilaFindJumpMenu, .home #PhilaObtainJumpMenu, .home #PhilaPayJumpMenu{
     border:1px solid @dark-blue-green;
     width:100%;
-    padding:5px;
+    padding:5px 5px 5px 35px;
+    
+}
+.home select#PhilaFindJumpMenu, .home select#PhilaObtainJumpMenu, .home select#PhilaPayJumpMenu{
+    background:rgba(0,0,0,0);
+}
+.home .report {
+    padding:10px 10px 10px 40px;
+    background:url(../phila-gov-bootstrap/images/icons/report.png) no-repeat 10px 5px @light-blue;
+    
+}
+.home .submit-tip {
+    padding:10px 10px 10px 40px;
+    background:url(../phila-gov-bootstrap/images/icons/submit-tip.png) no-repeat 5px 7px @light-blue;
     
 }

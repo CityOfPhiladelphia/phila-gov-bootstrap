@@ -504,18 +504,11 @@ add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 add_action( 'wp_enqueue_scripts', 'theme_js' );
 add_filter('stylesheet_uri','wpi_stylesheet_uri',10,2);
 
-function remove_more_link($link) {
-	$offset = strpos($link, '#more-');
-	if ($offset) {
-		$end = strpos($link, '"',$offset);
-	}
-	if ($end) {
-		$link = substr_replace($link, '', $offset, $end-$offset);
-	}
-	return $link;
+
+
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+    function modify_read_more_link() {
+        return '<a class="more-link" href="' . get_permalink() . '"></a>';
 }
-add_filter('the_content', 'remove_more_link');
-
-
 
 ?>

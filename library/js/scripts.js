@@ -114,5 +114,11 @@ jQuery(document).ready(function($) {
         "notTop": "headroom--not-top"
       }
   });*/
+    //make trending boxes clickable
+    $(".trending .no-img").click(function(){
+     window.location=$(this).find("a").attr("href"); 
+     return false;
+        console.log(":(");
+});
 
 });
