@@ -496,7 +496,7 @@ add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
     wp_enqueue_script('headroom');
     wp_enqueue_script('jquery_headroom');
     wp_enqueue_script('phila-scripts');
-    // wp_enqueue_script('velocity');
+   //wp_enqueue_script('velocity');
     //wp_enqueue_script('velocity_ui');
     
   }

@@ -15,13 +15,10 @@ Template Name: Home Page Template
                     <section class="top-annoucements row">
                         <!--Date/time -->
                         <div class="col-md-16">
-                          <!-- slideshow large screens-->
-                            <div class="visible-lg visible-md visible-sm">
-                                <div class="overlay-box">
-                                    <h1 class="section-header">Headlines</h1>
-                                    <?php echo slider_pro(2); //two on prod
-                                    ?>
-                                </div>
+                            <div class="overlay-box">
+                                <h1 class="section-header">Headlines</h1>
+                                <?php echo slider_pro(2); //two on prod
+                                 ?>
                             </div>
                         </div>
                         
@@ -178,7 +175,7 @@ Template Name: Home Page Template
                             <h1 class="break">Trending</h1>
                             <div class="row">  
                                 <?php $args_trending = array(
-                                        'posts_per_page'   => 4,
+                                        'posts_per_page'   => 8,
                                         'category_name'    => 'frontpage',     
                                         'orderby'          => 'post_date',
                                         'order'            => 'DESC',
@@ -243,73 +240,7 @@ Template Name: Home Page Template
                                     ?>
                                 </div><!--end first row of trending -->
                             </div>
-                        <div class="row">  
-                            <div class="col-sm-24">
-                                <?php 
-                                    $args_trending_2 = array(
-                                        'posts_per_page'   => 4,
-                                        'category_name'    => 'frontpage',     
-                                        'orderby'          => 'post_date',
-                                        'order'            => 'DESC',
-                                        'post_type'        => 'post',
-                                        'post_status'      => 'publish',
-                                        'tag'              => 'trending',
-                                        'offset'           => '4'
-                                    ); 
-                                    $trending_query = new WP_Query( $args_trending_2 ); 
-                                    // The Loop
-                                        if ( $trending_query->have_posts() ) {
-                                            while ( $trending_query->have_posts() ) {
-                                                $trending_query->the_post();
-                                                $category = get_the_category(); 
-                                                //thumb is NOT BLANK & slug IS homepage
-                                                    if (('' != get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) { //only display images with posts that have a featured imag
-                                                        echo '<div class="col-md-6 col-sm-8">
-                                                                <div class="overlay-box">';
-                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                        echo '</a>';
-                                                        echo '</div></div>';
-                                                        //if the post thumb IS BLANK & category is front page
-                                                    } else if (('' == get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) {
-                                                        echo '<div class="col-md-6 col-sm-8">
-                                                                <div class="overlay-box no-img">';
-                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
-                                                        echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
-                                                        echo '</a>';
-                                                        echo '</div></div>';            
-                                                        //if the post thumb is NOT blank and the slug is NOT front page
-                                                    } else if ( ('' != get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
-                                                         echo '<div class="col-md-6 col-sm-8">
-                                                                <div class="overlay-box">';
-                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                        echo '</a>';
-                                                        echo '</div></div>';
-                                                        // IS BLANK thumbnail and the category slug is not frontpage
-                                                    }else if (('' == get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
-                                                              echo '<div class="col-md-6 col-sm-8">
-                                                                <div class="overlay-box no-img">';
-                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
-                                                        echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
-                                                        echo '</a>';
-                                                        echo '</div></div>';  
-                                                    }
-                                            }//close while
-                                        } else {
-                                            // no posts found
-                                            ?><div class="col-lg-12">Bogus! There are no more trending news stories!</div> <?php
-                                        } 
-                                        /* Restore original Post Data */
-                                        wp_reset_postdata();
-                                ?>
-                            </div><!--end second row of trending -->
+                       
                         </div>
                         <!-- slideshow mobile only
                         <div class="visible-sm visible-xs">

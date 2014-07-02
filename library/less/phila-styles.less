@@ -27,18 +27,23 @@
 body {
     padding-top: 0 @imp;
     line-height: 1.2;
+    -o-transition: font-size .3s linear;
+    -moz-transition: font-size .3s linear;
+    -webkit-transition: font-size .3s linear;
+    transition: font-size .3s linear;
+}
+.container {
+    -o-transition: width .3s linear;
+    -moz-transition: width .3s linear;
+    -webkit-transition: width .3s linear;
+    transition: width .3s linear;
 }
 a:hover {
     text-decoration:none @imp;
+    .fade-in-out(.6);
 }
 #content {
     padding: 0;
-}
-.headroom {
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
 }
 .header {
     font-size: 11px;
@@ -158,7 +163,7 @@ a:hover {
     padding:35px 10px 10px 10px;
     background:@off-white;
     font-size:12px;
-    height:157px;
+    height:176px;
 }
 .home-events{
     color:@charcoal;
@@ -174,7 +179,7 @@ a:hover {
     font-size:12px;
     display:block;
     float:right;
-        border-bottom: 1px solid @dark-green;
+    border-bottom: 1px solid @dark-green;
 }
 .ko-calendar-date{
     font-size:12px;
@@ -214,7 +219,7 @@ a.more-events{
 /*ONLINE SERVICES*/
 
 .services .overlay-box img:hover {
-    opacity: 1;
+    .fade-in-out (.6);
 }
 .services .overlay-box a{
     color:@white;
@@ -240,15 +245,22 @@ a.more-events{
 .trending .no-img{
     cursor:pointer;
     border:1px solid @master-yellow;
+    overflow:hidden;
 }
 
 .trending .overlay-box:hover {
-    opacity: .8;
+    .fade-in-out(.6);
 }
 .trending .tile-text{
-    padding:30px 5px 0 5px;
     color:@charcoal;
     font-size:16px;
+    position: absolute;
+    top:30px;
+    bottom:0;
+    left:5px;
+    right:5px;
+    width:100%;
+    height:100%;
 }
 .trending .tile-text a{
     color:@charcoal;
@@ -295,7 +307,6 @@ footer .footer-logo{
         height:210px;
     }
     .services .overlay-box img {
-        opacity: .5;
         width:100%;
         height:210px;
     }

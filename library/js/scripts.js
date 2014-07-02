@@ -120,5 +120,16 @@ jQuery(document).ready(function($) {
      return false;
         console.log(":(");
 });
+  /*  
+    $('a').mouseenter(function(){
+      $(this).velocity({
+        opacity:.8
+      }, 1000);
+    }).mouseout(function(){
+      $(this).velocity({
+        opacity:1
+      }, 1000);
+    });
+    */
 
 });
