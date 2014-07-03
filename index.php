@@ -7,9 +7,7 @@ Template Name: Home Page Template
 			<div id="content" class="clearfix">
 				<div id="main" class="clearfix" role="main">
                     <div class="row">
-                        <div class="col-lg-24">
                              <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
-                        </div>
                     </div>
                     
                     <section class="top-annoucements row">
