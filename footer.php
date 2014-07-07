@@ -1,16 +1,22 @@
-			<footer role="contentinfo">
-			
-				<div id="inner-footer" class="clearfix">
+			<footer role="contentinfo" class="container-fluid">
+				<div id="inner-footer" class="container clearfix">
 		          <div id="widget-footer" class="clearfix row">
                     <div class="col-lg-24">
                         <span class="footer-logo"></span>
-					   <nav>
-						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-					   </nav>
-                        <div class="footer-right">
-                            <span class="email"><a href="mailto:webissues@phila.gov">webissues@phila.gov</a></span>
-                            <div class="social-media">social media icons</div>
-                        </div>
+					       <nav>
+                               <?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
+                            </nav>
+                                <ul class="social-media list-inline">
+                                    <li class="text"><a href="mailto:webissues@phila.gov">webissues@phila.gov</a></li>
+                                    <li><a href="https://www.flickr.com/photos/phillycityrep" class="flickr"><span>Flickr</span></a></li>
+                                    <li><a href="http://cityofphiladelphia.wordpress.com/" class="news"><span>News</a></span></li>
+                                    <li><a href="http://www.phila.gov/SubscribeRSS" class="rss"><span>RSS</a></span></li>
+                                    <li><a href="https://www.youtube.com/user/PhilaGov" class="you-tube"><span>You Tube</a></span></li>
+                                    <li><a href="#" class="google"><span>Google</a></span></li>
+                                    <li><a href="https://twitter.com/PhiladelphiaGov" class="twitter"><span>Twitter</a></span></li>
+                                    <li><a href="#" class="linked-in"><span>Linked In</a></span></li>
+                                    <li><a href="https://www.facebook.com/PhiladelphiaCityGovernment" class="facebook"><span>Facebook</a></span></li>
+                                </ul>
                       </div>
                     </div>
 				    </div> <!-- end #inner-footer -->

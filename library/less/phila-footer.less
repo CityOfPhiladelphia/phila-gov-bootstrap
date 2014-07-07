@@ -1,0 +1,97 @@
+@import "phila-variables.less";
+@import "phila-mixins.less";
+
+/*footer*/
+footer{
+    background:@light-purple;
+    margin:50px 0 0 0;
+    padding:20px;
+    position:relative;
+    font-size:12px;
+}
+footer ul {
+    margin-bottom:0;
+    padding:0;
+}
+footer .footer-logo{
+    position: absolute;
+    background: url('../phila-gov-bootstrap/images/footer-bell.png') no-repeat scroll 0% 0% transparent;
+    height: 51px;
+    width: 44px;
+    top: -52px;
+    right: 50%;
+    left: 50%;
+}
+.footer-links {
+    float:left;
+    color:@white;
+    padding:14px;
+}
+.footer-links ul li {  
+    display:inline-block;
+    padding-right:20px;
+}
+.footer-links ul li:last-child {  
+    padding-right:0;
+}
+
+footer .social-media {
+    float:right;
+}
+
+footer .text {
+    vertical-align: bottom;
+    padding: 0 10px 6px 0;
+}
+footer .social-media a span {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.footer-text-hide(){
+    width:22px;
+    height:22px;
+    display:block;
+    opacity: .5;
+    .transition();
+};
+
+footer .social-media .flickr {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat;
+    .footer-text-hide();
+}
+
+footer .social-media .news {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -34px 0;
+    .footer-text-hide();
+}
+footer .social-media .you-tube {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -68px 0;
+    .footer-text-hide();
+}
+footer .social-media .rss {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -103px 0;
+    .footer-text-hide();
+}
+footer .social-media .google {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -136px 0;
+    .footer-text-hide();
+}
+footer .social-media .twitter {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -170px 0;
+    .footer-text-hide();
+}
+footer .social-media .linked-in {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -205px 0;
+    .footer-text-hide();
+}
+footer .social-media .facebook {
+    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -239px 0;
+    .footer-text-hide();
+}
+footer .social-media a:hover{
+    opacity:1;
+    .transition();
+}

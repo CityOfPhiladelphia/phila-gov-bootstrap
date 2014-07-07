@@ -14,7 +14,7 @@ Template Name: Home Page Template
                         <!--Date/time -->
                         <div class="col-md-16">
                             <div class="overlay-box">
-                                <h1 class="section-header">Headlines</h1>
+                                <h1 class="section-header">Department Headlines</h1>
                                 <?php echo slider_pro(2); //two on prod
                                  ?>
                             </div>
@@ -55,7 +55,7 @@ Template Name: Home Page Template
                             ?>
                         </section><!--end overlaybox-->
                             <div class="home-events clearfix">
-                                <h1 class="section-header">Events</h1>
+                                <h1 class="section-header">Citywide Events</h1>
                                 <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
                                 <a href="#" class="tiny-text more-events">More events &raquo;</a>
                                
@@ -162,7 +162,7 @@ Template Name: Home Page Template
                         </div>
                         <div class="col-md-6 col-sm-24">
                             <div class="need-to">
-                                <div class="cat-label-top">I need to</div>
+                                <div class="cat-label-top">I want to</div>
                                 <?php echo do_shortcode('[PhilaActionWidget]'); ?>
                             </div>
                         </div>
@@ -170,7 +170,7 @@ Template Name: Home Page Template
                     </section>
                     <section class="trending row">
                         <div class="col-sm-24">
-                            <h1 class="break">Trending</h1>
+                            <h1 class="break">Trending City Departments</h1>
                             <div class="row">  
                                 <?php $args_trending = array(
                                         'posts_per_page'   => 8,
@@ -239,7 +239,6 @@ Template Name: Home Page Template
                                 </div><!--end first row of trending -->
                             </div>
                        
-                        </div>
                         <!-- slideshow mobile only
                         <div class="visible-sm visible-xs">
                             <?php echo slider_pro(3); ?>
@@ -248,5 +247,5 @@ Template Name: Home Page Template
                     </section>
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->
-
+    </div> <!-- end .container from header.php -->
 <?php get_footer(); ?>

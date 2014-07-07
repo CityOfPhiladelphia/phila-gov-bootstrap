@@ -7,6 +7,7 @@
 //custom phila.gov stuffs
 @import "phila-widgets.less"; 
 @import "phila-nav.less";
+@import "phila-footer.less";
 @import "phila-typography.less";
 @import "phila-forms.less";  // mixins etc
 @import "phila-variables.less";
@@ -275,37 +276,6 @@ a.more-events{
     padding: 0 0 0 25px;
 }
 
-/*footer*/
-footer{
-    background:@light-purple;
-    margin:50px 0 0 0;
-    padding:20px;
-    position:relative;
-    font-size:12px;
-}
-footer ul {
-    margin-bottom:0;
-    padding:0;
-}
-footer .footer-logo{
-    position: absolute;
-    background: url('../phila-gov-bootstrap/images/footer-bell.png') no-repeat scroll 0% 0% transparent;
-    height: 51px;
-    width: 44px;
-    top: -52px;
-    right: 50%;
-    left: 50%;
-}
-.footer-right{
-    float:right;
-}
-.footer-links {
-    float:left;
-    color:@white;
-}
-.footer-links ul li {  
-    display:inline-block;
-}
 //MEDIA FIXES
 @media (min-width: @screen-sm-min) {
     .trending .overlay-box img{
