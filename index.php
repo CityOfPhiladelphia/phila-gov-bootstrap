@@ -66,10 +66,16 @@ Template Name: Home Page Template
                     </section><!--end top row -->
                     <section class="services row">
                         <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
-                        <div class="col-md-6 col-sm-8">
+                        <div class="col-md-6 col-sm-12">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
                         </div>
-                        <div class="col-md-6 col-sm-8">
+                          <div class="col-md-6 col-sm-12">
+                            <div class="need-to">
+                                <div class="cat-label-top">I want to</div>
+                                <?php echo do_shortcode('[PhilaActionWidget]'); ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
                             <?php $args_services = array(
                                 'posts_per_page'   => 2,
                                 'category_name' =>    'frontpage+online-services',//homepage & online services only
@@ -114,7 +120,7 @@ Template Name: Home Page Template
                                 wp_reset_postdata();
                             ?>
                         </div>
-                        <div class="col-md-6 col-sm-8">
+                        <div class="col-md-6 col-sm-12">
                             <?php echo do_shortcode('[PhilaPropSearch]'); ?>
                            <?php $args_services_single = array(
                                 'posts_per_page'   => 1,
@@ -159,12 +165,6 @@ Template Name: Home Page Template
                                 /* Restore original Post Data */
                                 wp_reset_postdata();
                             ?>
-                        </div>
-                        <div class="col-md-6 col-sm-24">
-                            <div class="need-to">
-                                <div class="cat-label-top">I want to</div>
-                                <?php echo do_shortcode('[PhilaActionWidget]'); ?>
-                            </div>
                         </div>
                         
                     </section>

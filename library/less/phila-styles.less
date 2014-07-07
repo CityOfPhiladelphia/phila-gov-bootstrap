@@ -50,6 +50,7 @@ a:hover {
 .header {
     font-size: 11px;
 }
+.visible-xs.logo{padding:10px 0;}
 
 //override baked in menu style
 @media (min-width: 992px) {
@@ -295,21 +296,12 @@ a.more-events{
 .row.no-gutter {
   margin-left: 0px;
   margin-right: 0px;
+    padding-right: 0 @imp;
+  padding-left: 0 @imp;
 }
 
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.row.small-gutter {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.row.small-gutter [class*='col-']:not(:first-child),
-.row.small-gutter [class*='col-']:not(:last-child) {
-  padding-right: 5px;
-  padding-left: 5px;
+.row.no-gutter [class*='col-'],
+.row.no-gutter [class*='col-']{
+  padding-right: 0 @imp;
+  padding-left: 0 @imp;
 }

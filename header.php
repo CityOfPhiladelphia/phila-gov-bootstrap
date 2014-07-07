@@ -53,7 +53,7 @@
                                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="hidden-xs">
                                     
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final-sm.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="visible-xs">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final-sm.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="visible-xs logo">
                                 <h1 class="hide"><?php bloginfo('name'); ?></h1>
                             </a>
                          </div>
