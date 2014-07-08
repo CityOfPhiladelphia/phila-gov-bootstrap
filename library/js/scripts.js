@@ -140,13 +140,13 @@ jQuery(document).ready(function($) {
     
     $( ".translate-bubble-link").click(function() {
         $( ".translate-bubble").fadeToggle("fast");
-         $(".text-size-bubble").fadeOut("slow");
+         $(".text-size-bubble").fadeOut("fast");
          return false;
     }); 
     
     $( ".text-size-bubble-link" ).click(function() {
         $( ".text-size-bubble" ).fadeToggle("fast");
-        $(".translate-bubble").fadeOut("slow");
+        $(".translate-bubble").fadeOut("fast");
         return false;
     }); 
     

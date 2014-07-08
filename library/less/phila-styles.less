@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Marvel:700);
 
 @import "variables.less";
+@import "mixins.less";
 
 //custom phila.gov stuffs
 @import "phila-widgets.less"; 
@@ -22,8 +23,7 @@
         border-top: 1px solid transparent @imp;
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1) @imp;
         -webkit-overflow-scrolling: touch @imp;
-}
-
+    }
 }
 body {
     padding-top: 0 @imp;
@@ -47,6 +47,21 @@ a:hover {
 #content {
     padding: 0;
 }
+
+.hidden-xs.logo{
+    .img-retina("../phila-gov-bootstrap/images/city-of-phila.png", "../phila-gov-bootstrap/images/city-of-phila@2.png", 100px, 100px);
+    background-repeat: no-repeat;
+    width:100px;
+    height:100px;
+}
+
+.visible-xs.logo{
+    .img-retina("../phila-gov-bootstrap/images/phila-logo-final-sm.png", "../phila-gov-bootstrap/images/phila-logo-final-sm@2.png", 172px, 53px);
+    background-repeat: no-repeat;
+    width:172px;
+    height:53px;
+}
+
 .header {
     font-size: 11px;
 }
@@ -370,4 +385,11 @@ a.more-events{
 }
 .btn{   
     border-radius: 0;
+}
+.hide {
+  position: absolute !important;
+  height: 1px; width: 1px; 
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }

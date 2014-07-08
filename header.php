@@ -69,9 +69,8 @@
                             </button>
                           <div class="col-sm-4 col-xs-12 col-md-4 col-lg-3">
                                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="hidden-xs">
-                                    
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/phila-logo-final-sm.png" alt="The City of Philadelphia" title="The City of Philadelphia - Life, Libery, and You." class="visible-xs logo">
+                                <div class="hidden-xs logo"></div>
+                                <div class="visible-xs logo"></div>
                                 <h1 class="hide"><?php bloginfo('name'); ?></h1>
                             </a>
                          </div>
