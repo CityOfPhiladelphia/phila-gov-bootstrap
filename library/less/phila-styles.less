@@ -78,11 +78,68 @@ a:hover {
 .accessibility {
     height:25px;   
     .clearfix();
-}
-.accessibility p{
     float:right;
     font-size:12px;
 }
+
+div[class*="bubble"] {
+    display:none;
+}
+.text-size-bubble-link {
+        float:right;
+}
+.text-size-bubble{
+    background:@off-white;
+    position: absolute;
+    right:0;
+    top:40px;
+    width:200px;
+    height:100px;
+    z-index:20;
+    font-size:20px;
+    text-align: center;
+    padding:20px;
+}
+
+.translate-bubble-link{
+    float:right;
+    padding:0 20px 0 0;
+}
+.translate-bubble{
+    background:@off-white;
+    top:40px;
+    right:0;
+    width:250px;
+    z-index:20;
+    position: absolute;
+    text-align: center;
+    padding:20px;
+}
+.translate-bubble:after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -20px;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid @off-white;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    }
+
+.text-size-bubble:after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 80%;
+    margin-left: -20px;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid @off-white;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    }
 /*MAKE SEARCH LOOK GOOD */
 
 #search.form-control{
@@ -107,7 +164,7 @@ a:hover {
 /*TRENDING SEARCHES*/
 
 #trending-searches{
-    background:url(../phila-gov-bootstrap/images/icons/trending.png) no-repeat 5px @master-blue;
+    background:url(../phila-gov-bootstrap/images/icons/trending.png) no-repeat 8px 7px @master-blue;
     padding:10px 20px 10px 55px;
 }
 #trending-searches h1 {
@@ -116,6 +173,8 @@ a:hover {
     padding:0;
     text-transform: uppercase;
     font-size:14px;
+    font-weight: 400;
+    float: left;
 }
 
 #trending-searches a{
@@ -126,14 +185,16 @@ a:hover {
     font-size:89%;
 }
 #trending-searches .list-inline{
-    margin-left: 0;
-    padding-top:5px;
+    margin:3px 0 0 8px;
 }
 #trending-searches .list-inline > li{
-    margin:0 30px 0 0;
+    margin:0 10px 0 0;
 }
 #trending-searches .list-inline > li:last-child{
     margin:0;
+}
+.home .col-search-box {
+    margin-top:10px;
 }
 
 /*mayor events*/

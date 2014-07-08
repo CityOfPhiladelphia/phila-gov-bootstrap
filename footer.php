@@ -1,12 +1,12 @@
 			<footer role="contentinfo" class="container-fluid">
-				<div id="inner-footer" class="container clearfix">
-		          <div id="widget-footer" class="clearfix row">
+				<div id="inner-footer" class="container">
+		          <div id="widget-footer" class="row no-gutter">
                     <div class="col-lg-24">
                         <span class="footer-logo"></span>
-					       <nav>
+					       <nav class="col-xs-12">
                                <?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
                             </nav>
-                                <ul class="social-media list-inline">
+                                <ul class="social-media list-inline col-xs-12">
                                     <li class="text"><a href="mailto:webissues@phila.gov">webissues@phila.gov</a></li>
                                     <li><a href="https://www.flickr.com/photos/phillycityrep" class="flickr"><span>Flickr</span></a></li>
                                     <li><a href="http://cityofphiladelphia.wordpress.com/" class="news"><span>News</a></span></li>

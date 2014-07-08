@@ -120,16 +120,30 @@ jQuery(document).ready(function($) {
      return false;
         console.log(":(");
 });
-  /*  
-    $('a').mouseenter(function(){
-      $(this).velocity({
-        opacity:.8
-      }, 1000);
-    }).mouseout(function(){
-      $(this).velocity({
-        opacity:1
-      }, 1000);
-    });
-    */
+
+     $('#incfont').click(function(){    
+        curSize= parseInt($('body').css('font-size')) + 2;
+  if(curSize<=20)
+        $('body').css('font-size', curSize);
+        });  
+  $('#decfont').click(function(){    
+        curSize= parseInt($('body').css('font-size')) - 2;
+  if(curSize>=12)
+        $('body').css('font-size', curSize);
+    }); 
+
+    $( ".translate-bubble-link").click(function() {
+        $( ".translate-bubble").toggle("fast");
+        
+    }); 
+    
+    $( ".text-size-bubble-link" ).click(function() {
+        $( ".text-size-bubble" ).toggle("fast");
+        console.log("click");
+    }); 
+    
+
 
 });
+
+

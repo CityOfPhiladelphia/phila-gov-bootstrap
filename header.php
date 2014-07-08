@@ -25,9 +25,11 @@
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <!-- wordpress head functions -->
 		<?php wp_head(); ?>
-
+        <? echo 'body { font-size:',$_COOKIE['site_font_size'],'; }'; } ?>
 		<!-- end of wordpress head -->
-				
+        <meta name="google-translate-customization" content="d90261400faa65ae-ddf7613446a7abb6-g2c489841db617277-9"></meta>
+        
+        
 	</head>
 	
 	<body <?php body_class(); ?>>
@@ -38,8 +40,23 @@
 				<div class="container"> 
                     <div class="row">
                             <div class="accessibility visible-lg visible-md col-lg-24">
-                             <p> Text size ++ / <span class="glyphicon glyphicon-globe"></span> Translate</p>
-                            </div>
+                            <a href="#" class="text-size-bubble-link">Text size </a>
+                                <div class="text-size-bubble" id="text-size">
+                                    <p>Text size:</p>
+                                    <button type="button" href="#" id="incfont" class="btn btn-info">A+</button>
+                                    <button type="button" href="#" id="decfont" class="btn btn-info">a-</button>
+                               </div>
+                        <a href="#" class="translate-bubble-link"><span class="glyphicon glyphicon-globe"></span> Translate</a>
+                        <div class="translate-bubble" id="translate">
+                                <div id="google_translate_element"></div>
+                                <script type="text/javascript">
+                                    function googleTranslateElementInit() {
+                                          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                                        }
+                                    </script>
+                                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </div><!--end translate stuff -->
+                        </div>
                     </div>
                     <section class="row">
 
