@@ -15,7 +15,7 @@ Template Name: Home Page Template
                         <div class="col-md-16">
                             <div class="overlay-box">
                                 <h1 class="section-header">Department Headlines</h1>
-                                <?php echo slider_pro(2); //two on prod
+                                <?php echo slider_pro(1); //two on prod
                                  ?>
                             </div>
                         </div>

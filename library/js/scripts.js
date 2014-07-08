@@ -134,12 +134,13 @@ jQuery(document).ready(function($) {
 
     $( ".translate-bubble-link").click(function() {
         $( ".translate-bubble").toggle("fast");
+        return false;
         
     }); 
     
     $( ".text-size-bubble-link" ).click(function() {
         $( ".text-size-bubble" ).toggle("fast");
-        console.log("click");
+        return false;
     }); 
     
 

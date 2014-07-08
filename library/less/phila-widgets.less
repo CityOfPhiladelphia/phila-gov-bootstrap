@@ -78,32 +78,48 @@
     bottom:9px;
 }
 
-@media (min-width: 768px) {
-    .home #PhilaAlertsWidget .alerts{
-        position:static;
-    }
-}
-
 .home #PhilaAlertsIconsBlock .weather-alert{
     background:url(../phila-gov-bootstrap/images/icons/weather-alerts.png) no-repeat 0 top;
     height:25px;
+    background-size: 94%;
 }
 
 .home #PhilaAlertsIconsBlock .transit-alert{
     background:url(../phila-gov-bootstrap/images/icons/transit.png) no-repeat 0 0;
     height:25px;
+    background-size: 94%;
 }
 .home #PhilaAlertsIconsBlock .trash-alert{
     background:url(../phila-gov-bootstrap/images/icons/trash.png) no-repeat 0 0;
     height:25px;
+    background-size: 77%;
 }
 .home #PhilaAlertsIconsBlock .street-alert{
     background:url(../phila-gov-bootstrap/images/icons/street-closures.png) no-repeat 0 0;
     height:25px;
+    background-size: 94%;
 }
 @media (min-width:992px) {
     .home #PhilaAlertsIconsBlock {
         text-align: right;
+    }
+}
+
+@media (min-width: 768px) {
+    .home #PhilaAlertsWidget .alerts{
+        position:static;
+    }
+    .home #PhilaAlertsIconsBlock .weather-alert{
+    background-size: 28%;
+    }
+    .home #PhilaAlertsIconsBlock .transit-alert{
+        background-size: 29%;
+    }
+    .home #PhilaAlertsIconsBlock .trash-alert{
+        background-size: 19%;
+    }
+    .home #PhilaAlertsIconsBlock .street-alert{
+        background-size: 28%;
     }
 }
 
@@ -201,7 +217,7 @@
 /*ACTION */
 #PhilaActionWidget{
     height:430px;
-    background:@light-purple;
+    background:@off-white;
 }
 .home #PhilaActionWidget a{
     display:block;
