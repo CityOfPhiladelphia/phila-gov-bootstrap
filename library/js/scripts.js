@@ -132,14 +132,21 @@ jQuery(document).ready(function($) {
         $('body').css('font-size', curSize);
     }); 
 
+    function isHidden(el) {
+        return (el.offsetParent === null);
+    }
+    
+
+    
     $( ".translate-bubble-link").click(function() {
-        $( ".translate-bubble").toggle("fast");
-        return false;
-        
+        $( ".translate-bubble").fadeToggle("fast");
+         $(".text-size-bubble").fadeOut("slow");
+         return false;
     }); 
     
     $( ".text-size-bubble-link" ).click(function() {
-        $( ".text-size-bubble" ).toggle("fast");
+        $( ".text-size-bubble" ).fadeToggle("fast");
+        $(".translate-bubble").fadeOut("slow");
         return false;
     }); 
     

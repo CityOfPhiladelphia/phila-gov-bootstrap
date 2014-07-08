@@ -43,11 +43,12 @@
                             <a href="#" class="text-size-bubble-link">Text size </a>
                                 <div class="text-size-bubble" id="text-size">
                                     <p>Text size:</p>
-                                    <button type="button" href="#" id="incfont" class="btn btn-info">A+</button>
-                                    <button type="button" href="#" id="decfont" class="btn btn-info">a-</button>
+                                    <button type="button" href="#" id="incfont" class="btn btn-default">A+</button>
+                                    <button type="button" href="#" id="decfont" class="btn btn-default">a-</button>
                                </div>
                         <a href="#" class="translate-bubble-link"><span class="glyphicon glyphicon-globe"></span> Translate</a>
                         <div class="translate-bubble" id="translate">
+                             <p>Language:</p>
                                 <div id="google_translate_element"></div>
                                 <script type="text/javascript">
                                     function googleTranslateElementInit() {

@@ -81,7 +81,10 @@ a:hover {
     float:right;
     font-size:12px;
 }
-
+.accessibility p {
+    font-size:11px;
+    color:@white;
+}
 div[class*="bubble"] {
     display:none;
 }
@@ -89,12 +92,11 @@ div[class*="bubble"] {
         float:right;
 }
 .text-size-bubble{
-    background:@off-white;
+    background:@dark-green;
     position: absolute;
     right:0;
     top:40px;
-    width:200px;
-    height:100px;
+    width:150px;
     z-index:20;
     font-size:20px;
     text-align: center;
@@ -106,7 +108,7 @@ div[class*="bubble"] {
     padding:0 20px 0 0;
 }
 .translate-bubble{
-    background:@off-white;
+    background:@dark-green;
     top:40px;
     right:0;
     width:250px;
@@ -123,7 +125,7 @@ div[class*="bubble"] {
     margin-left: -20px;
     width: 0;
     height: 0;
-    border-bottom: 20px solid @off-white;
+    border-bottom: 20px solid @dark-green;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     }
@@ -136,7 +138,7 @@ div[class*="bubble"] {
     margin-left: -20px;
     width: 0;
     height: 0;
-    border-bottom: 20px solid @off-white;
+    border-bottom: 20px solid @dark-green;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     }
@@ -365,4 +367,7 @@ a.more-events{
 .row.no-gutter [class*='col-']{
   padding-right: 0 @imp;
   padding-left: 0 @imp;
+}
+.btn{   
+    border-radius: 0;
 }
