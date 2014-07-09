@@ -172,7 +172,7 @@
     min-height:430px;
 }
 .home #Phila311LinkBlock{
-    padding-top:200px;
+    padding-top:191px;
 }
 .home #Phila311LinkBlock {
     background:url(../phila-gov-bootstrap/images/philly-311-logo.png) no-repeat center top transparent;
@@ -219,7 +219,7 @@
 /*ACTION */
 #PhilaActionWidget{
     height:430px;
-    background:@off-white;
+    background:url(../phila-gov-bootstrap/images/need-to-bg.jpg) no-repeat center top fade(@dark-blue-green-50, 20%);
     padding: 50px 10px 10px;
 }
 .home #PhilaActionWidget a{
@@ -229,22 +229,6 @@
 }
 .home #PhilaActionWidget a:hover{
     .fade-in-out(.8);
-}
-
-.home .PhilaFindDropDown{
-    .img-retina("../phila-gov-bootstrap/images/icons/find.png", "../phila-gov-bootstrap/images/icons/find@2.png", 25px, 24px);
-    background-repeat: no-repeat;
-    background-position: 5px 4px;
-}
-.home .PhilaObtainDropDown{
-    .img-retina("../phila-gov-bootstrap/images/icons/obtain.png", "../phila-gov-bootstrap/images/icons/obtain@2.png", 25px, 23px);
-    background-repeat: no-repeat;
-    background-position: 5px 4px;
-}
-.home .PhilaPayDropDown{
-     .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
-    background-repeat: no-repeat;
-    background-position: 5px 4px;
 }
 .home .PhilaFindDropDown, .home .PhilaObtainDropDown, .home .PhilaPayDropDown {
     padding:  0 0 10px 0;
@@ -260,8 +244,23 @@
     padding:5px 5px 5px 35px;
     
 }
-.home select#PhilaFindJumpMenu, .home select#PhilaObtainJumpMenu, .home select#PhilaPayJumpMenu{
-    background:rgba(0,0,0,0);
+.home select#PhilaFindJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/find.png", "../phila-gov-bootstrap/images/icons/find@2.png", 25px, 24px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
+}
+.home select#PhilaObtainJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/obtain.png", "../phila-gov-bootstrap/images/icons/obtain@2.png", 25px, 23px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
+}
+.home select#PhilaPayJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
 }
 .home .report {
     padding: 20px 20px 20px 40px;

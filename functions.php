@@ -621,7 +621,7 @@ function trending_posts_homepage(){
                                                 
                                                 //thumb is NOT BLANK & slug IS homepage
                                                     if (('' != get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) { //only display images with posts that have a featured imag
-                                                        echo '<div class="col-md-6 col-sm-8">
+                                                        echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $category[1]->slug . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
@@ -631,7 +631,7 @@ function trending_posts_homepage(){
                                                         echo '</div></div>';
                                                         //if the post thumb IS BLANK & category is front page
                                                     } else if (('' == get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) {
-                                                        echo '<div class="col-md-6 col-sm-8">
+                                                        echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $category[1]->slug . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
@@ -640,7 +640,7 @@ function trending_posts_homepage(){
                                                         echo '</div></div>';            
                                                         //if the post thumb is NOT blank and the slug is NOT front page
                                                     } else if ( ('' != get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
-                                                         echo '<div class="col-md-6 col-sm-8">
+                                                         echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $category[0]->slug . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
@@ -650,7 +650,7 @@ function trending_posts_homepage(){
                                                         echo '</div></div>';
                                                         // IS BLANK thumbnail and the category slug is not frontpage
                                                     }else if (('' == get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
-                                                              echo '<div class="col-md-6 col-sm-8">
+                                                              echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $category[0]->slug . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';

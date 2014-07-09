@@ -17,11 +17,14 @@ footer .footer-logo{
     position: absolute;
     .img-retina("../phila-gov-bootstrap/images/footer-bell.png", "../phila-gov-bootstrap/images/footer-bell@2.png", 44px, 51px);
     background-repeat: no-repeat;
+    background-position: center center;
     height: 51px;
     width: 44px;
     top: -52px;
-    right: 50%;
-    left: 50%;
+    margin-left:auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
 }
 .footer-links {
     color:@white;
@@ -43,6 +46,17 @@ footer .text {
     vertical-align: bottom;
     padding: 0 10px 6px 0;
 }
+
+footer .text{
+    width: 100%;
+}
+
+@media (min-width: 976px){
+    footer .text{
+        width: auto;
+    }
+
+}
 footer .social-media a span {
     display: block;
     width: 0;
@@ -59,36 +73,44 @@ footer .social-media a span {
 };
 
 footer .social-media .flickr {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/flickr.png", "../phila-gov-bootstrap/images/icons/social/flickr@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 
 footer .social-media .news {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -34px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/news.png", "../phila-gov-bootstrap/images/icons/social/news@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .you-tube {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -68px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/you-tube.png", "../phila-gov-bootstrap/images/icons/social/you-tube@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .rss {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -103px 0;
+     .img-retina("../phila-gov-bootstrap/images/icons/social/rss.png", "../phila-gov-bootstrap/images/icons/social/rss@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .google {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -136px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/gplus.png", "../phila-gov-bootstrap/images/icons/social/gplus@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .twitter {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -170px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/twitter.png", "../phila-gov-bootstrap/images/icons/social/twitter@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .linked-in {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -205px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/linkedin.png", "../phila-gov-bootstrap/images/icons/social/linkedin@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media .facebook {
-    background:url(../phila-gov-bootstrap/images/social-media.png) no-repeat -239px 0;
+    .img-retina("../phila-gov-bootstrap/images/icons/social/facebook.png", "../phila-gov-bootstrap/images/icons/social/facebook@2.png", 22px, 22px);
+    background-repeat: no-repeat;
     .footer-text-hide();
 }
 footer .social-media a:hover{

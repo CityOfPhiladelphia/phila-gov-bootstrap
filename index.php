@@ -28,7 +28,7 @@ Template Name: Home Page Template
                             <div class="home-events clearfix">
                                 <h1 class="section-header">Citywide Events</h1>
                                 <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
-                                <a href="#" class="tiny-text more-events">More events &raquo;</a>
+                                <p class="more-events-bg"><a href="#" class="tiny-text more-events">More events &raquo;</a></p>
                             </div>
                          </div>
                                               
@@ -37,22 +37,22 @@ Template Name: Home Page Template
                     <section class="services row">
                         <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
                         <!--begin col 1 -->
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 col-ms-12">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
                         </div>
                         <!--begin col 2 -->
-                          <div class="col-md-6 col-sm-12">
+                          <div class="col-md-6 col-sm-12 col-ms-12">
                             <div class="need-to">
                                 <div class="cat-label-top">I want to</div>
                                 <?php echo do_shortcode('[PhilaActionWidget]'); ?>
                             </div>
                         </div>
                         <!--begin col 3 -->
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12  col-ms-12">
                          <?php add_services_homepage(2,0); ?>
                         </div>
                         <!--begin col 4 -->
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12  col-ms-12">
                             <?php echo do_shortcode('[PhilaPropSearch]'); ?>
                               <?php add_services_homepage(1,2); ?>
                         </div>

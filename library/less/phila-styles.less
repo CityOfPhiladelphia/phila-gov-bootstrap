@@ -14,6 +14,8 @@
 @import "phila-variables.less";
 @import "phila-animate.less";
 @import "phila-mixins.less";
+//@import "bootstrap.less";
+@import "phila-grid-add.less";
 
 @media (min-width: 991px){
     .navbar-collapse {
@@ -279,14 +281,30 @@ div[class*="bubble"] {
     left: -10px;
     max-height: 275px;
 }
-.more-events{
+p.more-events-bg{
     position: absolute;
-    z-index:10;
-    top:7px;
-    right:15px;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin:0;
+    height: 45px;
+    background: -moz-linear-gradient(top, rgba(242,242,242,.8) 0, rgba(242,242,242,1) 73%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,.8)), color-stop(73%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 }
 a.more-events{
-    color:#fff;
+    color: @charcoal;
+    float: right;
+    display: block;
+    width: 94px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
 }
 .ko-calendar-widget-events .ko-calendar-event-list{
   //  border-bottom: 1px solid @dark-green;
@@ -310,7 +328,9 @@ a.more-events{
 .services .overlay-box a{
     color:@white;
 }
-
+.need-to {
+    position: relative;
+}
 .services .cat-label-top, .services .cat-label {
     background:@dark-blue-green;
 }
@@ -415,6 +435,10 @@ a.more-events{
   padding-left: 0 @imp;
 }
 .btn{   
+    border-radius: 0;
+}
+input {
+    -webkit-appearance: none;
     border-radius: 0;
 }
 .hide {
