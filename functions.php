@@ -69,7 +69,7 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-    register_sidebar(array(
+  /*  register_sidebar(array(
     	'id' => 'home-first-row',
     	'name' => 'Homepage Row One Column Two',
     	'description' => 'Used on the homepage',
@@ -97,6 +97,7 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
+    */
     
     register_sidebar(array(
       'id' => 'footer-links',
@@ -510,5 +511,148 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
     function modify_read_more_link() {
         return '<a class="more-link" href="' . get_permalink() . '"></a>';
 }
+  function mayor_box_homepage() {
+        $args_mayor = array(
+                                'posts_per_page'   => 1,
+                                'category_name'    =>'frontpage+mayor-news', //DEV
+                                'orderby'          => 'post_date',
+                                'order'            => 'DESC',
+                                'post_type'        => 'post',
+                                'post_status'      => 'publish',
+                                'meta_key'    => '_thumbnail_id'
+                            ); 
+                           // $filter = );
+                            $query = new WP_Query( $args_mayor ); 
+                            // The Loop
+                                if ( $query->have_posts() ){
+                                    while ( $query->have_posts() ) {
+                                        $query->the_post();
 
-?>
+                                        echo '<h1 class="section-header">Mayor\'s Office</h1>';
+                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                        echo '<h2>' . get_the_title() .'</h2>';
+                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                        echo '</a>';
+                                    }
+                                } else {
+                                    // no posts found
+                                    ?><p>There are no Mayor's Office news stories!</p> <?php
+                                } 
+                                /* Restore original Post Data */
+                                wp_reset_postdata();
+  }
+
+function add_services_homepage($numb_posts, $post_offset){
+                            $args_services = array(
+                                    'posts_per_page'   => $numb_posts,
+                                    'category_name' =>    'frontpage+online-services',//homepage & online services only
+                                    'orderby'          => 'post_date',
+                                    'order'            => 'DESC',
+                                    'post_type'        => 'post',
+                                    'post_status'      => 'publish',
+                                    'meta_key'    => '_thumbnail_id',
+                                    'offset'       => $post_offset
+                                ); 
+                                $services_query = new WP_Query( $args_services ); 
+                                // The Loop
+                                    if ( $services_query->have_posts() ) {
+                                        while ( $services_query->have_posts() ) {
+                                            $services_query->the_post();
+                                            $category = get_the_category();
+
+                                            //dont show first category if it is "frontpage"
+                                            if($category[0]->slug == 'frontpage') {                                   
+                                                echo '<div class="overlay-box">';
+                                                echo '<div class="cat-label">' . $category[1]->slug . "</div>";
+                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                echo '</a>';
+                                                echo '</div>';
+                                            }else {
+                                                echo '<div class="overlay-box">';
+                                                echo '<div class="cat-label">' . $category[0]->slug . "</div>";
+                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                echo '</a>';
+                                                echo '</div>';
+
+                                            }
+                                        }
+                                    } else {
+                                        // no posts found
+                                        ?><p>There are no online services!?</p> <?php
+                                    } 
+                                    /* Restore original Post Data */
+                                    wp_reset_postdata();
+    }
+            
+function trending_posts_homepage(){
+            $args_trending = array(
+                        'posts_per_page'   => 8,
+                        'category_name'    => 'frontpage',     
+                        'orderby'          => 'post_date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'post',
+                        'post_status'      => 'publish',
+                         'tag'              => 'trending'
+                                    ); 
+                                    $trending_query = new WP_Query( $args_trending ); 
+                                    // The Loop
+                                        if ( $trending_query->have_posts() ) {
+                                            while ( $trending_query->have_posts() ) {
+                                                $trending_query->the_post();
+                                                $category = get_the_category(); 
+                                                
+                                                //thumb is NOT BLANK & slug IS homepage
+                                                    if (('' != get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) { //only display images with posts that have a featured imag
+                                                        echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                        //if the post thumb IS BLANK & category is front page
+                                                    } else if (('' == get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) {
+                                                        echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box no-img">';
+                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink() .'">';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '</a>';
+                                                        echo '</div></div>';            
+                                                        //if the post thumb is NOT blank and the slug is NOT front page
+                                                    } else if ( ('' != get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
+                                                         echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div></div>';
+                                                        // IS BLANK thumbnail and the category slug is not frontpage
+                                                    }else if (('' == get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
+                                                              echo '<div class="col-md-6 col-sm-8">
+                                                                <div class="overlay-box no-img">';
+                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink() .'">';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '</a>';
+                                                        echo '</div></div>';  
+                                                    }
+                                                                                  
+                                                }//close while
+                                            } else {
+                                                // no posts found
+                                                ?><p>There are no trending news stories!</p> <?php
+                                            } 
+                                        /* Restore original Post Data */
+                                        wp_reset_postdata();
+                                    ?></div> <?php 
+             }
+
+            
