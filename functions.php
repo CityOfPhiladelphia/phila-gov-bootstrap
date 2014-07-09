@@ -550,7 +550,6 @@ function add_services_homepage($numb_posts, $post_offset){
                                     'order'            => 'DESC',
                                     'post_type'        => 'post',
                                     'post_status'      => 'publish',
-                                    'meta_key'    => '_thumbnail_id',
                                     'offset'       => $post_offset
                                 ); 
                                 $services_query = new WP_Query( $args_services ); 
@@ -559,27 +558,42 @@ function add_services_homepage($numb_posts, $post_offset){
                                         while ( $services_query->have_posts() ) {
                                             $services_query->the_post();
                                             $category = get_the_category();
-
-                                            //dont show first category if it is "frontpage"
-                                            if($category[0]->slug == 'frontpage') {                                   
-                                                echo '<div class="overlay-box">';
-                                                echo '<div class="cat-label">' . $category[1]->slug . "</div>";
-                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                echo '</a>';
-                                                echo '</div>';
-                                            }else {
-                                                echo '<div class="overlay-box">';
-                                                echo '<div class="cat-label">' . $category[0]->slug . "</div>";
-                                                echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
-                                                echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
-                                                echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
-                                                echo '</a>';
-                                                echo '</div>';
-
-                                            }
-                                        }
+                                            if (('' != get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) { //only display images with posts that have a featured imag
+                                                        echo '<div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div>';
+                                                        //if the post thumb IS BLANK & category is front page
+                                                    } else if (('' == get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) {
+                                                        echo '<div class="overlay-box no-img">';
+                                                        echo '<div class="cat-label">' . $category[1]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink() .'">';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '</a>';
+                                                        echo '</div>';            
+                                                        //if the post thumb is NOT blank and the slug is NOT front page
+                                                    } else if ( ('' != get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
+                                                         echo '<div class="overlay-box">';
+                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
+                                                        echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
+                                                        echo '</a>';
+                                                        echo '</div>';
+                                                        // IS BLANK thumbnail and the category slug is not frontpage
+                                                    }else if (('' == get_the_post_thumbnail()) && ($category[0]->slug != 'frontpage')){
+                                                              echo '<div class="overlay-box no-img">';
+                                                        echo '<div class="cat-label">' . $category[0]->slug . "</div>";
+                                                        echo '<a href="' . get_permalink() .'">';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '</a>';
+                                                        echo '</div>';  
+                                                    }
+                                            
+                                        }//close while
                                     } else {
                                         // no posts found
                                         ?><p>There are no online services!?</p> <?php
