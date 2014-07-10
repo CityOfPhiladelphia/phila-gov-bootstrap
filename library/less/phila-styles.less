@@ -448,3 +448,19 @@ input {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+.equalheight {
+    overflow: hidden @imp; 
+}
+
+.equalize-height{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+@media (min-width: @screen-xs) and (max-width: @screen-xs-max){
+    .home .img-responsive{
+        height: 210px;
+        width:100%;
+    }
+}
