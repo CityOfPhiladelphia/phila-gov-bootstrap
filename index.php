@@ -10,6 +10,61 @@ Template Name: Home Page Template
                              <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
                     </div>
                     
+                    <!--MOBILE VIEW ONLY -->
+                    <section class="mobile-visitors visible-xs-block">
+                        <div class="row">
+                            <div class="col-xs-24">
+                                <a href="http://www.phila.gov/311/" class="philly-311-link mobile-button">
+                                    <section class="philly-311">
+                                        <h1>Philly 311</h1>
+                                        <h2>Your connection to City Hall</h2>
+                                    </section>
+                                </a>
+                            </div>
+                        </div>
+                        <section class="actions row">
+                            <div class="col-xs-24">
+                                <?php echo do_shortcode('[PhilaActionWidget]'); ?>
+                            </div>
+                        </section>
+                        <section class="most-visited row">
+                            <div class="col-xs-8">
+                                    <a href="#" class="mobile-button">
+                                        <span class="button-text">Property Info</span>  
+                                    </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="#" class="mobile-button">
+                                    <span class="button-text">Real Estate Taxes</span>  
+                                </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="#" class="mobile-button">
+                                    <span class="button-text">Employment</span>  
+                                </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="#" class="mobile-button">
+                                    <span class="button-text">Open Data</span>  
+                                </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="#" class="mobile-button">
+                                    <span class="button-text">Maps</span>  
+                                </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="#" class="mobile-button">
+                                    <span class="button-text">Property History</span>  
+                                </a>
+                            </div>
+                        </section>
+                        <section class="more-popular-links">
+                            Water billing, etc
+                        </section>
+                    </section><!--END MOBILE VIEW ONLY -->
+                    
+                    
                     <section class="top-annoucements row">
                         <!--Date/time -->
                         <div class="col-md-16">
@@ -25,16 +80,18 @@ Template Name: Home Page Template
                         <!-- mayor box and calendar -->
                         <?php mayor_box_homepage(); ?>
                         </section><!--end overlaybox-->
-                            <div class="home-events clearfix">
+                            <div class="home-events-container">
                                 <h1 class="section-header">Citywide Events</h1>
-                                <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
+                                <div class="home-events clearfix">
+                                    <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
+                                </div>
                                 <p class="more-events-bg"><a href="#" class="tiny-text more-events">More events &raquo;</a></p>
                             </div>
                          </div>
                                               
                         
                     </section><!--end top row -->
-                    <section class="services row">
+                    <section class="services row hidden-xs">
                         <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
                         <!--begin col 1 -->
                         <div class="col-md-6 col-sm-12 col-ms-12">

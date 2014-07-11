@@ -23,8 +23,13 @@
     color:#fff;
     .clearfix();
     margin-bottom:20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding:0;
+}
+@media(min-width:480px){
+    .home #PhilaAlertsWidget {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 .home #PhilaAlertsWidget .col-md-16{
     padding: 0;
@@ -49,7 +54,7 @@
 #PhilaAlertsDateTimeBlock {
     background:@red;
     padding:2px 5px;
-    height:25px;
+    height:30px;
 }
 .home #PhilaAlertsWidget #date{
     font-family: 'Marvel', sans-serif !important;
@@ -72,8 +77,9 @@
     text-transform: uppercase;
     font-size:11px;
     background:@red;
-    padding:0;
+    padding:2px 0 0 0;
     text-align: center;
+    min-height:30px;
 }
 
 
@@ -157,9 +163,15 @@
     opacity: .8;
 }
 //CALENDAR
+
+.home-events-container {
+    position: relative;
+}
+.home-events-container h1 {
+    position:static;
+}
 .home-events #PhilaGoogleCalendarWidget.PhilaWidget {
     padding:10px 0 0 0;
-
 }
 .home-events h1.PhilaWidgetTitle{
     display: none;
@@ -179,7 +191,55 @@
     float:right;
     display: block;
 }
-
+.home-events {
+    border:1px solid @dark-green;
+    padding:0 10px 10px 10px;
+    background:@off-white;
+    font-size:12px;
+    height:145px;
+    overflow: auto;
+}
+.home-events{
+    color:@charcoal;
+}
+.home-events a{
+    color:@dark-green;
+}
+.calendar-read-more{
+    text-transform: uppercase;
+    font-size:12px;
+    display:block;
+    float:right;
+    border-bottom: 1px solid @dark-green;
+}
+.phila-entry-data{
+    background: #fff;
+    position: absolute;
+    top: -28px;
+    padding: 20px;
+    border: 1px solid #000;
+    z-index: 10000;
+    width: 107%;
+    min-height: 250px;
+    overflow: auto;
+    left: -10px;
+    max-height: 275px;
+}
+p.more-events-bg{
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 0;
+    width: 100%;
+    margin:0;
+}
+a.more-events{
+    color: @charcoal;
+    display: block;
+    width: 94px;
+    position: absolute;
+    right: 10px;
+}
 /*311*/
 .home #Phila311Widget{
     background:url(../phila-gov-bootstrap/images/philly-311-home-bg.jpg) no-repeat center top fade(@dark-blue-green-50, 20%);
@@ -203,7 +263,6 @@
 .home #Phila311LinkBlock a:hover{
     .fade-in-out(.8);
 }
-
 /*property search*/
 #PhilaPropSearchWidget{
     background:@off-white;

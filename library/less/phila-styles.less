@@ -14,7 +14,7 @@
 @import "phila-variables.less";
 @import "phila-animate.less";
 @import "phila-mixins.less";
-//@import "bootstrap.less";
+@import "phila-home-mobile.less";
 @import "phila-grid-add.less";
 
 @media (min-width: 991px){
@@ -238,84 +238,6 @@ div[class*="bubble"] {
 .overlay-box.mayor a{
     color:@white;
 }
-
-/*calendar*/
-.home-events {
-    position: relative;
-    border:1px solid @dark-green;
-    padding:35px 10px 10px 10px;
-    background:@off-white;
-    font-size:12px;
-    height:176px;
-    overflow: hidden;
-}
-.home-events{
-    color:@charcoal;
-}
-.home-events a{
-    color:@dark-green;
-}
-.ko_calendar{
-    position: relative;
-}
-.calendar-read-more{
-    text-transform: uppercase;
-    font-size:12px;
-    display:block;
-    float:right;
-    border-bottom: 1px solid @dark-green;
-}
-.ko-calendar-date{
-    font-size:12px;
-}
-.phila-entry-data{
-    background: #fff;
-    position: absolute;
-    top: -28px;
-    padding: 20px;
-    border: 1px solid #000;
-    z-index: 10000;
-    width: 107%;
-    min-height: 250px;
-    overflow: auto;
-    left: -10px;
-    max-height: 275px;
-}
-p.more-events-bg{
-    position: absolute;
-    z-index: 10;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    margin:0;
-    height: 45px;
-    background: -moz-linear-gradient(top, rgba(242,242,242,.8) 0, rgba(242,242,242,1) 73%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,.8)), color-stop(73%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(242,242,242,.8) 0,rgba(242,242,242,1) 73%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-}
-a.more-events{
-    color: @charcoal;
-    float: right;
-    display: block;
-    width: 94px;
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-}
-.ko-calendar-widget-events .ko-calendar-event-list{
-  //  border-bottom: 1px solid @dark-green;
-}
-.close{
-    position:absolute;
-    top:0;
-    right:0;
-    padding: 10px !important;
-}
-
 /*ONLINE SERVICES*/
 .services .overlay-box{
     .transition;
