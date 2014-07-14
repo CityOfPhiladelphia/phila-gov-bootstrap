@@ -16,10 +16,19 @@
     display: block;
     text-align: center;
     padding: 5px;
-    min-height:44px;
+    height:44px;
     margin-bottom: 10px;
     font-size:.8em;
     color:@white;
+    width: 100%;
+    display: table;
+}
+.home .mobile-button span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.home .most-visited .mobile-button{
+    background:@master-yellow;
 }
 
 .home .mobile-button h1{
@@ -36,10 +45,25 @@
     padding: 5px;
 }
 .home .mobile-visitors #PhilaActionWidget{
-    background:#ccc;
+    background:transparent;
     height:140px;//dumb, i know
     min-height: 140px;//must have both for overrides 
-    padding:10px;
+    padding:0;
+}
+.home .mobile-visitors .PhilaFindDropDown, 
+.home .mobile-visitors .PhilaObtainDropDown, 
+.home .mobile-visitors .PhilaPayDropDown
+{
+    color:@white;
+
+}
+.home .mobile-visitors select#PhilaFindJumpMenu,
+.home .mobile-visitors select#PhilaObtainJumpMenu,
+.home .mobile-visitors select#PhilaPayJumpMenu{
+    background:@dark-blue-green;
+    padding:10px 0;
+    text-align: center;
+
 }
 
 .home .mobile-visitors #PhilaActionWidget h1.PhilaWidgetTitle, .home .mobile-visitors #PhilaActionWidget #PhilaReportMainWindow {

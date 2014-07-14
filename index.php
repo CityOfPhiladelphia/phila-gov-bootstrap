@@ -60,7 +60,7 @@ Template Name: Home Page Template
                             </div>
                         </section>
                         <section class="more-popular-links">
-                            Water billing, etc
+                            <?php echo slider_pro(3); //two on prod ?>
                         </section>
                     </section><!--END MOBILE VIEW ONLY -->
                     
@@ -70,8 +70,7 @@ Template Name: Home Page Template
                         <div class="col-md-16">
                             <div class="overlay-box">
                                 <h1 class="section-header">Department Headlines</h1>
-                                <?php echo slider_pro(2); //two on prod
-                                 ?>
+                                <?php echo slider_pro(2); //two on prod ?>
                             </div>
                         </div>
                         
