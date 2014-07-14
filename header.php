@@ -74,7 +74,7 @@
                                 <h1 class="hide"><?php bloginfo('name'); ?></h1>
                             </a>
                          </div>
-                            <div class="collapse navbar-collapse navbar-responsive-collapse col-lg-9 col-md-8 col-sm-3">
+                            <div class="collapse navbar-collapse navbar-responsive-collapse col-lg-9 col-md-8 col-sm-3 col-xs-24">
                                     <?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
                             </div>
 

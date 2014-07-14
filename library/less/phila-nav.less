@@ -5,19 +5,90 @@
     padding-bottom: 5px @imp;
     margin-bottom: 14px;
 }
-
+.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
 .navbar li:hover {
     opacity: .8;
    .transition();
 }
-
-.navbar-default .navbar-nav>li>a {
-    color: @master-blue !important;
-    .transition();
+@media (min-width: @screen-sm-min) {
+   .navbar-default .navbar-nav>li>a { 
+       color: @master-blue !important;
+   }
 }
 
+.navbar-nav {
+    margin: 0;
+    background: @master-blue;
+}
+.navbar-default .navbar-nav>li>a {
+    color: @white;
+    .transition();
+    border-bottom: 1px solid @white;
+}
+
+ #menu-main-menu.nav li:nth-child(1) > a {
+      .img-retina("../phila-gov-bootstrap/images/nav/residents-white.png", "../phila-gov-bootstrap/images/nav/residents-white@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        padding: 3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+    #menu-main-menu.nav li:nth-child(2) > a {
+        .img-retina("../phila-gov-bootstrap/images/nav/business-white.png", "../phila-gov-bootstrap/images/nav/business-white@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        padding: 3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+
+    #menu-main-menu.nav li:nth-child(3) > a {
+         .img-retina("../phila-gov-bootstrap/images/nav/government-white.png", "../phila-gov-bootstrap/images/nav/government-white@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        padding:3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+
+    }
+
+    #menu-main-menu.nav li:nth-child(4) > a {
+         .img-retina("../phila-gov-bootstrap/images/nav/visitors-white.png", "../phila-gov-bootstrap/images/nav/visitors-white@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        padding: 3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+    #menu-main-menu.nav li:nth-child(5) > a {
+        .img-retina("../phila-gov-bootstrap/images/nav/non-profit-white.png", "../phila-gov-bootstrap/images/nav/non-profit-white@2.png", 45px, 28px);
+        background-repeat: no-repeat;
+        padding: 3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+    #menu-main-menu.nav li:nth-child(6) > a {
+        .img-retina("../phila-gov-bootstrap/images/nav/n3rd-white.png", "../phila-gov-bootstrap/images/nav/n3rd-white@2.png", 45px, 28px);
+        background-repeat: no-repeat;
+        padding: 3px 50px 10px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
 
 @media (min-width: @screen-sm-min) {
+    .navbar-nav {
+        background: white;
+    }
     .navbar-collapse{
         width:33% @imp;
         margin-top:20px;
@@ -26,10 +97,39 @@
         padding:0;
     }   
     .navbar-nav > li {
-        width: 115px;
+        width: 120px;
     }
     .navbar-nav > li:nth-child(4), .navbar-nav > li:nth-child(5), .navbar-nav > li:nth-child(6) {
        float:right;
+    }
+     #menu-main-menu.nav li:nth-child(1) > a {
+        background:none;
+        padding:0;
+    }
+
+    #menu-main-menu.nav li:nth-child(2) > a {
+        background:none;
+        padding:0;
+    }
+
+    #menu-main-menu.nav li:nth-child(3) > a {
+        background: none;
+        padding:0;
+    }
+
+    #menu-main-menu.nav li:nth-child(4) > a {
+        background: none;
+        padding:0;
+    }
+
+    #menu-main-menu.nav li:nth-child(5) > a {
+        background: none;
+        padding:0;
+    }
+
+    #menu-main-menu.nav li:nth-child(6) > a {
+        background: none;
+        padding:0;
     }
 }
 
@@ -57,38 +157,50 @@
     }    
 
     #menu-main-menu.nav li:nth-child(1) > a {
-        background: url(../phila-gov-bootstrap/images/nav/residents.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/residents.png", "../phila-gov-bootstrap/images/nav/residents@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 0;
         display: inline-block;
     }
 
     #menu-main-menu.nav li:nth-child(2) > a {
-        background: url(../phila-gov-bootstrap/images/nav/business.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/business.png", "../phila-gov-bootstrap/images/nav/business@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 7px;
         display: inline-block;
     }
 
     #menu-main-menu.nav li:nth-child(3) > a {
-        background: url(../phila-gov-bootstrap/images/nav/government.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/government.png", "../phila-gov-bootstrap/images/nav/government@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 8px;
         display: inline-block;
 
     }
 
     #menu-main-menu.nav li:nth-child(4) > a {
-        background: url(../phila-gov-bootstrap/images/nav/visitors.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/visitors.png", "../phila-gov-bootstrap/images/nav/visitors@2.png", 38px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 6px;
         display: inline-block;
     }
 
     #menu-main-menu.nav li:nth-child(5) > a {
-        background: url(../phila-gov-bootstrap/images/nav/non-profit.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/non-profit.png", "../phila-gov-bootstrap/images/nav/non-profit@2.png", 45px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 4px;
         display: inline-block;
     }
 
     #menu-main-menu.nav li:nth-child(6) > a {
-        background: url(../phila-gov-bootstrap/images/nav/tech.png) no-repeat center 5px;
+        .img-retina("../phila-gov-bootstrap/images/nav/n3rd.png", "../phila-gov-bootstrap/images/nav/n3rd@2.png", 45px, 28px);
+        background-repeat: no-repeat;
+        backgound-position:center 5px;
         padding: 30px 0 0 0;
         display: inline-block;
     }

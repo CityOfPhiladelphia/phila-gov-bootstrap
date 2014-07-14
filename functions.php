@@ -668,5 +668,4 @@ function trending_posts_homepage(){
                                         wp_reset_postdata();
                                     ?></div> <?php 
              }
-
             
