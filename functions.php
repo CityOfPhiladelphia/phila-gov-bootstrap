@@ -470,19 +470,16 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
       array('jquery'));
 
-    wp_register_script(  'headroom', 
-      get_template_directory_uri() . '/library/js/headroom.js', 
-      array('jquery') );
-    wp_register_script(  'jquery_headroom', 
-      get_template_directory_uri() . '/library/js/jquery.headroom.js', 
-      array('jquery'));
-    
     wp_register_script(  'velocity', 
       get_template_directory_uri() . '/library/js/jquery.velocity.min.js', 
       array('jquery') );
     
     wp_register_script(  'velocity_ui', 
       get_template_directory_uri() . '/library/js/velocity.ui.js', 
+      array('jquery') );
+
+    wp_register_script(  'swiper', 
+      get_template_directory_uri() . '/library/js/idangerous.swiper-2.1.min.js', 
       array('jquery') );
 
     wp_register_script( 'phila-scripts', 
@@ -495,7 +492,7 @@ add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('modernizr');
     wp_enqueue_script('headroom');
-    wp_enqueue_script('jquery_headroom');
+    wp_enqueue_script('swiper');
     wp_enqueue_script('phila-scripts');
    //wp_enqueue_script('velocity');
     //wp_enqueue_script('velocity_ui');
@@ -561,7 +558,7 @@ function add_services_homepage($numb_posts, $post_offset){
                                             $dash = "-";
                                             $space = " ";
                                             if (('' != get_the_post_thumbnail()) && ($category[0]->slug == 'frontpage' )) { //only display images with posts that have a featured image
-                                                        $nicecat = str_replace("-", " ", $category[0]->slug); 
+                                                        $nicecat = str_replace("-", " ", $category[1]->slug); 
                                                         echo '<div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
                                                         echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
@@ -681,4 +678,32 @@ function trending_posts_homepage(){
                                         wp_reset_postdata();
                                     ?></div> <?php 
              }
-            
+function trending_posts_homepage_mobile(){
+     $args_trending = array(
+                        'posts_per_page'   => 8,
+                        'category_name'    => 'frontpage',     
+                        'orderby'          => 'post_date',
+                        'order'            => 'DESC',
+                        'post_type'        => 'post',
+                        'post_status'      => 'publish',
+                         'tag'              => 'trending'
+                                    ); 
+                            $trending_query = new WP_Query( $args_trending ); 
+                                    // The Loop
+                                        if ( $trending_query->have_posts() ) {
+                                            while ( $trending_query->have_posts() ) {
+                                                $trending_query->the_post();
+                                                    echo  '<div class="swiper-slide">';
+                                                    echo '<a href="' . get_permalink() .'"></a>';
+                                                    echo '<p class="title">' . get_the_title() . '</p>' . '<p>' . get_the_content() . '</p>';
+                                                    echo  '</div>';                              
+                                                }//close while
+                                            } else {
+                                                // no posts found
+                                                ?><p>There are no trending news stories!</p> <?php
+                                            } 
+                                        /* Restore original Post Data */
+                                        wp_reset_postdata();
+                                    ?></div> <?php 
+             }
+

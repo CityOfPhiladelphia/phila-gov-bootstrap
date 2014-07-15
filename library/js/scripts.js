@@ -102,24 +102,12 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
     
- /*no longer using headroom - commented out for now. 
- $("header").headroom({
-      "tolerance": 0,
-      "offset": 100,
-      "classes": {
-        "initial": "animated",
-        "pinned": "slideDown",
-        "unpinned": "slideUp",
-        "top": "headroom--top",
-        "notTop": "headroom--not-top"
-      }
-  });*/
+
     //make trending boxes clickable
     $(".trending .no-img").click(function(){
-     window.location=$(this).find("a").attr("href"); 
-     return false;
-        console.log(":(");
-});
+        window.location=$(this).find("a").attr("href"); 
+        return false;
+    });
 
      $('#incfont').click(function(){    
         curSize= parseInt($('body').css('font-size')) + 2;
@@ -135,9 +123,7 @@ jQuery(document).ready(function($) {
     function isHidden(el) {
         return (el.offsetParent === null);
     }
-    
-
-    
+    //accessibility jawns
     $( ".translate-bubble-link").click(function() {
         $( ".translate-bubble").fadeToggle("fast");
          $(".text-size-bubble").fadeOut("fast");
@@ -150,7 +136,21 @@ jQuery(document).ready(function($) {
         return false;
     }); 
     
-
+    //mobile view swiper
+    var mySwiper = $('.swiper-container').swiper({
+        mode:'horizontal',
+        loop: true,
+        slidesPerView: 3,
+        preventLinks:true
+ 
+  });
+    
+        //make slide boxes clickable
+    $(".swiper-slide").click(function(){
+        window.location=$(this).find("a").attr("href"); 
+        console.log("clicked!");
+        return false;
+    });
 
 });
 

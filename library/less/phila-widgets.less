@@ -1,4 +1,6 @@
 /*general styles*/
+@import "phila-mixins.less";
+
 .PhilaWidget{
     padding: 30px 10px 10px;
     position: relative;
@@ -22,7 +24,7 @@
 .home #PhilaAlertsWidget{
     color:#fff;
     .clearfix();
-    margin-bottom:20px;
+    margin-bottom:10px;
     padding:0;
 }
 @media(min-width:480px){
@@ -43,13 +45,6 @@
     font-weight: 400;   
     display:block;
 }
-@media (min-width: 768px) {
-    .home #PhilaAlertsWidget .alerts{
-        display:inline-block;
-        padding:0 20px 0 0;  
-        margin:5px 0 0 0;
-    }
-}
 
 #PhilaAlertsDateTimeBlock {
     background:@red;
@@ -65,7 +60,8 @@
     font-weight: 700;
 }
 .home #PhilaAlertsIconsBlock a:hover {
-    color:@kyle-fave-color;
+    .transition();
+    
 }
 .important-info{
     float:right;
@@ -79,9 +75,8 @@
     background:@red;
     padding:2px 0 0 0;
     text-align: center;
-    min-height:30px;
+    min-height:50px;
 }
-
 
 .home #PhilaAlertsIconsBlock .weather-alert{
     .img-retina("../phila-gov-bootstrap/images/icons/weather-alerts.png", "../phila-gov-bootstrap/images/icons/weather-alerts@2.png", 25px, 25px);
@@ -109,6 +104,18 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media (min-width: 768px) {
+    .home #PhilaAlertsWidget .alerts{
+        display:inline-block;
+        padding:0 20px 0 0;  
+        margin:5px 0 0 0;
+    }
+    .home #PhilaAlertsIconsBlock {
+        min-height:30px;
+    }
+}
+
 @media (min-width:992px) {
     .home #PhilaAlertsIconsBlock {
         text-align: right;

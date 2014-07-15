@@ -14,10 +14,10 @@ Template Name: Home Page Template
                     <section class="mobile-visitors visible-xs-block">
                         <div class="row">
                             <div class="col-xs-24">
-                                <a href="http://www.phila.gov/311/" class="philly-311-link mobile-button">
+                                <a href="https://iframe.publicstuff.com/#?client_id=242" class="philly-311-link mobile-button">
                                     <section class="philly-311">
                                         <h1>Philly 311</h1>
-                                        <h2>Your connection to City Hall</h2>
+                                        <h2>Submit a service request</h2>
                                     </section>
                                 </a>
                             </div>
@@ -29,8 +29,8 @@ Template Name: Home Page Template
                         </section>
                         <section class="most-visited row">
                             <div class="col-xs-8">
-                                    <a href="#" class="mobile-button">
-                                        <span class="button-text">Property Info</span>  
+                                    <a href="http://property.phila.gov/" class="mobile-button">
+                                        <span class="button-text">Property Search</span>  
                                     </a>
                             </div>
                             <div class="col-xs-8">
@@ -39,17 +39,17 @@ Template Name: Home Page Template
                                 </a>
                             </div>
                             <div class="col-xs-8">
-                                <a href="#" class="mobile-button">
+                                <a href="http://www.phila.gov/topics/employment/Pages/default.aspx" class="mobile-button">
                                     <span class="button-text">Employment</span>  
                                 </a>
                             </div>
                             <div class="col-xs-8">
-                                <a href="#" class="mobile-button">
+                                <a href="http://www.opendataphilly.org/" class="mobile-button">
                                     <span class="button-text">Open Data</span>  
                                 </a>
                             </div>
                             <div class="col-xs-8">
-                                <a href="#" class="mobile-button">
+                                <a href="http://www.phila.gov/map" class="mobile-button">
                                     <span class="button-text">Maps</span>  
                                 </a>
                             </div>
@@ -59,8 +59,16 @@ Template Name: Home Page Template
                                 </a>
                             </div>
                         </section>
-                        <section class="more-popular-links">
-                            <?php echo slider_pro(3); //two on prod ?>
+                        <section class="trending row">
+                            <div class="col-sm-24">
+                                <!--<h1 class="break">Trending City Departments</h1>-->
+                                <div class="row">  
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                           <?php trending_posts_homepage_mobile(); ?>
+                                        </div><!--end wrapper -->
+                                      </div><!--end container -->
+                                </div>
                         </section>
                     </section><!--END MOBILE VIEW ONLY -->
                     
@@ -114,7 +122,7 @@ Template Name: Home Page Template
                         </div>
                         
                     </section>
-                    <section class="trending row">
+                    <section class="trending row hidden-xs">
                         <div class="col-sm-24">
                             <h1 class="break">Trending City Departments</h1>
                             <div class="row">  
