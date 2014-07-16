@@ -5,6 +5,7 @@ Template Name: Home Page Template
 ?>
 <?php get_header(); ?>
 			<div id="content" class="clearfix">
+                
 				<div id="main" class="clearfix" role="main">
                     <div class="row">
                              <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
@@ -77,7 +78,7 @@ Template Name: Home Page Template
                         <!--Date/time -->
                         <div class="col-md-16">
                             <div class="overlay-box">
-                                <h1 class="section-header">Department Headlines</h1>
+                                <h1 class="section-header">Headlines</h1>
                                 <?php echo slider_pro(2); //two on prod ?>
                             </div>
                         </div>
@@ -113,12 +114,12 @@ Template Name: Home Page Template
                         </div>
                         <!--begin col 3 -->
                         <div class="col-md-6 col-sm-12  col-ms-12">
-                         <?php add_services_homepage(2,0); ?>
+                            <?php echo do_shortcode('[PhilaPropSearch]'); ?>
+                            <?php echo do_shortcode('[PhilaObtainWidget]'); ?>
                         </div>
                         <!--begin col 4 -->
                         <div class="col-md-6 col-sm-12  col-ms-12">
-                            <?php echo do_shortcode('[PhilaPropSearch]'); ?>
-                              <?php add_services_homepage(1,2); ?>
+                            <?php add_services_homepage(2,0); ?>
                         </div>
                         
                     </section>

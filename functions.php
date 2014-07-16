@@ -444,6 +444,20 @@ function add_active_class($classes, $item) {
   return $classes;
 }
 
+//modify login page
+function login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/city-of-phila@2.png);
+            padding-bottom: 20px;
+            background-size: 200px 200px;
+            height:200px;
+            width:200px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'login_logo' );
+
 // enqueue styles
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.

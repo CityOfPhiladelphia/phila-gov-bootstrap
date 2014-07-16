@@ -36,8 +36,7 @@
 	<body <?php body_class(); ?>>
 				
 		<header role="banner" class="header animated" id="header">
-			<div class="navbar navbar-default">
-				<div class="container"> 
+          		<div class="container"> 
                     <div class="row">
                             <div class="accessibility visible-lg visible-md col-lg-24">
                             <a href="#" class="text-size-bubble-link">Text size</a>
@@ -59,10 +58,14 @@
                         </div><!--end translate stuff -->
                         </div>
                     </div>
-                    <section class="row expose">
+                </div>
+
+			<div class="navbar navbar-default">
+				<div class="container"> 
+                    <section class="row">
 
                             <!-- hamburger button -->
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <button type="button" class="navbar-toggle expose" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -92,6 +95,7 @@
                             </div>
                         </div>
                     </section><!-- end .row -->
+   
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 		
