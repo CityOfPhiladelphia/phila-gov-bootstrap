@@ -495,21 +495,26 @@ if( !function_exists( "theme_js" ) ) {
     wp_register_script(  'swiper', 
       get_template_directory_uri() . '/library/js/idangerous.swiper-2.1.min.js', 
       array('jquery') );
-
+      
+    wp_register_script(  'fancySelect', 
+      get_template_directory_uri() . '/library/js/fancySelect.js', 
+      array('jquery') );
+        
     wp_register_script( 'phila-scripts', 
       get_template_directory_uri() . '/library/js/scripts.js', 
       array('jquery'));
 
+      
 add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
   
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('modernizr');
     wp_enqueue_script('headroom');
-    wp_enqueue_script('swiper');
+    wp_enqueue_script('swiper'); 
+    wp_enqueue_script('fancySelect');
     wp_enqueue_script('phila-scripts');
-   //wp_enqueue_script('velocity');
-    //wp_enqueue_script('velocity_ui');
+
     
   }
 }
@@ -586,7 +591,7 @@ function add_services_homepage($numb_posts, $post_offset){
                                                         echo '<div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_excerpt() . '</div>';
                                                         echo '</a>';
                                                         echo '</div>';            
                                                         //if the post thumb is NOT blank and the slug is NOT front page
@@ -605,7 +610,7 @@ function add_services_homepage($numb_posts, $post_offset){
                                                         echo '<div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_excerpt() . '</div>';
                                                         echo '</a>';
                                                         echo '</div>';  
                                                     }
@@ -657,7 +662,7 @@ function trending_posts_homepage(){
                                                                 <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' .get_the_excerpt() . '</div>';
                                                         echo '</a>';
                                                         echo '</div></div>';            
                                                         //if the post thumb is NOT blank and the slug is NOT front page
@@ -678,7 +683,7 @@ function trending_posts_homepage(){
                                                                 <div class="overlay-box no-img">';
                                                         echo '<div class="cat-label">' .$nicecat . "</div>";
                                                         echo '<a href="' . get_permalink() .'">';
-                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_content() . '</div>';
+                                                        echo '<div class="tile-text"> <h1>' . get_the_title() .'</h1>' . get_the_excerpt() . '</div>';
                                                         echo '</a>';
                                                         echo '</div></div>';  
                                                     }
@@ -709,7 +714,7 @@ function trending_posts_homepage_mobile(){
                                                 $trending_query->the_post();
                                                     echo  '<div class="swiper-slide">';
                                                     echo '<a href="' . get_permalink() .'"></a>';
-                                                    echo '<p class="title">' . get_the_title() . '</p>' . '<p>' . get_the_content() . '</p>';
+                                                    echo '<p class="title">' . get_the_title() . '</p>' . '<p>' . get_the_excerpt() . '</p>';
                                                     echo  '</div>';                              
                                                 }//close while
                                             } else {

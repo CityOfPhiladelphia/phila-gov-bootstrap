@@ -16,7 +16,10 @@
 @import "phila-mixins.less";
 @import "phila-home-mobile.less";
 @import "phila-grid-add.less";
+
+//custom js coolness
 @import "phila-swiper.less";
+@import "phila-fancyselect.less";
 
 @media (min-width: 991px){
     .navbar-collapse {
@@ -94,8 +97,9 @@ a:hover {
     font-size:12px;
 }
 .accessibility p {
-    font-size:11px;
+    font-size:16px;
     color:@white;
+    text-transform:capitalize;
 }
 div[class*="bubble"] {
     display:none;
@@ -120,14 +124,14 @@ div[class*="bubble"] {
     padding:0 20px 0 0;
 }
 .translate-bubble{
-    background:@dark-green;
-    top:40px;
-    right:0;
-    width:250px;
-    z-index:9999999;
+    background: @dark-green;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    z-index: 9999999;
     position: absolute;
     text-align: center;
-    padding:20px;
+    padding: 20px 5px;
 }
 .translate-bubble:after {
     content: '';

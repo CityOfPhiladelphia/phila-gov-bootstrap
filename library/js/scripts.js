@@ -169,7 +169,9 @@ jQuery(document).ready(function($) {
         return false;
     });
     
-    
+    $(".pick-me").fancySelect({
+        forceiOS:true
+    });
     
 });
 
