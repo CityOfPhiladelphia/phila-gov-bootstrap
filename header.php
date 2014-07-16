@@ -10,7 +10,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>	
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--no scaling for you! -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 				
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>
@@ -35,12 +36,11 @@
 	<body <?php body_class(); ?>>
 				
 		<header role="banner" class="header animated" id="header">
-				
 			<div class="navbar navbar-default">
 				<div class="container"> 
                     <div class="row">
                             <div class="accessibility visible-lg visible-md col-lg-24">
-                            <a href="#" class="text-size-bubble-link">Text size </a>
+                            <a href="#" class="text-size-bubble-link">Text size</a>
                                 <div class="text-size-bubble" id="text-size">
                                     <p>Text size:</p>
                                     <button type="button" href="#" id="incfont" class="btn btn-default">A+</button>
@@ -59,9 +59,9 @@
                         </div><!--end translate stuff -->
                         </div>
                     </div>
-                    <section class="row">
+                    <section class="row expose">
 
-                            <!-- hanburger button -->
+                            <!-- hamburger button -->
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -96,5 +96,7 @@
 			</div> <!-- end .navbar -->
 		
 		</header> <!-- end header -->
+        <!--bg fade -->
+        <div id="full-page-overlay"></div>
 		
 		<div class="container">
