@@ -92,7 +92,7 @@ a:hover {
 }
 .accessibility {
     height:25px;   
-    .clearfix();
+    //.clearfix();
     float:right;
     font-size:12px;
 }
@@ -159,11 +159,6 @@ div[class*="bubble"] {
     border-right: 20px solid transparent;
     }
 /*MAKE SEARCH LOOK GOOD */
-
-#search.form-control{
-    padding:20px 20px 20px 55px;
-}
-
 .left-inner-addon{
     position:relative;   
 }
@@ -173,7 +168,7 @@ div[class*="bubble"] {
 }
 .left-inner-addon span {
     position: absolute;
-    padding: 8px 12px;
+    padding: 3px 12px;
     pointer-events: none;
     font-size:24px;
     color:@white;
@@ -183,16 +178,22 @@ div[class*="bubble"] {
     color:#fff;
 }
 @media (min-width:767px){
-
-    
+    //bigger form element 
+    #search.form-control{
+        padding: 9px 20px 10px 55px;
+        height: auto;
+    }
+    .left-inner-addon span {
+       padding: 7px 12px;
+    }
     .col-xs-24 #search.form-control {
         background-color:@white;
         color:@light-gray;
     }   
         .col-xs-24 .left-inner-addon span {
             color:@light-gray;
-        }
     }
+}
 
 /*TRENDING SEARCHES*/
 
@@ -234,6 +235,7 @@ div[class*="bubble"] {
 .mayor {
     margin-bottom:10px;
 }
+
 @media(min-width:768px){
     .overlay-box {
         min-height:210px;
@@ -244,7 +246,6 @@ div[class*="bubble"] {
     position: relative;
     margin-bottom: 10px;
 }
-
 
 .overlay-box.mayor h2{
     position: absolute;
@@ -263,6 +264,7 @@ div[class*="bubble"] {
 .overlay-box.mayor a{
     color:@white;
 }
+
 /*ONLINE SERVICES*/
 .services .overlay-box{
     .transition;
@@ -323,7 +325,7 @@ div[class*="bubble"] {
     background:@off-white;
     .transition;
 }
-.trending .cat-label-top, .trending .cat-label {
+.trending .cat-label {
     background:@master-yellow;
     color:@charcoal;
 }

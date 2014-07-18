@@ -13,9 +13,7 @@
 .PhilaWidget {
     min-height:210px; /*CHANGE BEFORE PROD */
 }
-.home .PhilaWidget h2{
-    font-size:20px;
-}
+
 .home h1.PhilaWidgetTitle{
     background:@dark-blue-green;
 }
@@ -23,7 +21,7 @@
 /*alerts widgets*/
 .home #PhilaAlertsWidget{
     color:#fff;
-    .clearfix();
+    //.clearfix();
     margin-bottom:10px;
     padding:0;
 }
@@ -51,16 +49,12 @@
     font-style: italic;
     font-size: 18px;
 }
-.home #PhilaAlertsWidget #time{
-    font-weight: 700;
-}
+
 .home #PhilaAlertsIconsBlock a:hover {
     .transition();
     
 }
-.important-info{
-    float:right;
-}
+
 .home #PhilaAlertsDateTimeBlock{
     padding:2px 0px 0px 5px @imp;
 }
@@ -214,26 +208,7 @@
 .home-events a{
     color:@dark-green;
 }
-.calendar-read-more{
-    text-transform: uppercase;
-    font-size:12px;
-    display:block;
-    float:right;
-    border-bottom: 1px solid @dark-green;
-}
-.phila-entry-data{
-    background: #fff;
-    position: absolute;
-    top: -28px;
-    padding: 20px;
-    border: 1px solid #000;
-    z-index: 10000;
-    width: 107%;
-    min-height: 250px;
-    overflow: auto;
-    left: -10px;
-    max-height: 275px;
-}
+
 p.more-events-bg{
     position: absolute;
     z-index: 10;
@@ -326,7 +301,7 @@ a.more-events{
     display:block;
     margin-bottom: 87px;
 }
-.home #PhilaFindJumpMenu, .home #PhilaApplyJumpMenu, .home #PhilaPayJumpMenu, .home #PhilaLicenceJumpMenu{
+.home #PhilaFindJumpMenu, .home #PhilaPayJumpMenu, .home #PhilaLicenceJumpMenu{
     border:1px solid @dark-blue-green;
     width:100%;
     padding:5px 5px 5px 35px;
@@ -377,12 +352,7 @@ div.certificate-drop-down {
     background-position: 5px 4px;
     background-color:@off-white;
 }
-.home select#PhilaApplyJumpMenu{
-    .img-retina("../phila-gov-bootstrap/images/icons/obtain.png", "../phila-gov-bootstrap/images/icons/obtain@2.png", 25px, 23px);
-    background-repeat: no-repeat;
-    background-position: 5px 4px;
-    background-color:@off-white;
-}
+
 .home select#PhilaPayJumpMenu{
     .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
     background-repeat: no-repeat;
