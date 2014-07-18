@@ -46,19 +46,26 @@
 }
 .home .mobile-visitors #PhilaActionWidget{
     background:transparent;
-    height:140px;//dumb, i know
-    min-height: 140px;//must have both for overrides 
+    height: 0;
+    min-height: 84px;//must have both for overrides 
     padding:0;
 }
+.home .mobile-visitors #PhilaApplyWidget {
+    background: none repeat scroll 0px 0px transparent;
+    padding: 0px;
+    border:none;
+    height: 0;
+    min-height: 122px; //dumb   
+}
 .home .mobile-visitors .PhilaFindDropDown, 
-.home .mobile-visitors .PhilaObtainDropDown, 
+.home .mobile-visitors .PhilaApplyDropDown, 
 .home .mobile-visitors .PhilaPayDropDown
 {
     color:@white;
 
 }
 .home .mobile-visitors select#PhilaFindJumpMenu,
-.home .mobile-visitors select#PhilaObtainJumpMenu,
+.home .mobile-visitors select#PhilaApplyJumpMenu,
 .home .mobile-visitors select#PhilaPayJumpMenu{
     background:@dark-blue-green;
     padding:10px 0;
@@ -66,7 +73,7 @@
 
 }
 
-.home .mobile-visitors #PhilaActionWidget h1.PhilaWidgetTitle, .home .mobile-visitors #PhilaActionWidget #PhilaReportMainWindow {
+.home .mobile-visitors #PhilaActionWidget h1.PhilaWidgetTitle, .home .mobile-visitors #PhilaActionWidget #PhilaReportMainWindow, .home .mobile-visitors h1.PhilaWidgetTitle {
     display:none;
 }
 
@@ -83,4 +90,5 @@
     margin-left:-5px;
     margin-right:-5px;
     margin-bottom: 0;
+    width: auto;
 }

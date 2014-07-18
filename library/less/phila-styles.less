@@ -176,8 +176,23 @@ div[class*="bubble"] {
     padding: 8px 12px;
     pointer-events: none;
     font-size:24px;
-    color:@light-gray;
+    color:@white;
 }
+#search.form-control {
+    background-color: @dark-blue;
+    color:#fff;
+}
+@media (min-width:767px){
+
+    
+    .col-xs-24 #search.form-control {
+        background-color:@white;
+        color:@light-gray;
+    }   
+        .col-xs-24 .left-inner-addon span {
+            color:@light-gray;
+        }
+    }
 
 /*TRENDING SEARCHES*/
 
@@ -219,11 +234,18 @@ div[class*="bubble"] {
 .mayor {
     margin-bottom:10px;
 }
+@media(min-width:768px){
+    .overlay-box {
+        min-height:210px;
+    }
+}
+
 .overlay-box {
     position: relative;
     margin-bottom: 10px;
-    min-height:210px;
 }
+
+
 .overlay-box.mayor h2{
     position: absolute;
     bottom: 0;

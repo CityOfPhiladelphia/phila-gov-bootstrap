@@ -56,6 +56,7 @@ Template Name: Left Sidebar Page
 			
 				</div> <!-- end #main -->
     
-			</div> <!-- end #content -->
+			</div> <!-- end something? -->
+        </div><!-- end #content -->
 
 <?php get_footer(); ?>

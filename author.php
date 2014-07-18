@@ -81,6 +81,7 @@
     
 				<?php get_sidebar(); // sidebar 1 ?>
     
-			</div> <!-- end #content -->
+			</div> <!-- end something? -->
+        </div><!-- end #content -->
 
 <?php get_footer(); ?>

@@ -60,9 +60,14 @@ Template Name: Home Page Template
                                 </a>
                             </div>
                         </section>
+                        <section class="actions row">
+                            <div class="col-xs-24">
+                                <?php echo do_shortcode('[PhilaApplyWidget]'); ?>
+                            </div>
+                        </section>
                         <section class="trending row">
                             <div class="col-sm-24">
-                                <!--<h1 class="break">Trending City Departments</h1>-->
+                                <h1 class="break">Trending City Departments</h1>
                                 <div class="row">  
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper">
@@ -115,7 +120,7 @@ Template Name: Home Page Template
                         <!--begin col 3 -->
                         <div class="col-md-6 col-sm-12  col-ms-12">
                             <?php echo do_shortcode('[PhilaPropSearch]'); ?>
-                            <?php echo do_shortcode('[PhilaObtainWidget]'); ?>
+                            <?php echo do_shortcode('[PhilaApplyWidget]'); ?>
                         </div>
                         <!--begin col 4 -->
                         <div class="col-md-6 col-sm-12  col-ms-12">

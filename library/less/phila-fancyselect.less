@@ -4,7 +4,6 @@
 
 div.fancy-select {
 	position: relative;
-	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 13px;
 	color: @charcoal;
@@ -53,18 +52,6 @@ div.fancy-select div.trigger:after {
 	right: 9px;
 }
 
-div.find-drop-down {
-    .img-retina("../phila-gov-bootstrap/images/icons/find.png", "../phila-gov-bootstrap/images/icons/find@2.png", 25px, 24px);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;
-    background-color:@off-white;
-}
-div.pay-drop-down {
-    .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
-    background-repeat: no-repeat;
-    background-position: 5px 8px;
-    background-color:@off-white;
-}
 div.fancy-select div.trigger.open {
 	background: @off-white;
 	color: @charcoal;
@@ -82,10 +69,10 @@ div.fancy-select ul.options {
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 50;
+	z-index: 999999;
 	max-height: 350px;
 	overflow: auto;
-	background: @white;
+	background: @dark-blue-green;
     min-width:300px;
     padding:10px;
 
@@ -94,6 +81,10 @@ div.fancy-select ul.options {
 	-moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
 	-ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
 	-o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options {
+    width:100%;
 }
 
 div.fancy-select ul.options.open {
@@ -133,7 +124,7 @@ div.fancy-select ul.options.overflowing.open {
 
 div.fancy-select ul.options li {
 	padding: 8px 12px;
-	color: @philly-311-blue;
+	color: @off-white;
 	cursor: pointer;
 	white-space: nowrap;
 
@@ -151,5 +142,5 @@ div.fancy-select ul.options li.selected {
 
 div.fancy-select ul.options li.hover {
 	color: @charcoal;
-    background:@philly-311-blue;
+    background:@off-white;
 }

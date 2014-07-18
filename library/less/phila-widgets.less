@@ -27,16 +27,11 @@
     margin-bottom:10px;
     padding:0;
 }
-@media(min-width:480px){
-    .home #PhilaAlertsWidget {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-}
-.home #PhilaAlertsWidget .col-md-16{
-    padding: 0;
-}
 
+.home #PhilaAlertsWidget {
+    padding-left: 5px;
+    padding-right:5px;
+}
 .home #PhilaAlertsWidget .alerts {
     text-transform: uppercase;
     font-size:12px;
@@ -113,6 +108,13 @@
     }
     .home #PhilaAlertsIconsBlock {
         min-height:30px;
+    }
+    .home #PhilaAlertsWidget .col-md-16{
+        padding:0;
+    }
+    .home #PhilaAlertsWidget {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -276,10 +278,10 @@ a.more-events{
     padding: 60px 10px 10px;
 }
 
-#PhilaObtainWidget{
+#PhilaApplyWidget{
     background:@off-white;
     border:1px solid @dark-blue-green;
-    padding: 40px 10px 10px;
+    padding: 40px 10px 10px; 
 }
 #PhilaPropSearchWidget a {
     color:@dark-blue-green;
@@ -316,11 +318,77 @@ a.more-events{
 .home #PhilaActionWidget a:hover{
     .fade-in-out(.8);
 }
+.home .PhilaFindDropDown, .home .PhilaApplyDropDown, .home .PhilaPayDropDown {
+    padding:  0;
+    width:100%;
+}
 .home #PhilaPayMainWindow {
     display:block;
     margin-bottom: 87px;
 }
+.home #PhilaFindJumpMenu, .home #PhilaApplyJumpMenu, .home #PhilaPayJumpMenu, .home #PhilaLicenceJumpMenu{
+    border:1px solid @dark-blue-green;
+    width:100%;
+    padding:5px 5px 5px 35px;
+}
 
+.home #PhilaLicenceJumpMenu, .home #PhilaPermitJumpMenu, .home #PhilaCertificateJumpMenu{
+    border:1px solid @dark-blue-green;
+    width:100%;
+    padding:5px;
+    margin-bottom: 10px;
+}
+div.find-drop-down {
+    .img-retina("../phila-gov-bootstrap/images/icons/find.png", "../phila-gov-bootstrap/images/icons/find@2.png", 25px, 24px);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    background-color:@light-purple;
+}
+div.pay-drop-down {
+    .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
+    background-repeat: no-repeat;
+    background-position: 5px 8px;
+    background-color:@light-purple;
+}
+
+div.licence-drop-down {
+    .img-retina("../phila-gov-bootstrap/images/icons/licences.png", "../phila-gov-bootstrap/images/icons/licences@2.png", 23px, 25px);
+    background-repeat: no-repeat;
+    background-position: 5px 6px;
+    background-color:@light-purple;
+}
+
+div.permit-drop-down {
+    .img-retina("../phila-gov-bootstrap/images/icons/permits.png", "../phila-gov-bootstrap/images/icons/permits@2.png", 25px, 23px);
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+    background-color:@light-purple;
+}
+div.certificate-drop-down {
+    .img-retina("../phila-gov-bootstrap/images/icons/certificates.png", "../phila-gov-bootstrap/images/icons/certificates@2.png", 25px, 24px);
+    background-repeat: no-repeat;
+    background-position: 5px 6px;
+    background-color:@light-purple;
+}
+
+.home select#PhilaFindJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/find.png", "../phila-gov-bootstrap/images/icons/find@2.png", 25px, 24px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
+}
+.home select#PhilaApplyJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/obtain.png", "../phila-gov-bootstrap/images/icons/obtain@2.png", 25px, 23px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
+}
+.home select#PhilaPayJumpMenu{
+    .img-retina("../phila-gov-bootstrap/images/icons/pay-online.png", "../phila-gov-bootstrap/images/icons/pay-online@2.png", 27px, 20px);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-color:@off-white;
+}
 .home .report {
     padding: 20px 20px 20px 40px;
      .img-retina("../phila-gov-bootstrap/images/icons/report.png", "../phila-gov-bootstrap/images/icons/report@2.png", 19px, 27px);
@@ -334,5 +402,8 @@ a.more-events{
     background-repeat: no-repeat;
     background-position: 7px 18px;
     background-color:@philly-311-blue;
-    
+}
+
+.licence-drop-down, .permit-drop-down, .certificate-drop-down{
+    background:@light-purple;
 }
