@@ -5,8 +5,6 @@ Template Name: Home Page Template
 ?>
 <?php get_header(); ?>
 			<div id="content" class="clearfix">
-                
-				<div id="main" class="clearfix" role="main">
                     <div class="row">
                              <?php echo do_shortcode('[PhilaAlertsWidget]'); ?>
                     </div>
