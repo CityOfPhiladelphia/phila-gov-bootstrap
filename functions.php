@@ -651,7 +651,7 @@ function add_services_homepage($numb_posts, $post_offset){
     }
             
 function trending_posts_homepage(){
-		global $post_id; //kind of a hack
+			global $post_id; //kind of a hack
             $args_trending = array(
                         'posts_per_page'   => 8,
                         'category_name'    => 'frontpage',     
