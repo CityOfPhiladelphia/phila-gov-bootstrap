@@ -1,0 +1,60 @@
+aside .social-media a span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.aside-text-hide(){
+    width:22px;
+    height:22px;
+    display:block;
+    opacity: .5;
+    .transition();
+};
+
+aside .social-media .flickr {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/flickr.png", "../phila-gov-bootstrap/images/icons/social/flickr@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+
+aside .social-media .news {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/news.png", "../phila-gov-bootstrap/images/icons/social/news@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .you-tube {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/you-tube.png", "../phila-gov-bootstrap/images/icons/social/you-tube@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .rss {
+     .img-retina("../phila-gov-bootstrap/images/icons/social/rss.png", "../phila-gov-bootstrap/images/icons/social/rss@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .google {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/gplus.png", "../phila-gov-bootstrap/images/icons/social/gplus@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .twitter {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/twitter.png", "../phila-gov-bootstrap/images/icons/social/twitter@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .linked-in {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/linkedin.png", "../phila-gov-bootstrap/images/icons/social/linkedin@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media .facebook {
+    .img-retina("../phila-gov-bootstrap/images/icons/social/facebook.png", "../phila-gov-bootstrap/images/icons/social/facebook@2.png", 22px, 22px);
+    background-repeat: no-repeat;
+    .aside-text-hide();
+}
+aside .social-media a:hover{
+    opacity:1;
+    .transition();
+}

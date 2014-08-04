@@ -69,16 +69,16 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-  /*  register_sidebar(array(
-    	'id' => 'home-first-row',
-    	'name' => 'Homepage Row One Column Two',
-    	'description' => 'Used on the homepage',
+    register_sidebar(array(
+    	'id' => 'department-sidebar',
+    	'name' => 'Department Sidebar and Nav',
+    	'description' => 'For use on department pages',
     	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     	'after_widget' => '</aside>',
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-    
+    /*
     register_sidebar(array(
     	'id' => 'home-second-row',
     	'name' => 'Homepage Row Two',
@@ -97,17 +97,7 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-    */
-    
-    register_sidebar(array(
-      'id' => 'footer-links',
-      'name' => 'Footer Links',
-      'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h4 class="widgettitle">',
-      'after_title' => '</h4>',
-    ));
-        
+    */        
     /* 
     to add more sidebars or widgetized areas, just copy
     and edit the above sidebar code. In order to call 
@@ -123,6 +113,21 @@ function wp_bootstrap_register_sidebars() {
     
     */
 } // don't remove this bracket!
+
+//karissa includes
+include(get_template_directory() . '/inc/widgets/phila-social-media.php');
+
+function load_phila_widgets() {
+	register_widget("Phila_Social_Widget");
+}
+add_action("widgets_init", "load_phila_widgets");
+
+register_nav_menu( 'sidebar-menu', 'Secondary Navigation' );
+
+/**
+ * Customizer additions.
+ */
+//require get_template_directory() . '/inc/customizer.php';
 
 /************* COMMENT LAYOUT *********************/
 		
@@ -266,6 +271,7 @@ function add_homepage_meta_box() {
 add_action( 'add_meta_boxes', 'add_homepage_meta_box' );
 */
 
+
 // Field Array  
 $prefix = 'custom_';  
 $custom_meta_fields = array(  
@@ -367,6 +373,15 @@ function first_paragraph( $content ){
 }
 add_filter( 'the_content', 'first_paragraph' );
 
+//Get post cat slug and looks for single-[cat slug].php and applies it
+add_filter('single_template', create_function(
+	'$the_template',
+	'foreach( (array) get_the_category() as $cat ) {
+		if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
+		return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
+	return $the_template;' )
+);
+
 // Menu output mods
 class Bootstrap_walker extends Walker_Nav_Menu{
 
@@ -458,6 +473,8 @@ function login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'login_logo' );
 
+
+
 // enqueue styles
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
@@ -527,7 +544,13 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
     function modify_read_more_link() {
         return '<a class="more-link" href="' . get_permalink() . '"></a>';
 }
-  function mayor_box_homepage() {
+
+/*
+	All this stuff is custom for phila.gov. Consider moving/making better.
+*/
+
+function mayor_box_homepage() {
+	global $post_id; //kind of a hack
         $args_mayor = array(
                                 'posts_per_page'   => 1,
                                 'category_name'    =>'frontpage+mayor-news', //DEV
@@ -543,9 +566,11 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
                                 if ( $query->have_posts() ){
                                     while ( $query->have_posts() ) {
                                         $query->the_post();
-
+										
                                         echo '<h1 class="section-header">Mayor\'s Office</h1>';
-                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                        echo '<a href="' . get_permalink() . '">';
+										
+										
                                         echo '<h2>' . get_the_title() .'</h2>';
                                         echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
                                         echo '</a>';
@@ -559,6 +584,7 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
   }
 
 function add_services_homepage($numb_posts, $post_offset){
+		global $post_id; //kind of a hack
                             $args_services = array(
                                     'posts_per_page'   => $numb_posts,
                                     'category_name' =>    'frontpage+online-services',//homepage & online services only
@@ -580,7 +606,7 @@ function add_services_homepage($numb_posts, $post_offset){
                                                         $nicecat = str_replace("-", " ", $category[1]->slug); 
                                                         echo '<div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<a href="' . get_permalink() . '">';
                                                         echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
                                                         echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
                                                         echo '</a>';
@@ -599,7 +625,7 @@ function add_services_homepage($numb_posts, $post_offset){
                                                     $nicecat = str_replace("-", " ", $category[0]->slug); 
                                                         echo '<div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<a href="' . get_permalink() . '">';
                                                         echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
                                                         echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
                                                         echo '</a>';
@@ -625,6 +651,7 @@ function add_services_homepage($numb_posts, $post_offset){
     }
             
 function trending_posts_homepage(){
+		global $post_id; //kind of a hack
             $args_trending = array(
                         'posts_per_page'   => 8,
                         'category_name'    => 'frontpage',     
@@ -650,7 +677,7 @@ function trending_posts_homepage(){
                                                         echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $nicecat. "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<a href="' . get_permalink() . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
                                                         echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
                                                         echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
                                                         echo '</a>';
@@ -671,7 +698,7 @@ function trending_posts_homepage(){
                                                          echo '<div class="col-md-6 col-sm-8 col-ms-12">
                                                                 <div class="overlay-box">';
                                                         echo '<div class="cat-label">' . $nicecat . "</div>";
-                                                        echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+                                                        echo '<a href="' . get_permalink() . '">';
                                                         echo '<h1 class="trending-headline">' . get_the_title() .'</h1>';
                                                         echo  get_the_post_thumbnail($post_id, 'full', array('class' =>'img-responsive'));
                                                         echo '</a>';
@@ -725,4 +752,3 @@ function trending_posts_homepage_mobile(){
                                         wp_reset_postdata();
                                     ?></div> <?php 
              }
-

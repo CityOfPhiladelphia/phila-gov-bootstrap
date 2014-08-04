@@ -1,4 +1,5 @@
-				<div id="sidebar1" class="col-sm-6" role="complementary">
+				<div id="sidebar-departments" class="col-sm-6" role="complementary">
+					<h2>This sidebar is specific to this page</h2>
 				
 					<?php
 						$menu_location = 'sidebar';
@@ -9,9 +10,9 @@
 						echo esc_html($menu_name);
 					?>
 					
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+					<?php if ( is_active_sidebar( 'department-sidebar' ) ) : ?>
 
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
+						<?php dynamic_sidebar( 'department-sidebar'  ); ?>
 
 					<?php else : ?>
 
