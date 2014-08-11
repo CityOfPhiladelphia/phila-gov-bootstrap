@@ -2,7 +2,7 @@
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-16 clearfix" role="main">
+				<div id="main" class="col-sm-16 clearfix archive" role="main">
 				
 					<div class="page-header">
 					<?php if (is_category()) { ?>
@@ -47,7 +47,6 @@
 						<section class="post_content">
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
-						
 							<?php the_excerpt(); ?>
 					
 						</section> <!-- end article section -->
