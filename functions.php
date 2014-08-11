@@ -567,7 +567,7 @@ function mayor_box_homepage() {
                                     while ( $query->have_posts() ) {
                                         $query->the_post();
 										
-                                        echo '<h1 class="section-header">Mayor\'s Office</h1>';
+                                        echo '<a href="#"><h1 class="section-header">Mayor\'s Office</h1></a>';
                                         echo '<a href="' . get_permalink() . '">';
 										
 										

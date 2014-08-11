@@ -83,29 +83,28 @@ Template Name: Home Page Template
                         <!--Date/time -->
                         <div class="col-md-16">
                             <div class="overlay-box">
-                                <h1 class="section-header">Headlines</h1>
+                                <a href="/news"><h1 class="section-header">Headlines</h1></a>
                                 <?php echo slider_pro(2); //two on prod ?>
                             </div>
                         </div>
                         
                         <div class="col-md-8">
                             <section class="overlay-box mayor">
-                        <!-- mayor box and calendar -->
-                        <?php mayor_box_homepage(); ?>
+                        	<!-- mayor box and calendar -->
+                        	<?php mayor_box_homepage(); ?>
                         </section><!--end overlaybox-->
                             <div class="home-events-container">
-                                <h1 class="section-header">Citywide Events</h1>
+                                <a href="/events"><h1 class="section-header">Citywide Events</h1></a>
                                 <div class="home-events clearfix">
                                     <?php echo do_shortcode('[PhilaGoogleCalendarWidget]'); ?>
                                 </div>
-                                <p class="more-events-bg"><a href="#" class="tiny-text more-events">More events &raquo;</a></p>
                             </div>
                          </div>
                                               
                         
                     </section><!--end top row -->
                     <section class="services row hidden-xs">
-                        <div class="col-lg-24"><h1 class="break">Online Services</h1></div>
+                        <div class="col-lg-24"><a href="/services"><h1 class="break">Online Services</h1></a></div>
                         <!--begin col 1 -->
                         <div class="col-md-6 col-sm-12 col-ms-12">
                             <?php echo do_shortcode('[Phila311Widget]'); ?>
@@ -130,7 +129,7 @@ Template Name: Home Page Template
                     </section>
                     <section class="trending row hidden-xs">
                         <div class="col-sm-24">
-                            <h1 class="break">Trending City Departments</h1>
+                            <a href="/trending"><h1 class="break">Trending City Departments</h1></a>
                             <div class="row">  
                                <?php trending_posts_homepage(); ?>
                             </div>
