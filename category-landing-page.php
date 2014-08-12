@@ -1,6 +1,7 @@
 <?php
 /*
-Template Name: Test Category Landing page (first) and general page template
+Single Post Template: Department landing page
+Description: Used for displaying department pages
 */
 ?>
 <?php get_header(); ?>
@@ -10,40 +11,9 @@ Template Name: Test Category Landing page (first) and general page template
 				<div id="main" class="col-sm-18 clearfix" role="main">
 					
 					<div class="page-header">
-					<?php if (is_category()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Categorized:", "wpbootstrap"); ?></span> <?php single_cat_title(); ?>
-						</h1>
-					<?php } elseif (is_tag()) { ?> 
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Tagged:", "wpbootstrap"); ?></span> <?php single_tag_title(); ?>
-						</h1>
-					<?php } elseif (is_author()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts By:", "wpbootstrap"); ?></span> <?php get_the_author_meta('display_name'); ?>
-						</h1>
-					<?php } elseif (is_day()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Daily Archives:", "wpbootstrap"); ?></span> <?php the_time('l, F j, Y'); ?>
-						</h1>
-					<?php } elseif (is_month()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Monthly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('F Y'); ?>
-					    </h1>
-					<?php } elseif (is_year()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Yearly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('Y'); ?>
-					    </h1>
-					<?php } ?>
+						<h1><?php the_category(', '); ?></h1>
 					</div>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<?php  
-						if (in_category(31)) { 
-							echo 'ding dong the witch is alive!';	
-						} elseif (in_category(31 && 'landing-page')) {
-							echo 'oops i did it again';
-							}
-					?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						

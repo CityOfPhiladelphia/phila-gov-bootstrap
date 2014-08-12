@@ -203,10 +203,15 @@ function my_widget_tag_cloud_args( $args ) {
 // filter tag clould output so that it can be styled by CSS
 function add_tag_class( $taglinks ) {
     $tags = explode('</a>', $taglinks);
-    $regex = "#(.*tag-link[-])(.*)(' title.*)#e";
-
+    $regex = "#(.*tag-link[-])(.*)(' title.*)#";
+	$replaceme = "('$1$2 label tag-'.get_tag($2)->slug.'$3')";
+//KD updates - removed use of deprecated preg_replace
     foreach( $tags as $tag ) {
-    	$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
+    	$tagn[] = $replacement = preg_replace_callback(
+		$regex,
+			function($m) use ($replaceme) {return $m[0];},
+		$tag
+		);
     }
 
     $taglinks = implode('</a>', $tagn);
