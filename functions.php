@@ -26,6 +26,12 @@ function wp_bootstrap_custom_admin_footer() {
 // adding it to the admin area
 add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
 
+function phila_add_cats_to_pages(){
+	register_taxonomy_for_object_type('category', 'page');  
+}
+
+add_action( 'init', 'phila_add_cats_to_pages' );
+
 // Set content width
 if ( ! isset( $content_width ) ) $content_width = 580;
 
@@ -549,6 +555,31 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
     function modify_read_more_link() {
         return '<a class="more-link" href="' . get_permalink() . '"></a>';
 }
+
+function theme_name_wp_title( $title, $sep ) {
+	if ( is_feed() ) {
+		return $title;
+	}
+	
+	global $page, $paged;
+
+	// Add the blog name
+	$title .= get_bloginfo( 'name', 'display' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title .= ' | ' . "$site_description";
+	}
+
+	// Add a page number if necessary:
+	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'theme_name_wp_title', 10, 2 );
 
 /*
 	All this stuff is custom for phila.gov. Consider moving/making better.
