@@ -1,6 +1,7 @@
-//da font
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
-@import url(http://fonts.googleapis.com/css?family=Marvel:700);
+//da old font
+//@import url(http://fonts.googleapis.com/css?family=Montserrat);
+//@import url(http://fonts.googleapis.com/css?family=Marvel:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 @import "variables.less";
 @import "mixins.less";
@@ -39,7 +40,10 @@ body {
     -moz-transition: font-size .3s linear;
     -webkit-transition: font-size .3s linear;
     transition: font-size .3s linear;
-    background:@light-corn-silk;
+}
+
+body.home {
+	background:@light-corn-silk;
 }
 .container {
     -o-transition: width .3s linear;

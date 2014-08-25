@@ -1,8 +1,3 @@
-<?php
-/*
-Template Name: Home Page Template
-*/
-?>
 <?php get_header(); ?>
 			<div id="content" class="clearfix">
                 

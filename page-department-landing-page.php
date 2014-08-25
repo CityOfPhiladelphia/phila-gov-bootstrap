@@ -7,21 +7,20 @@ Template Name: Department Landing Page
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
+				<header>
+							
+					<div class="page-header"><h1><?php the_title(); ?></h1></div>
+						
+				</header> <!-- end article header -->
             
             	<?php get_sidebar(); // sidebar 1 ?>
 			
-				<div id="main" class="col col-lg-16 clearfix" role="main">
+				<div id="main" class="col col-lg-18 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						
-						<header>
 							
-							<div class="page-header"><h1><?php the_title(); ?></h1></div>
-						
-						</header> <!-- end article header -->
-					
 						<section class="post_content">
 							<?php the_content(); ?>
 					

@@ -2,7 +2,7 @@
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-16 clearfix" role="main">
+				<div id="main" class="col-sm-18 clearfix" role="main">
 				
 					
 					<div class="page-header">
