@@ -583,7 +583,7 @@ add_filter( 'wp_title', 'theme_name_wp_title', 10, 2 );
 function get_department_name(){
 	$post = null;
 	$post = get_post( $post['ID'] );//need array notation here
-	$terms = get_the_terms($post, 'departments');
+	$terms = get_the_terms($post, 'category');
 
 	if ($terms && ! is_wp_error($terms)){
 		
@@ -606,13 +606,25 @@ function mayor_box_homepage() {
 	global $post_id; //kind of a hack
         $args_mayor = array(
         	'posts_per_page'   => 1,
-            'category_name'    =>'frontpage+mayor-news', //DEV
             'orderby'          => 'post_date',
             'order'            => 'DESC',
             'post_type'        => 'post',
             'post_status'      => 'publish',
-            'meta_key'    => '_thumbnail_id'
-           ); 
+            'meta_key'    => '_thumbnail_id',
+			'tax_query'	=> array(
+				'relation'		=> 'AND',
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'frontpage'
+				),
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'mayor-news'
+				),
+			)
+        ); 
           $query = new WP_Query( $args_mayor ); 
           if ( $query->have_posts() ){
               while ( $query->have_posts() ) {
@@ -633,18 +645,29 @@ function add_services_homepage($numb_posts, $post_offset){
 		global $post_id; //kind of a hack
         $args_services = array(
              'posts_per_page'   => $numb_posts,
-             'category_name' =>    'frontpage+online-services',//homepage & online services only
              'orderby'          => 'post_date',
              'order'            => 'DESC',
              'post_type'        => 'post',
              'post_status'      => 'publish',
-             'offset'       => $post_offset
+             'offset'       => $post_offset,
+			 'tax_query'	=> array(
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'frontpage'
+				),
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'online-services'
+				),
+			),
          ); 
         $services_query = new WP_Query( $args_services ); 
          if ( $services_query->have_posts() ) {
               while ( $services_query->have_posts() ) {
                $services_query->the_post();
-               $category = get_the_category();
+				   
                  if (('' != get_the_post_thumbnail())) {
                    echo '<div class="overlay-box">';
                    echo '<div class="cat-label">Online Services</div>';
@@ -673,12 +696,24 @@ function trending_posts_homepage(){
 	global $thumbnail;
      $args_trending = array(
           'posts_per_page'   => 8,
-           'category_name'    => 'frontpage+trending', 
            'orderby'          => 'post_date',
            'order'            => 'DESC',
             'post_type'        =>  array('post', 'page'),
             'post_status'      => 'publish',
-           ); 
+		 	'tax_query'	=> array(
+				'relation'		=> 'AND',
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'frontpage'
+					),
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'trending'
+				),
+			),
+        ); 
        $trending_query = new WP_Query( $args_trending ); 
        if ( $trending_query->have_posts() ) {
            while ( $trending_query->have_posts() ) {
@@ -711,14 +746,25 @@ function trending_posts_homepage(){
 }
 function trending_posts_homepage_mobile(){
      $args_trending = array(
-         'posts_per_page'   => 8,
-         'category_name'    => 'frontpage',     
+         'posts_per_page'   => 8,  
           'orderby'          => 'post_date',
           'order'            => 'DESC',
           'post_type'        => 'post',
           'post_status'      => 'publish',
-          'tag'              => 'trending'
-          ); 
+			'tax_query'	=> array(
+				'relation'		=> 'AND',
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'frontpage'
+					),
+				array(
+					'taxonomy'		=> 'display_options', 
+					'field'			=> 'slug',
+					'terms' 		=> 'trending'
+				),
+			),
+       ); 
          $trending_query = new WP_Query( $args_trending ); 
          // The Loop
            if ( $trending_query->have_posts() ) {
