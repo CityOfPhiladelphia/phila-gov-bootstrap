@@ -120,12 +120,14 @@ function wp_bootstrap_register_sidebars() {
 } // don't remove this bracket!
 
 //karissa includes
+/*
 include(get_template_directory() . '/inc/widgets/phila-social-media.php');
 
 function load_phila_widgets() {
 	register_widget("Phila_Social_Widget");
 }
 add_action("widgets_init", "load_phila_widgets");
+*/
 
 register_nav_menu( 'sidebar-menu', 'Secondary Navigation' );
 
@@ -500,9 +502,7 @@ add_action( 'wp_enqueue_scripts', 'theme_styles' );
 // enqueue javascript
 if( !function_exists( "theme_js" ) ) {  
   function theme_js(){
-  
-
-        
+          
     wp_register_script( 'bootstrap', 
       get_template_directory_uri() . '/library/js/bootstrap.min.js', 
       array('jquery'));
@@ -518,11 +518,12 @@ if( !function_exists( "theme_js" ) ) {
     wp_register_script(  'velocity_ui', 
       get_template_directory_uri() . '/library/js/velocity.ui.js', 
       array('jquery') );
-
+	  
+	  //for mobile swiping of things
     wp_register_script(  'swiper', 
       get_template_directory_uri() . '/library/js/idangerous.swiper-2.1.min.js', 
       array('jquery') );
-      
+      //for sweet select boxes
     wp_register_script(  'fancySelect', 
       get_template_directory_uri() . '/library/js/fancySelect.js', 
       array('jquery') );
