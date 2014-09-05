@@ -374,7 +374,7 @@ function add_class_attachment_link( $html ) {
 add_filter( 'wp_get_attachment_link', 'add_class_attachment_link', 10, 1 );
 
 // Add lead class to first paragraph
-function first_paragraph( $content ){
+/*function first_paragraph( $content ){
     global $post;
 
     // if we're on the homepage, don't add the lead class to the first paragraph of text
@@ -384,6 +384,7 @@ function first_paragraph( $content ){
         return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
 }
 add_filter( 'the_content', 'first_paragraph' );
+*/
 
 //Get post cat slug and looks for single-[cat slug].php and applies it
 add_filter('single_template', create_function(
@@ -783,3 +784,5 @@ function trending_posts_homepage_mobile(){
                      wp_reset_postdata();
                   ?></div> <?php 
              }
+
+require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';

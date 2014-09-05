@@ -3,6 +3,12 @@
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col-sm-18 clearfix archive" role="main">
+					
+					<div class="breadcrumbs">
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
+					</div>
 					<div class="page-header">
 
 								<h1>Browsing 
@@ -12,7 +18,6 @@
 															 ); echo $term->name; ?></h1>
 					
 					</div>
-					does this work
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<?php 

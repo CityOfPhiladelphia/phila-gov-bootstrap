@@ -7,6 +7,11 @@ Template Name: Left Sidebar Page
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
+				<div class="breadcrumbs">
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
+					</div>
             
             	<?php get_sidebar(); // sidebar 1 ?>
 			

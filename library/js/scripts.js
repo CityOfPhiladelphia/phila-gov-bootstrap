@@ -172,7 +172,22 @@ jQuery(document).ready(function($) {
     $(".pick-me").fancySelect({
         forceiOS:true
     });
-    
+	
+	$(".widget_nav_menu .menu").addClass("nav nav-pills nav-stacked");
+	
+	$(".widget_nav_menu .sub-menu").addClass("nav nav-pills nav-stacked");
+	
+	/*$(".widget_nav_menu li").each(function() {
+		  if ($(this).hasClass("active"))
+				$(this).children().toggle();
+		});
+	*/
+	$('.widget_nav_menu .menu-item-has-children ul').hide();
+   	$('.current-menu-item').children().show();
+	$('.current-menu-ancestor').children().show();
+	
+	$('.current-menu-item').parent().show();
+	$('.current-menu-ancestor').parent().show();
 });
 
 

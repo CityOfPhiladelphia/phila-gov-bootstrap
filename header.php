@@ -87,10 +87,10 @@
                                 <div id="trending-searches" class="hidden-xs">
                                 <h1>Trending Searches:</h1>
                                     <ul class="list-inline">
-                                        <li><a href="#">Health Clinics</a></li>
-                                        <li><a href="#">Inmate Location</a></li>
-                                        <li><a href="#">Taxes</a></li>
-                                        <li><a href="#">Property</a></li>
+                                        <li><a href="<?php echo home_url(); ?>/?s=Health+Clinics">Health Clinics</a></li>
+                                        <li><a href="<?php echo home_url(); ?>/?s=Inmate+Location">Inmate Location</a></li>
+                                        <li><a href="<?php echo home_url(); ?>/?s=Taxes">Taxes</a></li>
+                                        <li><a href="<?php echo home_url(); ?>/?s=Property">Property</a></li>
                                     </ul>
                             </div>
                         </div>

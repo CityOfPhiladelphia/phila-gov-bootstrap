@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
+			<div class="breadcrumbs">
+				<?php if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+				} ?>
+			</div>
 			
 				<div id="main" class="col-sm-18 clearfix" role="main">
 				

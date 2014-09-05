@@ -19,6 +19,9 @@
 @import "phila-grid-add.less";
 @import "phila-images.less";
 
+//change the Visual Composer elements to match our styles
+@import "phila-VC-overrides.less";
+
 //custom js coolness
 @import "phila-swiper.less";
 @import "phila-fancyselect.less";
@@ -74,28 +77,21 @@ a h1:hover, a h1:active{
     font-size: 11px;
     background: @white;
 }
+header{
+	.clearfix();
+}
+.breadcrumbs{
+	float:right;
+}
+.page-header{
+	float:left;
+}
+.breadcrumbs{
+	padding: 10px 0 0 0;
+}
+
 .visible-xs.logo{padding:10px 0;}
 
-//override baked in menu style
-@media (min-width: 992px) {
-    .navbar-responsive-collapse.col-md-8.collapse {
-        width: 33.3333%;
-    }
-}
-@media (min-width: 1200px) {
-    .navbar-responsive-collapse.col-lg-9.collapse {
-        width: 37.5%;
-    }
-}
-
-.navbar-toggle{
-    z-index:10000;
-}
-
-.navbar-default {
-    background-color:#fff @imp;
-    border-color:transparent @imp;
-}
 .trending .row {
     margin-bottom: 20px;
 }
@@ -421,10 +417,6 @@ input {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-    border-color:#fff;
-}
-
 @media (min-width: @screen-xs) and (max-width: @screen-xs-max){
     .home .img-responsive{
         height: 210px;
@@ -434,4 +426,12 @@ input {
 
 article.phila_news{
 	margin-bottom: 20px;
+}
+hr {
+	margin-right:40px;
+	border-top:1px solid fade(@master-blue,30%) @imp;
+}
+
+.swiftype-widget{
+	z-index: 100000;
 }

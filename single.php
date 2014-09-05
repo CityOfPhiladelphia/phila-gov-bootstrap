@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
+			<div class="breadcrumbs">
+				<?php if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+				} ?>
+			</div>
 			
 				<div id="main" class="col-sm-16 clearfix" role="main">
 
@@ -10,7 +15,7 @@
 						
 						<header>
 						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
+							<?php the_post_thumbnail( 'wpbs-featured', array('class' => 'img-responsive') ); ?>
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							

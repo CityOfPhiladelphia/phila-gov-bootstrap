@@ -7,21 +7,24 @@ Template Name: Department Landing Page
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
-				<header>
-							
-					<div class="page-header"><h1><?php the_title(); ?></h1></div>
-						
-				</header> <!-- end article header -->
-            
-            	<?php get_sidebar(); // sidebar 1 ?>
 			
-				<div id="main" class="col col-lg-18 clearfix" role="main">
+				<div id="main" class="col col-lg-24 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-							
+							<header>
+								<h1 class="page-header"><?php the_title(); ?></h1>	
+								<div class="breadcrumbs">
+									<?php if ( function_exists('yoast_breadcrumb') ) {
+										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+									} ?>
+								
+							</header> <!-- end article header -->
+
+					
 						<section class="post_content">
+							<h1 class="page-header"><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 					
 						</section> <!-- end article section -->
@@ -33,7 +36,6 @@ Template Name: Department Landing Page
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
-					
 					
 					<?php endwhile; ?>	
 					
@@ -54,7 +56,9 @@ Template Name: Department Landing Page
 			
 				</div> <!-- end #main -->
     
-			</div> <!-- end something? -->
-        </div><!-- end #content -->
+				<?php //get_sidebar(); // sidebar 1 ?>
+    
+			</div> <!-- end #content -->
+</div>
 
 <?php get_footer(); ?>
