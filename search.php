@@ -1,11 +1,21 @@
 <?php get_header(); ?>
-			
+
+	</div> <!-- end header.php container --> 
+		<header class="fluid-container page-title">
+			<div class="container">
+				<h1 class="page-header"><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+				<div class="breadcrumbs">
+				<?php if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+				} ?>
+			</div>
+			</div>
+		</header>
+
+	<div class="container marg-top">
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col col-lg-16 clearfix" role="main">
-				
-					<div class="page-header"><h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
-
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">

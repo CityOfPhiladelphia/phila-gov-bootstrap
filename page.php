@@ -1,13 +1,8 @@
 <?php get_header(); ?>
-			
-			<div id="content" class="clearfix row">
-			
-				<div id="main" class="col col-lg-24 clearfix" role="main">
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-							<header>
+	</div> <!-- end header.php container --> 
+			<header class="fluid-container page-title">
+				<div class="container">
 								<h1 class="page-header"><?php 
 									$category = get_the_category(); 
 									echo $category[0]->cat_name;
@@ -16,8 +11,16 @@
 									<?php if ( function_exists('yoast_breadcrumb') ) {
 										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 									} ?>
-								
-							</header> <!-- end article header -->
+					</div>
+				</header> <!-- end article header -->
+		<div class="container marg-top">
+			<div id="content" class="clearfix row">
+			
+				<div id="main" class="col col-lg-24 clearfix" role="main">
+
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					
+					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 					
 						<section class="post_content">
 							<?php the_content(); ?>

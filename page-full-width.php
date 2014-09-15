@@ -1,11 +1,21 @@
 <?php
 /*
-Template Name: Department Landing Page
+Template Name: Regular Full Width Page
 */
 ?>
 
 <?php get_header(); ?>
-			
+	</div> <!-- end header.php container --> 
+			<header class="fluid-container page-title">
+				<div class="container">
+								<h1 class="page-header"><?php the_title(); ?></h1>	
+								<div class="breadcrumbs">
+									<?php if ( function_exists('yoast_breadcrumb') ) {
+										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+									} ?>
+				</div>	
+			</header> <!-- end article header -->
+<div class="container marg-top">
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col col-lg-24 clearfix" role="main">
@@ -13,18 +23,9 @@ Template Name: Department Landing Page
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-							<header>
-								<h1 class="page-header"><?php the_title(); ?></h1>	
-								<div class="breadcrumbs">
-									<?php if ( function_exists('yoast_breadcrumb') ) {
-										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-									} ?>
-								
-							</header> <!-- end article header -->
-
 					
 						<section class="post_content">
-							<h1 class="page-header"><?php the_title(); ?></h1>
+
 							<?php the_content(); ?>
 					
 						</section> <!-- end article section -->
@@ -55,8 +56,6 @@ Template Name: Department Landing Page
 					<?php endif; ?>
 			
 				</div> <!-- end #main -->
-    
-				<?php //get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 </div>

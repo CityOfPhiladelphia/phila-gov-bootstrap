@@ -1,28 +1,30 @@
 <?php get_header(); ?>
-			
-			<div id="content" class="clearfix row">
-			<div class="breadcrumbs">
+
+	</div> <!-- end header.php container --> 
+	<header class="fluid-container page-title">
+				<div class="container">
+					<h1 class="single-title page-header" itemprop="headline"><?php the_title(); ?></h1>
+				<div class="breadcrumbs">
 				<?php if ( function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 				} ?>
 			</div>
-			
+		</div>
+	</header>
+<div class="container marg-top">
+		<div id="content" class="clearfix row">
+						
 				<div id="main" class="col-sm-16 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
-						<header>
-						
-							<?php the_post_thumbnail( 'wpbs-featured', array('class' => 'img-responsive') ); ?>
-							
-							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-							
+						<header>	
 							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
 						
 						</header> <!-- end article header -->
-					
+						<?php the_post_thumbnail( 'wpbs-featured', array('class' => 'img-responsive') ); ?>
 						<section class="post_content clearfix" itemprop="articleBody">
 							<?php the_content(); ?>
 							

@@ -40,6 +40,7 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 // Thumbnail sizes
 add_image_size( 'wpbs-featured', 770, 400, true );
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
+add_image_size( 'phila-standard-thumb', 283, 210, true);
 
 /* 
 to add more sizes, simply copy a line from above 
@@ -785,4 +786,4 @@ function trending_posts_homepage_mobile(){
                   ?></div> <?php 
              }
 
-require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
+//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
