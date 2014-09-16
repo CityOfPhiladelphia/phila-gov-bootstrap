@@ -41,13 +41,13 @@
 									$no_menu_excerpt = preg_replace($strip_this, '', $page_excerpt);
 									$no_html_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
 									
-									echo chop_chars($no_html_excerpt, 200);
+									echo chop_chars($no_html_excerpt, 300);
 									?>
 									<p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a>
 							</p><?php
 
 								}else {
-									echo the_excerpt_max_charlength(200);
+									echo the_excerpt_max_charlength(300);
 							?><p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a></p><?php
 								}
 					?>
