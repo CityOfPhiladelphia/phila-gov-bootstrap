@@ -27,7 +27,24 @@
 						</header> <!-- end article header -->
 					
 						<section class="post_content">
-							<?php the_excerpt('<span class="read-more">' . __("Read more on","wpbootstrap") . ' "'.the_title('', '', false).'" &raquo;</span>'); ?>
+							
+							<?php
+						//total hack!! get stripped contnet, match on [whatever]
+						//output plain text
+								$page_excerpt = get_the_content();
+				
+								if ( $page_excerpt != '' ) {
+
+									//$menu_content = $page_excerpt;
+									$strip_this = "/\[(.*?)\]/";
+									
+									$no_menu_excerpt = preg_replace($strip_this, '', $page_excerpt);
+									
+									echo $no_menu_excerpt; // Outputs the processed value to the page
+									
+								}
+								
+							?>
 					
 						</section> <!-- end article section -->
 						
