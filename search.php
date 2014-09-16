@@ -22,7 +22,7 @@
 						
 						<header>
 							
-							<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+							<h3><?php $category = get_the_category(); echo $category[0]->cat_name;?> : <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							
 						</header> <!-- end article header -->
 					
@@ -36,25 +36,20 @@
 
 									//$menu_content = $page_excerpt;
 									$strip_this = "/\[(.*?)\]/";
-									$and_this = "/\<img (.*?)\>/";
+									$and_this = "/\<(.*?)\>/";
 									
 									$no_menu_excerpt = preg_replace($strip_this, '', $page_excerpt);
-									$no_menu_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
+									$no_html_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
 									
-									echo chop_chars($no_menu_excerpt, 100);
-									echo '...'; // Outputs the processed value to the page
-									//echo '<span class="read-more">' . __("Read more on","wpbootstrap") . ' "'.the_title('', '', false).'" &raquo;</span>';
+									echo chop_chars($no_html_excerpt, 200);
+									echo '...';
+									echo '<a href="' . get_permalink() .'">Read More &raquo;</a>';
 								}else {
-									echo 'the excerpt: ' . $the_excerpt;
+									the_excerpt();
 								}
 					?>
 						</section> <!-- end article section -->
-						
-						<footer>
-					
-							
-						</footer> <!-- end article footer -->
-					
+					<hr>
 					</article> <!-- end article -->
 					
 					<?php endwhile; ?>	
@@ -93,6 +88,8 @@
     			
     			<?php get_sidebar(); // sidebar 1 ?>
     
-					</div> <!-- end something? -->
+					</div> <!-- end-->
         </div><!-- end #content -->
+  </div><!-- end container -->
+
 <?php get_footer(); ?>
