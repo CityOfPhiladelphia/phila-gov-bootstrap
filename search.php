@@ -42,8 +42,7 @@
 									$no_html_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
 									
 									echo chop_chars($no_html_excerpt, 200);
-									echo '...';
-									echo '<a href="' . get_permalink() .'">Read More &raquo;</a>';
+
 								}else {
 									the_excerpt();
 								}
