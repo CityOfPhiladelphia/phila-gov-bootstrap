@@ -36,7 +36,7 @@
 
 									//$menu_content = $page_excerpt;
 									$strip_this = "/\[(.*?)\]/";
-									$and_this = "/\<(.*?)\>/";
+									$and_this = "/\<img (.*?)\>/";
 									
 									$no_menu_excerpt = preg_replace($strip_this, '', $page_excerpt);
 									$no_menu_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
