@@ -39,9 +39,9 @@
 									$and_this = "/\<(.*?)\>/";
 									
 									$no_menu_excerpt = preg_replace($strip_this, '', $page_excerpt);
-									$no_html_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
+									$no_menu_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
 									
-									echo chop_chars($no_html_excerpt, 100);
+									echo chop_chars($no_menu_excerpt, 100);
 									echo '...'; // Outputs the processed value to the page
 									//echo '<span class="read-more">' . __("Read more on","wpbootstrap") . ' "'.the_title('', '', false).'" &raquo;</span>';
 								}else {
