@@ -12,7 +12,7 @@
 			</div>
 		</header>
 
-	<div class="container marg-top">
+	<div class="container marg-top search">
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col col-lg-16 clearfix" role="main">

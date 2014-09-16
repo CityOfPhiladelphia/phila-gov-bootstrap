@@ -1,5 +1,6 @@
 /*general typography*/
 @import "phila-variables.less";
+@import "phila-mixins.less";
 
 body {
     font-family: 'Open Sans', sans-serif @imp;
@@ -114,8 +115,6 @@ article ul {
 	line-height:24px;
 }
 
-@import "variables.less";
-
 //general page/post styles
 
 .page header h1, .post header h1, .phila_news header h1  {
@@ -128,4 +127,7 @@ article ul {
 
 .page h3, .page .h3, .post h3, .post .h3, .phila_news h3, .phila_news .h3  {
 	font-size: 18px;
+}
+.search .article p{
+	.marg-top(10px);
 }
