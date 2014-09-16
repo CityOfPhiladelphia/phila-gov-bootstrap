@@ -28,7 +28,7 @@
 					
 						<section class="post_content">							
 					<?php
-						//total hack!! get stripped contnet, match on [whatever]
+						//get stripped contnet, match on [whatever]
 						//output plain text
 								$page_excerpt = get_the_content();
 								$the_excerpt = get_the_excerpt();
@@ -42,9 +42,13 @@
 									$no_html_excerpt = preg_replace($and_this, '', $no_menu_excerpt);
 									
 									echo chop_chars($no_html_excerpt, 200);
+									?>
+									<p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a>
+							</p><?php
 
 								}else {
-									the_excerpt();
+									echo the_excerpt_max_charlength(200);
+							?><p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a></p><?php
 								}
 					?>
 						</section> <!-- end article section -->

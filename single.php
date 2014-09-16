@@ -70,6 +70,7 @@
     
 				<?php get_sidebar(); // sidebar 1 ?>
     
-			</div> <!-- end something? -->
+			</div> <!-- end -->
         </div><!-- end #content -->
+</div><!-- end container -->
 <?php get_footer(); ?>
