@@ -9,10 +9,7 @@ Template Name: Landing Page Template
 	</div> <!-- end header.php container --> 
 			<header class="fluid-container page-title">
 				<div class="container">
-								<h1 class="page-header"><?php 
-									$category = get_the_category(); 
-									echo $category[0]->cat_name;
-									?></h1>	
+								<div class="page-header"><h1><?php the_title(); ?></h1></div>
 								<div class="breadcrumbs">
 									<?php if ( function_exists('yoast_breadcrumb') ) {
 										yoast_breadcrumb('<p id="breadcrumbs">','</p>');

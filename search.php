@@ -12,10 +12,10 @@
 			</div>
 		</header>
 
-	<div class="container marg-top search">
+	<div class="container marg-top">
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col col-lg-16 clearfix" role="main">
+				<div id="main" class="col col-lg-18 clearfix search" role="main">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -48,7 +48,7 @@
 
 								}else {
 									echo the_excerpt_max_charlength(300);
-							?><p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a></p><?php
+							?><p class="marg-top"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read More</a></p><?php
 								}
 					?>
 						</section> <!-- end article section -->
