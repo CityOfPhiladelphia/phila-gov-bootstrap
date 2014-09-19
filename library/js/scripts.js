@@ -125,15 +125,29 @@ jQuery(document).ready(function($) {
     }
    
 	
-	//bg fade	
+	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
     });
-	//collapse menu when overlay is clicked
-	$("#full-page-overlay").on ('click', function() {
-		$('#main-nav.navbar-toggle').click();
+	
+	//collapse menu when overlay is clicke
+	$("#full-page-overlay").on('click', function() {
+		if ($('.navbar-collapse').hasClass('in')){
+			$('#main-nav.navbar-toggle').click();
+		}
 	});
 
+	
+	//bg fade side nav
+    $('#side-menu-button .navbar-toggle').click(function(e){
+        $('#full-page-overlay').fadeToggle(300);
+    });
+	
+	$("#full-page-overlay").on('click', function() {
+		if ($('.navmenu-fixed-left').hasClass('in')){
+			$('#side-menu-button .navbar-toggle').click();
+		}
+	});
 	
     $('#full-page-overlay').click(function(e){
         $('#full-page-overlay').fadeOut(300, function(){
