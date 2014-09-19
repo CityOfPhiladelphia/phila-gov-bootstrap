@@ -9,16 +9,16 @@ Template Name: Landing Page Template
 	</div> <!-- end header.php container --> 
 			<header class="fluid-container page-title">
 				<div class="container">
-								<div class="page-header"><h1><?php the_title(); ?></h1></div>
+								<h1 class="page-header"><?php the_title(); ?></h1>
 								<div class="breadcrumbs">
 									<?php if ( function_exists('yoast_breadcrumb') ) {
 										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 									} ?>
 					</div>
 				</header> <!-- end article header -->
-		<div class="container marg-top landing-page">
+		<div class="container landing-page">
 			<div id="content" class="clearfix row">
-			
+
 				<div id="main" class="col col-lg-24 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -27,7 +27,7 @@ Template Name: Landing Page Template
 					
 						<section class="post_content">
 							<?php the_content(); ?>
-					
+				
 						</section> <!-- end article section -->
 						
 						<footer>

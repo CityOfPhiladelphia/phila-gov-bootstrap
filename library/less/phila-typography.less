@@ -1,7 +1,4 @@
 /*general typography*/
-@import "phila-variables.less";
-@import "phila-mixins.less";
-
 body {
     font-family: 'Open Sans', sans-serif @imp;
     font-weight: 400; 
@@ -10,7 +7,6 @@ body {
 p, article{
 	line-height:21px;
 }
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif @imp;
@@ -24,7 +20,11 @@ h2, .h2 {
 h3, .h3{
 	font-size:22px;
 }
-
+.page-header h1, h1.page-header{
+	margin:0;
+	border:none;
+	font-family: Georgia, serif @imp; 
+}
 h1.break, h2.break{
     font-family: 'Open Sans', sans-serif @imp;
     text-transform: uppercase;
@@ -88,15 +88,12 @@ h1.break, h2.break{
 h1.PhilaWidgetTitle {
     margin:0;
 }
+
+
 .tiny-text{
     font-size:90%;
 }
 
-.page-header{
-	margin:0;
-	border:none;
-	font-family: Georgia, serif @imp; 
-}
 .meta {
 	font-size:13px;
 	color:@faded-gray;
@@ -127,4 +124,7 @@ article ul {
 
 .page h3, .page .h3, .post h3, .post .h3, .phila_news h3, .phila_news .h3  {
 	font-size: 18px;
+}
+h1.inner-page-title{
+	.marg-top(0);
 }

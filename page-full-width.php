@@ -27,7 +27,7 @@ Template Name: Regular Full Width Page
 						<section class="post_content">
 
 							<?php the_content(); ?>
-					
+	
 						</section> <!-- end article section -->
 						
 						<footer>

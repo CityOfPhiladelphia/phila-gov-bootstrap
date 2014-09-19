@@ -460,18 +460,9 @@ class Bootstrap_walker extends Walker_Nav_Menu{
   }        
 }
 
-add_editor_style('editor-style.css');
+//add_editor_style('editor-style.css');
 
-// Add Twitter Bootstrap's standard 'active' class name to the active nav link item
-add_filter('nav_menu_css_class', 'add_active_class', 10, 2 );
 
-function add_active_class($classes, $item) {
-	if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
-    $classes[] = "active";
-	}
-  
-  return $classes;
-}
 
 //modify login page
 function login_logo() { ?>
@@ -492,10 +483,11 @@ add_action( 'login_enqueue_scripts', 'login_logo' );
 // enqueue styles
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
+		wp_register_style( 'jasny-bootstrap', get_template_directory_uri() . '/library/css/jasny-bootstrap.min.css' );
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css' );
-        wp_register_style('phila-style',  get_template_directory_uri() . '/phila-style.css'); //first register your custom script
+        wp_register_style('phila-style',  get_template_directory_uri() . '/phila-style.css'); 
     
-        
+       	wp_enqueue_style( 'jasny-bootstrap' ); 
         wp_enqueue_style( 'bootstrap' );
         wp_enqueue_style('phila-style');
     }
@@ -507,38 +499,48 @@ if( !function_exists( "theme_js" ) ) {
           
     wp_register_script( 'bootstrap', 
       get_template_directory_uri() . '/library/js/bootstrap.min.js', 
-      array('jquery'));
-  
+      array('jquery'),
+		'3.2.0',
+		true);
+	  
     wp_register_script(  'modernizr', 
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
-      array('jquery'));
-
-    wp_register_script(  'velocity', 
-      get_template_directory_uri() . '/library/js/jquery.velocity.min.js', 
-      array('jquery') );
-    
-    wp_register_script(  'velocity_ui', 
-      get_template_directory_uri() . '/library/js/velocity.ui.js', 
-      array('jquery') );
-	  
-	  //for mobile swiping of things
+      array('jquery'),
+		'2.0.6',
+		false);
+ 
+	//for mobile swiping of things
     wp_register_script(  'swiper', 
       get_template_directory_uri() . '/library/js/idangerous.swiper-2.1.min.js', 
-      array('jquery') );
-      //for sweet select boxes
+      array('jquery'),
+		'2.1',
+		true);
+     
+	  //for sweet select boxes
     wp_register_script(  'fancySelect', 
       get_template_directory_uri() . '/library/js/fancySelect.js', 
-      array('jquery') );
+      array('jquery'), 
+		'1.4.0',
+		true);
         
     wp_register_script( 'phila-scripts', 
       get_template_directory_uri() . '/library/js/scripts.js', 
-      array('jquery'));
+      array('jquery'),
+		'1.0',
+		true);
+	  
+	  wp_register_script( 'jansy-bootstrap', 
+      get_template_directory_uri() . '/library/js/jasny-bootstrap.min.js', 
+      array('jquery'),
+		'3.1.3',
+		false);
 
       
-add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+	add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
   
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap');
+	wp_enqueue_script('jansy-bootstrap');
     wp_enqueue_script('modernizr');
     wp_enqueue_script('headroom');
     wp_enqueue_script('swiper'); 
@@ -786,4 +788,5 @@ function trending_posts_homepage_mobile(){
                   ?></div> <?php 
              }
 
-//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
+//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';\
+

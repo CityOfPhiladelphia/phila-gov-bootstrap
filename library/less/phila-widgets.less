@@ -1,10 +1,20 @@
-/*general styles*/
-@import "phila-mixins.less";
-@import "phila-variables.less";
-@import "mixins.less";
+/* 
++++++++++++++++++++++++++++++
+This file contains widget styles for: 
 
-
-.PhilaWidget{
+ *	General Phila Widget Styles  	.PhilaWidget
+ * 	Phila Alerts 				 	#PhilaAlertsWidget
+ * 	Phila Google Calendar 			#PhilaGoogleCalendarWidget
+ * 	Phila 311 						#Phila311Widget
+ * 	Phila Actionable items widget 	#PhilaActionWidget
+ * 	Property Search  				#PhilaPropSearchWidget
++++++++++++++++++++++++++++++
+***Other widgets
+	* Woff Twitter 					.wolf-tweet
+	* WP RSS Feed  					.widget_rss
+++++++++++++++++++++++++++++
+*/
+.home .PhilaWidget{
     padding: 30px 10px 10px;
     position: relative;
     margin-bottom: 10px;
@@ -13,7 +23,7 @@
     color:@white;
 }
     
-.PhilaWidget {
+.home .PhilaWidget {
     min-height:210px; /*CHANGE BEFORE PROD */
 }
 
@@ -379,4 +389,49 @@ div.certificate-drop-down {
 
 .licence-drop-down, .permit-drop-down, .certificate-drop-down{
     background:@light-purple;
+}
+
+//twitter feed display && WP RSS DISPLAY
+.wolf-tweet-text, .widget_rss ul {
+	font-size: inherit @imp;
+	line-height: 20px @imp;
+ 	font-family: 'Open Sans', sans-serif @imp;
+}
+ul.wolf-tweet-list  {
+	.strip-ul();
+}
+.wolf-tweet-time {
+	font-size:12px;
+	float: right;
+	.pad-right(15px);
+}
+.wolf-tweet-list li {
+	line-height: 1.2em;
+	.pad-bottom(20px);
+	.clearfix();
+}
+//RSS WIDGET
+ .widget_rss ul{
+ 	.strip-ul();
+ }
+
+.widget_rss li{
+	position: relative;
+	.pad-top(20px);
+}
+.widget_rss .rss-date{
+	position: absolute;
+	top:0;
+	left:0;
+	font-size:12px;
+}
+
+//PHILA CALENDAR Landing page widget - CHANGE THESE BEFORE PROD
+.page .PhilaWidgetTitle {display: none;}
+
+.page .PhilaGoogleCalendarTitleRow a {display:block;}
+.page #PhilaGoogleCalendarWidget{
+	height:263px; 
+	overflow:auto;
+	.marg-bottom(20px);
 }

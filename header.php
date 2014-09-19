@@ -65,7 +65,7 @@
                     <section class="row">
 
                             <!-- hamburger button -->
-                            <button type="button" class="navbar-toggle expose" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <button id="main-nav" type="button" class="navbar-toggle expose" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>

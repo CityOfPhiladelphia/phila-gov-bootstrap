@@ -1,4 +1,9 @@
-//nav styles
+/*
+******
+	1. Top Navigation Styles 
+	2. Side menu styles 
+******
+*/
 
 //override baked in menu style
 @media (min-width: 992px) {
@@ -323,3 +328,56 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 .widget_nav_menu .sub-menu {
 	font-weight: normal;
 }
+
+/****2 Side Menu Styles ***/
+#side-menu-button {
+	position: fixed;
+	left: -12px;
+}
+
+#side-menu-button .navbar-toggle {
+	background:url(../phila-gov-bootstrap/images/tab.png) center no-repeat;
+}
+.navmenu-fixed-left, .navmenu-fixed-right, .navbar-offcanvas{
+	z-index: 100000;//otherwise it's behind the logo
+}
+
+.navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus {
+	color: #fff;
+	background-color: #004990;
+}
+.caret {
+	margin-left:10px;
+}
+
+.navmenu, .navbar-offcanvas {
+	width:250px;
+}
+
+.navmenu-fixed-left, .navmenu-fixed-right, .navbar-offcanvas {
+	overflow:visible;
+}
+
+@media (min-width: 768px){
+	#side-menu-button .navbar-toggle {
+		 display: block; 
+	}
+
+}
+
+@media (min-width: @screen-md-min)  {
+	#side-menu-button .navbar-toggle {
+		 display: none; 
+	}
+	.navmenu-fixed-left, .navbar-offcanvas.navmenu-fixed-left {
+		position: static;
+	}
+	.navmenu-default, .navbar-default .navbar-offcanvas {
+		background-color:transparent;
+		border:none;
+	}
+	.navmenu, .navbar-offcanvas {
+		width:100%;
+	}
+}
+
