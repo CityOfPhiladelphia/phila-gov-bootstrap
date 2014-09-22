@@ -139,13 +139,13 @@ jQuery(document).ready(function($) {
 
 	
 	//bg fade side nav
-    $('#side-menu-button .navbar-toggle').click(function(e){
+    $('#side-menu-button .side-menu').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
     });
 	
 	$("#full-page-overlay").on('click', function() {
 		if ($('.navmenu-fixed-left').hasClass('in')){
-			$('#side-menu-button .navbar-toggle').click();
+			$('#side-menu-button .side-menu').click();
 		}
 	});
 	

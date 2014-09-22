@@ -28,7 +28,6 @@
 
 .navbar {
     text-transform: uppercase;
-    padding-bottom: 5px @imp;
     margin-bottom: 14px;
 }
 .navbar-collapse {
@@ -336,8 +335,6 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	height:25px;
 	z-index: 99998;
 	width: 100px;
-	background: #A8A8A8;
-	color: #fff;
 	left: -3px;
 	border-radius: 0 20px 20px 0;
 }
@@ -346,14 +343,12 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	padding: 0 28px 0 0;
 }
 
-
 #side-menu-button .navbar-toggle {
 	background:url(../phila-gov-bootstrap/images/tab.png) center no-repeat;
 }
 .navmenu-fixed-left, .navmenu-fixed-right, .navbar-offcanvas{
 	z-index: 100000;//otherwise it's behind the logo
 }
-
 .navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus {
 	color: #fff;
 	background-color: #004990;
@@ -370,15 +365,14 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	overflow:visible;
 }
 
-@media (min-width: 768px){
-	#side-menu-button .navbar-toggle {
-		 display: block; 
+@media (min-width: 991px){
+	#side-menu-button {
+		 display: none; 
 	}
-
 }
 
-@media (min-width: @screen-md-min)  {
-	#side-menu-button .navbar-toggle {
+@media (min-width: @screen-sm-min)  {
+	#side-menu-button {
 		 display: none; 
 	}
 	.navmenu-fixed-left, .navbar-offcanvas.navmenu-fixed-left {
