@@ -133,10 +133,9 @@ jQuery(document).ready(function($) {
 	//there is no preventDefault opposite, so binding and unbinding it is!
 	function checkScroll(){
 		if ($('.navmenu-fixed-left').hasClass('in')){
-			$('body').unbind('touchmove', preventDefault);
-			//$('').bind('touchmove', preventDefault);
+			$('body').removeClass('no-scroll');
 		}else {
-			$('body').bind('touchmove', preventDefault);
+			$('body').addClass('no-scroll');
 		}
 	}
 	
