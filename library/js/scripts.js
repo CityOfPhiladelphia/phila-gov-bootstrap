@@ -123,12 +123,22 @@ jQuery(document).ready(function($) {
     function isHidden(el) {
         return (el.offsetParent === null);
     }
-   
+	
+	function preventDefault(e) {
+    	e.preventDefault();
+	}
+	function checkScroll(){
+		if ($('.navmenu-fixed-left').hasClass('in')){
+			$('body').unbind('touchmove', preventDefault);
+		}else {
+			$('body').bind('touchmove', preventDefault);
+		}
+	}
 	
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
-		$('.navbar-default').css('z-index', '99999');
+		$('.navbar-default').css('z-index', '99999');//bring to top for search
     });
 	
 	//collapse menu when overlay is clicked
@@ -137,18 +147,21 @@ jQuery(document).ready(function($) {
 			$('#main-nav.navbar-toggle').click();
 		}
 	});
-
 	
+	
+
 	//bg fade side nav
     $('#side-menu-button .side-menu').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
-		$('.navbar-default').css('z-index', '99998');
+		$('.navbar-default').css('z-index', '99998'); //send search to back	
+		checkScroll();
     });
 	
 	$("#full-page-overlay").on('click', function() {
 		if ($('.navmenu-fixed-left').hasClass('in')){
 			$('#side-menu-button .side-menu').click();
 		}
+		checkScroll();
 	});
 	
     $('#full-page-overlay').click(function(e){
