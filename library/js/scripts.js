@@ -128,9 +128,10 @@ jQuery(document).ready(function($) {
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
+		$('.navbar-default').css('z-index', '99999');
     });
 	
-	//collapse menu when overlay is clicke
+	//collapse menu when overlay is clicked
 	$("#full-page-overlay").on('click', function() {
 		if ($('.navbar-collapse').hasClass('in')){
 			$('#main-nav.navbar-toggle').click();
@@ -141,6 +142,7 @@ jQuery(document).ready(function($) {
 	//bg fade side nav
     $('#side-menu-button .side-menu').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
+		$('.navbar-default').css('z-index', '99998');
     });
 	
 	$("#full-page-overlay").on('click', function() {
