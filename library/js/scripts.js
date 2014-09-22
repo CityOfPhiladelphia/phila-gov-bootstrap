@@ -102,21 +102,23 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
     
-    //make trending boxes clickable
-    $(".trending .no-img").click(function(){
-        window.location=$(this).find("a").attr("href"); 
-        return false;
-    });
+	function clickableBoxes(){
+		window.location=$(this).find("a").attr("href"); 
+       	return false;
+	}
+	
+    //force trending boxes to be clickable
+    $(".trending .no-img").click(clickableBoxes);
 
 	//increase/decrease font size
      $('#incfont').click(function(){    
-        curSize= parseInt($('body').css('font-size')) + 2;
-  if(curSize<=20)
-        $('body').css('font-size', curSize);
+			curSize= parseInt($('body').css('font-size')) + 2;
+  			if(curSize<=20)
+			$('body').css('font-size', curSize);
         });  
-  $('#decfont').click(function(){    
+  	$('#decfont').click(function(){    
         curSize= parseInt($('body').css('font-size')) - 2;
-  if(curSize>=12)
+		if(curSize>=12)
         $('body').css('font-size', curSize);
     }); 
 
@@ -127,9 +129,12 @@ jQuery(document).ready(function($) {
 	function preventDefault(e) {
     	e.preventDefault();
 	}
+	
+	//there is no preventDefault opposite, so binding and unbinding it is!
 	function checkScroll(){
 		if ($('.navmenu-fixed-left').hasClass('in')){
 			$('body').unbind('touchmove', preventDefault);
+			//$('').bind('touchmove', preventDefault);
 		}else {
 			$('body').bind('touchmove', preventDefault);
 		}
@@ -138,7 +143,7 @@ jQuery(document).ready(function($) {
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
-		$('.navbar-default').css('z-index', '99999');//bring to top for search
+		$('.navbar-default').css('z-index', '99999');//bring to top so users can still search
     });
 	
 	//collapse menu when overlay is clicked
@@ -146,23 +151,26 @@ jQuery(document).ready(function($) {
 		if ($('.navbar-collapse').hasClass('in')){
 			$('#main-nav.navbar-toggle').click();
 		}
+		if ($('.navmenu-fixed-left').hasClass('in')){
+			$('#side-menu-button .side-menu').click();
+			$('.side-menu i').removeClass('glyphicon-chevron-left');
+			$('.side-menu i').addClass('glyphicon-chevron-right');
+		}
+		checkScroll();
 	});
 	
-	
-
 	//bg fade side nav
     $('#side-menu-button .side-menu').click(function(e){
         $('#full-page-overlay').fadeToggle(300);
 		$('.navbar-default').css('z-index', '99998'); //send search to back	
-		checkScroll();
-    });
-	
-	$("#full-page-overlay").on('click', function() {
+		$('.side-menu i').removeClass('glyphicon-chevron-right');
+		$('.side-menu i').addClass('glyphicon-chevron-left');
 		if ($('.navmenu-fixed-left').hasClass('in')){
-			$('#side-menu-button .side-menu').click();
+			$('.side-menu i').removeClass('glyphicon-chevron-left');
+			$('.side-menu i').addClass('glyphicon-chevron-right');
 		}
 		checkScroll();
-	});
+    });
 	
     $('#full-page-overlay').click(function(e){
         $('#full-page-overlay').fadeOut(300, function(){
@@ -196,13 +204,10 @@ jQuery(document).ready(function($) {
         slidesPerView: 2,
         preventLinks:true
   });
-    
-    //make slide boxes clickable
-    $(".swiper-slide").click(function(){
-        window.location=$(this).find("a").attr("href"); 
-        return false;
-    });
-    
+	
+	//make slide boxes clickable
+    $(".swiper-slide").click(clickableBoxes);
+       
     $(".pick-me").fancySelect({
         forceiOS:true
     });
