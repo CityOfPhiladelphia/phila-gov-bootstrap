@@ -141,8 +141,9 @@ jQuery(document).ready(function($) {
 	
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
-        $('#full-page-overlay').fadeToggle(300);
+        $('#full-page-overlay').fadeToggle(200);
 		$('.navbar-default').css('z-index', '99999');//bring to top so users can still search
+		
     });
 	
 	//collapse menu when overlay is clicked
@@ -160,7 +161,7 @@ jQuery(document).ready(function($) {
 	
 	//bg fade side nav
     $('#side-menu-button .side-menu').click(function(e){
-        $('#full-page-overlay').fadeToggle(300);
+        $('#full-page-overlay').fadeToggle(200);
 		$('.navbar-default').css('z-index', '99998'); //send search to back	
 		$('.side-menu i').removeClass('glyphicon-chevron-right');
 		$('.side-menu i').addClass('glyphicon-chevron-left');
@@ -172,7 +173,7 @@ jQuery(document).ready(function($) {
     });
 	
     $('#full-page-overlay').click(function(e){
-        $('#full-page-overlay').fadeOut(300, function(){
+        $('#full-page-overlay').fadeOut(200, function(){
             $(".text-size-bubble").fadeOut(100);
             $(".translate-bubble").fadeOut(100);
         });
@@ -183,7 +184,7 @@ jQuery(document).ready(function($) {
         $(".translate-bubble").fadeToggle("fast");
         
         $(".text-size-bubble").fadeOut("fast");
-        $('#full-page-overlay').fadeToggle(300);
+        $('#full-page-overlay').fadeToggle(200);
         
          return false;
     }); 
@@ -191,7 +192,7 @@ jQuery(document).ready(function($) {
     $( ".text-size-bubble-link" ).click(function() {
         $( ".text-size-bubble" ).fadeToggle("fast");
         $(".translate-bubble").fadeOut("fast");
-        $('#full-page-overlay').fadeToggle(300);
+        $('#full-page-overlay').fadeToggle(200);
      
         return false;
     }); 

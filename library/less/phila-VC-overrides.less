@@ -3,7 +3,8 @@
 Visual Composer Built in Components 
 
 1. Teaser Grid
-
+2. Flex slider
+3. Posts gallery
 */
 .landing-page .teaser_grid_container h2{
 	font-size: 18px;
@@ -13,7 +14,7 @@ Visual Composer Built in Components
 }
 
 .landing-page .wpb_row {
-	margin-bottom: 0px @imp;
+	margin-bottom: 20px @imp;
 }
 
 h2.wpb_heading, .wpb_wrapper h2.widgettitle {
@@ -53,3 +54,29 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 .teaser_grid_container img {
 	width:100%;
 }
+@media(min-width: @screen-sm-min){
+	.wpb_thumbnails li:first-child{
+		padding-left:0 @imp;
+	}
+	.wpb_thumbnails li{
+		padding-left:15px @imp;
+		padding-right:15px @imp;
+	}
+	.wpb_thumbnails li:last-child{
+		padding-right:0 @imp;
+	}
+}
+
+//posts gallery
+.border > .wpb_wrapper{
+	border: 1px solid #3D4C53;
+	margin-bottom: 30px;
+	height: 310px;
+	overflow: hidden;
+}
+//attempt to select any possible element to add padding
+.border h2 + div,
+.border h2 + ul{
+	padding:0 10px 10px 10px;
+}
+
