@@ -138,12 +138,17 @@ jQuery(document).ready(function($) {
 			$('body').addClass('no-scroll');
 		}
 	}
+	function checkNavSate(){
+		$('#side-menu-button').toggleClass('hide');
+	}
+	
+	
 	
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(200);
 		$('.navbar-default').css('z-index', '99999');//bring to top so users can still search
-		
+		checkNavSate();
     });
 	
 	//collapse menu when overlay is clicked
