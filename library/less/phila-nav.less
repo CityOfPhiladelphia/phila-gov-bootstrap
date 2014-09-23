@@ -387,3 +387,18 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	}
 }
 
+//scrolling
+.no-scroll{
+	overflow:hidden @imp;
+	position: fixed @imp;
+}
+
+.scroll-me{
+	overflow-y: scroll;
+}
+
+@media (min-width: @screen-sm-min)  {
+	.scroll-me{
+		overflow-y: visible;
+	}
+}

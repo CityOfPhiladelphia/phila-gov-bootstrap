@@ -29,6 +29,12 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 	font-style: normal;
 	font-weight: 400;
 }
+.vc_call_to_action h2.wpb_heading{
+	background:none;
+	text-transform: none;
+	font-size: 26px;
+	color:@dark-gray;
+}
 
 //FLEX SLIDER FOR LANDING PAGES
 .landing-page .flexslider {
@@ -44,16 +50,22 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 }
 
 .flex-direction-nav a {
-	color:@master-blue;
+	color:@master-blue @imp;
 }
 
 .flex-direction-nav a::before, .flex-direction-nav a::after {
 	font-size: 30px;
 }
-//
+
+.wpb_gallery .wpb_flexslider .flex-control-nav {
+    bottom: -153px @imp;
+}
+
+//teaser grid
 .teaser_grid_container img {
 	width:100%;
 }
+
 @media(min-width: @screen-sm-min){
 	.wpb_thumbnails li:first-child{
 		padding-left:0 @imp;
@@ -67,6 +79,13 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 	}
 }
 
+//attempt to select any possible element to add padding
+.border h2 + div,
+.border h2 + ul{
+	padding:0 10px 10px 10px;
+}
+
+
 //posts gallery
 .border > .wpb_wrapper{
 	border: 1px solid #3D4C53;
@@ -74,9 +93,3 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 	height: 310px;
 	overflow: hidden;
 }
-//attempt to select any possible element to add padding
-.border h2 + div,
-.border h2 + ul{
-	padding:0 10px 10px 10px;
-}
-
