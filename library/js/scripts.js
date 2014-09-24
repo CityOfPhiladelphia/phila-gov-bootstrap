@@ -186,6 +186,7 @@ jQuery(document).ready(function($) {
         
         $(".text-size-bubble").fadeOut("fast");
         $('#full-page-overlay').fadeToggle(200);
+		$('.navbar-default').css('z-index', '99998'); //send search to back	
         
          return false;
     }); 
@@ -194,6 +195,7 @@ jQuery(document).ready(function($) {
         $( ".text-size-bubble" ).fadeToggle("fast");
         $(".translate-bubble").fadeOut("fast");
         $('#full-page-overlay').fadeToggle(200);
+		$('.navbar-default').css('z-index', '99998'); //send search to back	
      
         return false;
     }); 
