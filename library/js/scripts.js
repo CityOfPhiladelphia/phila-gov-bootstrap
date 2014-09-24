@@ -201,6 +201,7 @@ jQuery(document).ready(function($) {
     }); 
    
 	
+	
 	$("#side-nav .menu").addClass("nav nav-pills nav-stacked");
 	
 	$("#side-nav .sub-menu").addClass("nav nav-pills nav-stacked");
@@ -239,6 +240,11 @@ jQuery(document).ready(function($) {
 	if ($('#side-menu-button').exists()) {
 		$('h1.page-header').addClass('h1-push-left');
 	}
+	
+	//for 'yalls trying to re-size the browser window
+	$(window).resize(function() {
+		$('#full-page-overlay').fadeOut(200);
+	});
 });
 
 
