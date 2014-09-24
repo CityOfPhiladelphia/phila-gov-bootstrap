@@ -232,6 +232,11 @@ jQuery(document).ready(function($) {
     $(".pick-me").fancySelect({
         forceiOS:true
     });
+	jQuery.fn.exists = function(){return this.length>0;}
+
+	if ($('#side-menu-button').exists()) {
+		$('h1.page-header').addClass('h1-push-left');
+	}
 });
 
 
