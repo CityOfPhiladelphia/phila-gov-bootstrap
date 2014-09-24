@@ -289,7 +289,7 @@
 	border-bottom:none;
 }
 .nav-stacked li a {
-	color:@dark-gray;
+	color:@dark-gray @imp;
 }
 
 .nav-stacked > li > ul {
@@ -328,6 +328,9 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 }
 
 /****2 Side Menu Styles ***/
+#side-nav {
+	margin-bottom: 15px;
+}
 #side-menu-button {
 	position: relative;
 	top: -54px;
@@ -356,9 +359,9 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 .navmenu-fixed-left, .navmenu-fixed-right, .navbar-offcanvas{
 	z-index: 100000;//otherwise it's behind the logo
 }
-.navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus {
-	color: #fff;
-	background-color: #004990;
+.navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover, .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus, ul.nav-stacked>li>ul>li.current_page_item>a, ul.nav-stacked>li>ul>li>ul>li.current_page_item>a, ul.nav-stacked>li>ul>li>ul>li>ul>li.current_page_item>a ul.nav-stacked>li>ul>li>ul>li>ul>li>ul>li.current_page_item>a {
+	color: @white @imp;
+	background-color: @master-blue @imp;
 }
 .caret {
 	margin-left:10px;
@@ -414,5 +417,9 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	.scroll-me{
 		overflow-y: visible;
 	}
-
+	
+	.no-scroll{
+		overflow:auto @imp;
+		position: relative@imp;
+	}
 }
