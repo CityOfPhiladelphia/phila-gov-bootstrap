@@ -330,14 +330,22 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 
 /****2 Side Menu Styles ***/
 #side-menu-button {
-	position: fixed;
-	top: 118px;
-	height:25px;
+	position: relative;
+	top: -54px;
+	height: 25px;
 	z-index: 99998;
 	width: 100px;
-	left: -3px;
-	border-radius: 0 20px 20px 0;
+	left: -5px;
 }
+#side-menu-button .btn{
+	padding: 10px;
+	box-shadow: -4px 3px 5px rgba(78, 78, 78, 1);
+}
+
+#side-menu-button .btn:hover{
+	padding: 10px;
+}
+
 #side-menu-button .navbar-toggle{
 	margin:0;
 	padding: 0 28px 0 0;
@@ -389,10 +397,9 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 
 //scrolling
 .no-scroll{
-	overflow:hidden @imp;
-	position: fixed @imp;
+	overflow:auto @imp;
+	position: relative @imp;
 }
-
 .scroll-me{
 	overflow-y: scroll;
 }
@@ -401,4 +408,5 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 	.scroll-me{
 		overflow-y: visible;
 	}
+
 }

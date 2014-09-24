@@ -529,7 +529,7 @@ if( !function_exists( "theme_js" ) ) {
 		'1.0',
 		true);
 	  
-	  wp_register_script( 'jansy-bootstrap', 
+  wp_register_script( 'jansy-bootstrap', 
       get_template_directory_uri() . '/library/js/jasny-bootstrap.min.js', 
       array('jquery'),
 		'3.1.3',
@@ -788,5 +788,5 @@ function trending_posts_homepage_mobile(){
                   ?></div> <?php 
              }
 
-//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';\
+//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
 

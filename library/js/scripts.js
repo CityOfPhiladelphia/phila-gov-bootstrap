@@ -126,43 +126,35 @@ jQuery(document).ready(function($) {
         return (el.offsetParent === null);
     }
 	
-	function preventDefault(e) {
+/*	function preventDefault(e) {
     	e.preventDefault();
 	}
-	
-	//there is no preventDefault opposite, so binding and unbinding it is!
-	function checkScroll(){
-		if ($('.navmenu-fixed-left').hasClass('in')){
-			$('body').removeClass('no-scroll');
-		}else {
-			$('body').addClass('no-scroll');
-		}
-	}
-	function checkNavSate(){
-		$('#side-menu-button').toggleClass('hide');
-	}
+*/
 	
 	
+/*	navigation! */
 	
 	//bg fade main nav
     $('#main-nav.navbar-toggle').click(function(e){
         $('#full-page-overlay').fadeToggle(200);
 		$('.navbar-default').css('z-index', '99999');//bring to top so users can still search
-		checkNavSate();
+		$('#side-menu-button').toggleClass('hide');
     });
 	
-	//collapse menu when overlay is clicked
-	$("#full-page-overlay").on('click', function() {
-		if ($('.navbar-collapse').hasClass('in')){
-			$('#main-nav.navbar-toggle').click();
-		}
-		if ($('.navmenu-fixed-left').hasClass('in')){
-			$('#side-menu-button .side-menu').click();
-			$('.side-menu i').removeClass('glyphicon-chevron-left');
-			$('.side-menu i').addClass('glyphicon-chevron-right');
-		}
-		checkScroll();
-	});
+
+		//collapse menu when overlay is clicked
+		$("#full-page-overlay").on('click', function() {
+			if ($('.navbar-collapse').hasClass('in')){
+				$('#main-nav.navbar-toggle').click();
+			}
+			if ($('.navmenu-fixed-left').hasClass('in')){
+				$('#side-menu-button .side-menu').click();
+				$('.side-menu i').removeClass('glyphicon-chevron-left');
+				$('.side-menu i').addClass('glyphicon-chevron-right');
+			}
+			$('body').removeClass('no-scroll');
+		});
+
 	
 	//bg fade side nav
     $('#side-menu-button .side-menu').click(function(e){
@@ -170,12 +162,16 @@ jQuery(document).ready(function($) {
 		$('.navbar-default').css('z-index', '99998'); //send search to back	
 		$('.side-menu i').removeClass('glyphicon-chevron-right');
 		$('.side-menu i').addClass('glyphicon-chevron-left');
+		
 		if ($('.navmenu-fixed-left').hasClass('in')){
 			$('.side-menu i').removeClass('glyphicon-chevron-left');
 			$('.side-menu i').addClass('glyphicon-chevron-right');
+			$('body').removeClass('no-scroll');
+		}else {
+			$('body').addClass('no-scroll');
 		}
-		checkScroll();
     });
+	
 	
     $('#full-page-overlay').click(function(e){
         $('#full-page-overlay').fadeOut(200, function(){
@@ -201,21 +197,7 @@ jQuery(document).ready(function($) {
      
         return false;
     }); 
-    
-    //mobile view swiper
-    var mySwiper = $('.swiper-container').swiper({
-        mode:'horizontal',
-        loop: true,
-        slidesPerView: 2,
-        preventLinks:true
-  });
-	
-	//make slide boxes clickable
-    $(".swiper-slide").click(clickableBoxes);
-       
-    $(".pick-me").fancySelect({
-        forceiOS:true
-    });
+   
 	
 	$("#side-nav .menu").addClass("nav nav-pills nav-stacked");
 	
@@ -232,6 +214,24 @@ jQuery(document).ready(function($) {
 	
 	$('.current-menu-item').parent().show();
 	$('.current-menu-ancestor').parent().show();
+
+
+/*homepage functonality */
+
+    //mobile view swiper
+    var mySwiper = $('.swiper-container').swiper({
+        mode:'horizontal',
+        loop: true,
+        slidesPerView: 2,
+        preventLinks:true
+  });
+
+	//make slide boxes clickable
+    $(".swiper-slide").click(clickableBoxes);
+       
+    $(".pick-me").fancySelect({
+        forceiOS:true
+    });
 });
 
 

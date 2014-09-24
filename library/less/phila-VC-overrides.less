@@ -13,8 +13,8 @@ Visual Composer Built in Components
 	padding:0 @imp;
 }
 
-.landing-page .wpb_row {
-	margin-bottom: 20px @imp;
+.wpb_row {
+	margin-bottom: 5px @imp;
 }
 
 h2.wpb_heading, .wpb_wrapper h2.widgettitle {
@@ -29,6 +29,10 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 	font-style: normal;
 	font-weight: 400;
 }
+
+.landing-page h2.wpb_heading{
+	margin: 0;
+}
 .vc_call_to_action h2.wpb_heading{
 	background:none;
 	text-transform: none;
@@ -40,25 +44,29 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 .landing-page .flexslider {
 	box-shadow: none @imp;
 	border-radius: 0 @imp;
-	border:none @imp;
+	border:1px solid @dark-gray;
 }
 .landing-page .flex-caption {
 	height:150px;
 }
 .landing-page .wpb_posts_slider .flex-caption, .landing-page .wpb_posts_slider .nivo-caption {
-	background-color: rgba(237, 237, 237, 1) @imp;
+	background-color: @white @imp;
 }
 
-.flex-direction-nav a {
+.landing-page .flex-direction-nav a {
 	color:@master-blue @imp;
 }
 
-.flex-direction-nav a::before, .flex-direction-nav a::after {
+.landing-page .flex-direction-nav a::before, .landing-page .flex-direction-nav a::after {
 	font-size: 30px;
 }
 
-.wpb_gallery .wpb_flexslider .flex-control-nav {
-    bottom: -153px @imp;
+.landing-page .wpb_gallery .wpb_flexslider .flex-control-nav {
+    bottom: 155px @imp;
+}
+
+.landing-page .wpb_posts_slider .flex-caption, .landing-page .wpb_posts_slider .nivo-caption { 
+	padding:10px @imp;
 }
 
 //teaser grid
@@ -81,15 +89,18 @@ h2.wpb_heading, .wpb_wrapper h2.widgettitle {
 
 //attempt to select any possible element to add padding
 .border h2 + div,
-.border h2 + ul{
-	padding:0 10px 10px 10px;
+.border h2 + ul,
+.border .wpb_wrapper > p {
+	padding:10px;
 }
-
-
-//posts gallery
+//boxed border 
+@media(min-width: @screen-sm-min){ 
+	.border > .wpb_wrapper{
+		height: 310px;
+	}
+}
 .border > .wpb_wrapper{
 	border: 1px solid #3D4C53;
 	margin-bottom: 30px;
-	height: 310px;
 	overflow: hidden;
 }

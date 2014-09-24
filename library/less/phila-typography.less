@@ -25,7 +25,7 @@ h3, .h3{
 	font-size:22px;
 }
 .page-header h1, h1.page-header{
-	margin:0;
+	margin:0px 0px 0px 38px;
 	border:none;
 	font-family: Georgia, serif @imp; 
 }
@@ -40,11 +40,13 @@ h1.break, h2.break{
     font-style: italic;
 	font-weight: 400;
 }
-.page h2.break, {
+.page h2.break {
 	background:@dark-gray;
 	font-size:15px;
 	font-style:normal;
-	margin-top:0;
+}
+.landing-page h2.break{
+	margin:0;
 }
 .section-header {
     position:absolute;
@@ -116,19 +118,46 @@ article ul {
 	line-height:24px;
 }
 
-//general page/post styles
+ul {
+	padding-left: 25px;
+}
 
 .page header h1, .post header h1, .phila_news header h1  {
-	font-size: 36px;
+	font-size: 30px;
 }
 
 .page h1, .page .h1, .post h1, .post .h1, .phila_news h1, .phila_news .h1 {
-	font-size: 30px;
+	font-size: 26px;
 }
+
+//general page/post styles
+
 
 .page h3, .page .h3, .post h3, .post .h3, .phila_news h3, .phila_news .h3  {
 	font-size: 18px;
 }
 h1.inner-page-title{
 	.marg-top(0);
+}
+
+.page h3 + p{
+	margin-bottom: 20px;
+}
+
+.breadcrumbs {
+	display: none;
+}
+
+@media(min-width:767px) {
+	.page header h1, .post header h1, .phila_news header h1  {
+		font-size: 36px;
+	}
+
+	.page h1, .page .h1, .post h1, .post .h1, .phila_news h1, .phila_news .h1 {
+		font-size: 30px;
+	}
+	
+	.breadcrumbs {
+		display: none;
+	}
 }
