@@ -377,14 +377,14 @@ ul.nav-stacked > li > ul > li > ul > li > ul > li > ul > li.current_page_item > 
 		 display: none; 
 	}
 }
-
+// move the page heading over in mobile view to make room for the side nav
 .h1-push-left{
-	margin: 0px 0px 0px 38px;
+	margin: 0px 0px 0px 38px @imp;
 }
 
 @media (min-width: @screen-sm-min)  {
 	.h1-push-left{
-		margin: 0;
+		margin: 0 @imp;
 	}
 	#side-menu-button {
 		 display: none; 
