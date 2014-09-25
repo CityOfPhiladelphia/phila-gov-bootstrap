@@ -1,13 +1,28 @@
 .social-text-hide(){
 	display: inline-block;
-    width: 0;
-    height: 0;
+    width: 33px;
+    height: 33px;
     overflow: hidden;
-    .transition();
+	text-indent: -99999em;
 };
+
+.facebook_smsc{
+    .img-retina("../phila-gov-bootstrap/images/icons/social/departments/facebook.png", "../phila-gov-bootstrap/images/icons/social/departments/facebook@2.png", 33px, 33px);
+    background-repeat: no-repeat;
+    .social-text-hide();
+	.transition();
+}
+a.facebook_smsc:hover{
+	.transition();
+}
+
 
 .twitter_smsc{
     .img-retina("../phila-gov-bootstrap/images/icons/social/departments/twitter.png", "../phila-gov-bootstrap/images/icons/social/departments/twitter@2.png", 33px, 33px);
     background-repeat: no-repeat;
     .social-text-hide();
+	.transition();
+}
+a.twitter_smsc:hover{
+	.transition();
 }
