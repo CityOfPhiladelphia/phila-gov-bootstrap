@@ -245,6 +245,7 @@ jQuery(document).ready(function($) {
 	$(window).resize(function() {
 		$('#full-page-overlay').fadeOut(200);
 	});
+
 });
 
 

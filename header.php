@@ -29,7 +29,7 @@
         <? echo 'body { font-size:',$_COOKIE['site_font_size'],'; }'; } ?>
 		<!-- end of wordpress head -->
         <meta name="google-translate-customization" content="d90261400faa65ae-ddf7613446a7abb6-g2c489841db617277-9"></meta>
-        
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         
 	</head>
 	
