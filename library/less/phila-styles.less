@@ -17,7 +17,6 @@
 @import "phila-images.less";
 @import "phila-landing-page.less";
 @import "phila-search.less";
-@import "phila-social-media.less";
 
 //change the Visual Composer elements to match our styles
 @import "phila-VC-overrides.less";
@@ -478,4 +477,9 @@ td{
 
 tr:nth-child(odd) {
 	background-color:fade(@light-gray, 20%);
+}
+
+//for social media icons 
+.fa-stack{
+	.marg-bottom(20px) !important; //can't take @imp
 }

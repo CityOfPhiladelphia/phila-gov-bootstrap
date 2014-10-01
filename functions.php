@@ -789,4 +789,3 @@ function trending_posts_homepage_mobile(){
              }
 
 //require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
-

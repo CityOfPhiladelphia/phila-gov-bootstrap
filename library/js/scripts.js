@@ -235,8 +235,9 @@ jQuery(document).ready(function($) {
     $(".pick-me").fancySelect({
         forceiOS:true
     });
+	
 	jQuery.fn.exists = function(){return this.length>0;}
-
+		
 	if ($('#side-menu-button').exists()) {
 		$('h1.page-header').addClass('h1-push-left');
 	}
@@ -245,6 +246,7 @@ jQuery(document).ready(function($) {
 	$(window).resize(function() {
 		$('#full-page-overlay').fadeOut(200);
 	});
+	
 
 });
 
