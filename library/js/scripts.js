@@ -247,6 +247,8 @@ jQuery(document).ready(function($) {
 		$('#full-page-overlay').fadeOut(200);
 	});
 	
+	//init datatables!
+	$('.sortable').DataTable();
 
 });
 

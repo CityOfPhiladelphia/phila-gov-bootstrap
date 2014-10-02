@@ -486,6 +486,7 @@ add_action( 'login_enqueue_scripts', 'login_logo' );
 		wp_register_style( 'jasny-bootstrap', get_template_directory_uri() . '/library/css/jasny-bootstrap.min.css' );
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css' );
         wp_register_style('phila-style',  get_template_directory_uri() . '/phila-style.css'); 
+	
     
        	wp_enqueue_style( 'jasny-bootstrap' ); 
         wp_enqueue_style( 'bootstrap' );
@@ -534,6 +535,12 @@ if( !function_exists( "theme_js" ) ) {
       array('jquery'),
 		'3.1.3',
 		false);
+	  
+  wp_register_script( 'datatables', 
+     '//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js', 
+      array('jquery'),
+		'1.10.2',
+		false);
 
       
 	add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
@@ -545,6 +552,7 @@ if( !function_exists( "theme_js" ) ) {
     wp_enqueue_script('headroom');
     wp_enqueue_script('swiper'); 
     wp_enqueue_script('fancySelect');
+	wp_enqueue_script('datatables');
     wp_enqueue_script('phila-scripts');
 
     
@@ -788,4 +796,28 @@ function trending_posts_homepage_mobile(){
                   ?></div> <?php 
              }
 
-//require WPMU_PLUGIN_DIR.'/phila_general/inc/VC_shortcodes.php';
+//VISUAL COMPOSER STUFF
+vc_disable_frontend();
+
+//todo FINISH THIS
+function dg_gallery_template_func($desc){
+		return '<table> %rows% </table>';
+}
+
+add_filter('dg_gallery_template', 'dg_gallery_template_func', 10, 1);
+
+function dg_row_template_func($desc){
+	
+	return '<tr class="%class%">%icons%</tr>';
+
+}
+
+add_filter('dg_row_template', 'dg_row_template_func', 10);
+
+function  dg_icon_template_func($desc, $id){
+	//$description = $id->post_content;
+	return '<td></td><td><img src="%img%" alt="%title%"></td><td><a href="%link%"> %title% </a></td>' ;
+	
+}
+add_filter('dg_icon_template', 'dg_icon_template_func', 10, 2);
+
