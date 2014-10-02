@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
+
 @import "variables.less";
 @import "mixins.less";
 
@@ -465,6 +466,9 @@ div .document-icon img {
 }
 
 //tables 
+table {
+	width:100%;
+}
 th{
 	font-size: 16px;
 	background:@master-blue;
@@ -477,6 +481,38 @@ td{
 
 tr:nth-child(odd) {
 	background-color:fade(@light-gray, 20%);
+}
+
+// sortbale table
+    thead {
+        .sorting_asc,
+        .sorting_desc,
+        .sorting {
+            cursor: pointer;
+            *cursor: hand;
+			position: relative;
+        }
+ 
+        .sorting_asc::after {
+         	position: absolute;
+			margin-left:10px;
+			font-family: 'FontAwesome' @imp;
+			content: '\f0de';
+        }
+        .sorting_desc::after {
+            position: absolute;
+			margin-left:10px;
+			font-family: 'FontAwesome' @imp;
+			content: '\f0dd';
+        }
+    }
+.dataTables_filter {
+	margin:10px 0;
+}
+.dataTables_filter input {
+	border: 1px solid @master-blue;
+	padding:5px;
+	margin:0 0 0 10px;
 }
 
 //for social media icons 

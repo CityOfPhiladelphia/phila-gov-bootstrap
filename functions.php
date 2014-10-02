@@ -800,7 +800,7 @@ function trending_posts_homepage_mobile(){
 vc_disable_frontend();
 
 //todo FINISH THIS
-function dg_gallery_template_func($desc){
+/*function dg_gallery_template_func($desc){
 		return '<table> %rows% </table>';
 }
 
@@ -820,4 +820,5 @@ function  dg_icon_template_func($desc, $id){
 	
 }
 add_filter('dg_icon_template', 'dg_icon_template_func', 10, 2);
+*/
 

@@ -248,7 +248,9 @@ jQuery(document).ready(function($) {
 	});
 	
 	//init datatables!
-	$('.sortable').DataTable();
+	$('.sortable').DataTable({
+		paging: false
+	});
 
 });
 
