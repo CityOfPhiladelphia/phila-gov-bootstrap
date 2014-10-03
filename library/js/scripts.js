@@ -257,7 +257,7 @@ jQuery(document).ready(function($) {
 	
 	noSortCol1Table = $('.no-sort-col-1').DataTable({
 		paging: false,
-		order: [[1, 'desc']],
+		order: [[1, 'asc']],
 		"columnDefs": [
 			{ "orderable": false, "targets": 0 }
   		]
