@@ -247,9 +247,20 @@ jQuery(document).ready(function($) {
 		$('#full-page-overlay').fadeOut(200);
 	});
 	
-	//init datatables!
-	$('.sortable').DataTable({
+	//datatables!
+	var regularTable;
+	var noSortCol1Table;
+	
+	regularTable = 	$('.sortable').DataTable({
 		paging: false
+	});
+	
+	noSortCol1Table = $('.no-sort-col-1').DataTable({
+		paging: false,
+		order: [[1, 'desc']],
+		"columnDefs": [
+			{ "orderable": false, "targets": 0 }
+  		]
 	});
 
 });

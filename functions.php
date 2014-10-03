@@ -799,9 +799,9 @@ function trending_posts_homepage_mobile(){
 //VISUAL COMPOSER STUFF
 vc_disable_frontend();
 
-//todo FINISH THIS
-/*function dg_gallery_template_func($desc){
-		return '<table> %rows% </table>';
+//modify document gallery [dg] to allow for tabular display
+function dg_gallery_template_func($desc){
+		return '<table class="no-sort-col-1"><thead><tr><th></th><th>Document Name</th><th>Description</th></tr></thead> <tbody>%rows% </tbody></table>';
 }
 
 add_filter('dg_gallery_template', 'dg_gallery_template_func', 10, 1);
@@ -814,11 +814,11 @@ function dg_row_template_func($desc){
 
 add_filter('dg_row_template', 'dg_row_template_func', 10);
 
-function  dg_icon_template_func($desc, $id){
-	//$description = $id->post_content;
-	return '<td></td><td><img src="%img%" alt="%title%"></td><td><a href="%link%"> %title% </a></td>' ;
+function  dg_icon_template_func(){
+
+	return '<td><img src="%img%" alt="%title%"></td><td><a href="%link%"> %title% </a><td>%description%</td></td>' ;
 	
 }
 add_filter('dg_icon_template', 'dg_icon_template_func', 10, 2);
-*/
+
 
