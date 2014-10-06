@@ -799,26 +799,38 @@ function trending_posts_homepage_mobile(){
 //VISUAL COMPOSER STUFF
 vc_disable_frontend();
 
+
+
 //modify document gallery [dg] to allow for tabular display
-function dg_gallery_template_func($desc){
-		return '<table class="no-sort-col-1"><thead><tr><th></th><th>Document Name</th><th>Description</th></tr></thead> <tbody>%rows% </tbody></table>';
+function dg_gallery_template_func($icon, $desc){
+		if ($desc == true){
+			//return $desc;
+			
+			return '<table class="no-sort-col-1"><thead><tr><th></th><th>Document Name</th><th>Description</th></tr></thead> <tbody>%rows%</tbody></table>';
+		}else {
+			return '<div class="doc-gallery">%rows%</div>';
+		}
 }
 
-add_filter('dg_gallery_template', 'dg_gallery_template_func', 10, 1);
+add_filter('dg_gallery_template', 'dg_gallery_template_func', 10, 2);
 
-function dg_row_template_func($desc){
-	
-	return '<tr class="%class%">%icons%</tr>';
+function dg_row_template_func($id, $desc){
+	if ($desc == true){
+		return '<tr class="%class%">%icons%</tr>'; 
+	}else{
+		return '%icons%';
+	}
 
 }
 
-add_filter('dg_row_template', 'dg_row_template_func', 10);
+add_filter('dg_row_template', 'dg_row_template_func', 10, 2);
 
-function  dg_icon_template_func(){
-
-	return '<td><img src="%img%" alt="%title%"></td><td><a href="%link%"> %title% </a><td>%description%</td></td>' ;
-	
+function  dg_icon_template_func($id, $desc){
+	if ($desc == true){
+		return '<td><img src="%img%" alt="%title%"></td><td><a href="%link%"> %title% </a><td>%description%</td></td>';
+	}else{
+		return '<div class="document-icon"><a href="%link%"><img src="%img%" alt="%title%"><p>%title%</p></a></div>';
+	}
 }
 add_filter('dg_icon_template', 'dg_icon_template_func', 10, 2);
-
 
