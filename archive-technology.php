@@ -1,41 +1,18 @@
 <?php get_header(); ?>
-			
-			<div id="content" class="clearfix row">
-			<div class="breadcrumbs">
-			<?php if ( function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-				} ?>
-			</div>
-			
-				<div id="main" class="col-sm-16 clearfix archive" role="main">
-				
-					<div class="page-header">
-					<?php if (is_category()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Categorized:", "wpbootstrap"); ?></span> <?php single_cat_title(); ?>
-						</h1>
-					<?php } elseif (is_tag()) { ?> 
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Tagged:", "wpbootstrap"); ?></span> <?php single_tag_title(); ?>
-						</h1>
-					<?php } elseif (is_author()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts By:", "wpbootstrap"); ?></span> <?php get_the_author_meta('display_name'); ?>
-						</h1>
-					<?php } elseif (is_day()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Daily Archives:", "wpbootstrap"); ?></span> <?php the_time('l, F j, Y'); ?>
-						</h1>
-					<?php } elseif (is_month()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Monthly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('F Y'); ?>
-					    </h1>
-					<?php } elseif (is_year()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Yearly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('Y'); ?>
-					    </h1>
-					<?php } ?>
+
+	</div> <!-- end header.php container --> 
+			<header class="fluid-container page-title">
+				<div class="container">
+								<h1 class="page-header"><?php the_title(); ?></h1>
+								<div class="breadcrumbs">
+									<?php if ( function_exists('yoast_breadcrumb') ) {
+										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+									} ?>
 					</div>
+				</header> <!-- end article header -->
+
+		<div class="container marg-top">
+			<div id="content" class="clearfix row">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

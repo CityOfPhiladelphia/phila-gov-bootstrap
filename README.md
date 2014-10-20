@@ -5,4 +5,4 @@ Bootstrap (http://getbootstrap.com) in WordPress theme form.
 
 ------------------
 
-Check this file for more inforomation in the future. 
+Check this file for more info in the future. 
