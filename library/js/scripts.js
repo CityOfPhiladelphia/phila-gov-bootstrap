@@ -102,6 +102,7 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
     
+	//force entire box to be clickable on homepage
 	function clickableBoxes(){
 		window.location=$(this).find("a").attr("href"); 
        	return false;
