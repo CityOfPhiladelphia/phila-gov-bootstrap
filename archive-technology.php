@@ -3,7 +3,7 @@
 	</div> <!-- end header.php container --> 
 			<header class="fluid-container page-title">
 				<div class="container">
-								<h1 class="page-header"><?php the_title(); ?></h1>
+								<h1 class="page-header">Technology</h1>
 								<div class="breadcrumbs">
 									<?php if ( function_exists('yoast_breadcrumb') ) {
 										yoast_breadcrumb('<p id="breadcrumbs">','</p>');
@@ -13,32 +13,33 @@
 
 		<div class="container marg-top">
 			<div id="content" class="clearfix row">
-
+				<div id="main" class="col-sm-18 clearfix">
+					
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						
-						<header>
+						<div class="col-sm-8">
+							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							
-							<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
+								<div class="thumb"><?php the_post_thumbnail( 'wpbs-featured' ); ?></div>
+							<header>
+
+								<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+
+							</header> <!-- end article header -->
+
+							<section class="post_content">
+
 						
-						</header> <!-- end article header -->
-					
-						<section class="post_content">
-						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
-							<?php the_excerpt(); ?>
-					
-						</section> <!-- end article section -->
-						
-						<footer>
-							
-						</footer> <!-- end article footer -->
-					
-					</article> <!-- end article -->
-					
+								<?php the_excerpt(); ?>
+
+							</section> <!-- end article section -->
+
+							<footer>
+
+							</footer> <!-- end article footer -->
+
+						</article> <!-- end article -->
+					</div>
 					<?php endwhile; ?>	
 					
 					<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
@@ -69,11 +70,12 @@
 					</article>
 					
 					<?php endif; ?>
-			
+		
 				</div> <!-- end #main -->
     
-				<?php get_sidebar(); // sidebar 1 ?>
-    
+			
+					<?php get_sidebar(); // sidebar 1 ?>
+   
 			</div> <!-- end something? -->
         </div><!-- end #content -->
 	</div>

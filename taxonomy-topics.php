@@ -19,7 +19,7 @@
 					
 					</div>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+				
 					<?php 
 						//look for URL and output this instead of the full news story
 						$url = get_post_meta($post->ID, 'phila_url', true );
