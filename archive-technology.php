@@ -19,7 +19,7 @@
 						$alpha_query = new WP_Query( array ( 'orderby' => 'title', 'order' => 'ASC', 'post_type'=> 'technology' ) ); 
 						if ($alpha_query->have_posts()) : while ($alpha_query->have_posts()) : $alpha_query->the_post();	?>
 					
-						<div class="col-sm-8">
+						<div class="col-md-8 col-sm-12 col-xs-12">
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							
 								<div class="thumb"><?php the_post_thumbnail( 'wpbs-featured' ); ?></div>
