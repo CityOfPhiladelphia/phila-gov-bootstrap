@@ -14,8 +14,10 @@
 		<div class="container marg-top">
 			<div id="content" class="clearfix row">
 				<div id="main" class="col-sm-18 clearfix">
-					
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<div class="masonry">
+					<?php 
+						$alpha_query = new WP_Query( array ( 'orderby' => 'title', 'order' => 'ASC', 'post_type'=> 'technology' ) ); 
+						if ($alpha_query->have_posts()) : while ($alpha_query->have_posts()) : $alpha_query->the_post();	?>
 					
 						<div class="col-sm-8">
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -23,15 +25,44 @@
 								<div class="thumb"><?php the_post_thumbnail( 'wpbs-featured' ); ?></div>
 							<header>
 
-								<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+								<h3 class="h2"><a href="<?php 
+									$url = get_post_meta($post->ID, 'phila_url', true );
+									echo $url;
+									?>" rel="bookmark" title="<?php $address ?> Website"><?php the_title(); ?></a></h3>
 
 							</header> <!-- end article header -->
 
 							<section class="post_content">
-
 						
-								<?php the_excerpt(); ?>
+								<?php the_excerpt();
 
+								$address = get_post_meta($post->ID, 'phila_address', true );
+								$url = get_post_meta($post->ID, 'phila_url', true );
+								$phone = get_post_meta($post->ID, 'phila_phone', true );
+									echo '<div class="address">'. $address . '</div>';
+									echo '<div class="url"><a href="'. $url . '">Visit Website</a></div>';
+									echo '<div class="phone">'. $phone . '</div>';
+								?>
+								<div class="social">
+									<?php 
+										$facebook = get_post_meta($post->ID, 'phila_facebook', true );
+										$twitter = get_post_meta($post->ID, 'phila_twitter', true );
+										if ($facebook != ''){
+											echo '<a href="' . $facebook . '" title="Facebook profile" target="_self">
+												<span class="fa-stack fa-lg">
+													<i class="fa fa-circle fa-stack-2x"></i>
+													<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+												</span></a>';
+										}
+										if ($twitter != ''){
+											echo '<a href="' . $twitter . '" title="Twitter profile" target="_self">
+												<span class="fa-stack fa-lg">
+													<i class="fa fa-circle fa-stack-2x"></i>
+													<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+												</span></a>';
+										}
+									?>
+								</div>
 							</section> <!-- end article section -->
 
 							<footer>
@@ -72,7 +103,7 @@
 					<?php endif; ?>
 		
 				</div> <!-- end #main -->
-    
+    </div>
 			
 					<?php get_sidebar(); // sidebar 1 ?>
    

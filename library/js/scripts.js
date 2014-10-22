@@ -263,7 +263,18 @@ jQuery(document).ready(function($) {
 			{ "orderable": false, "targets": 0 }
   		]
 	});
-
+	
+	/*
+	//masonry grids
+	keeping this for when Kyle realizes he is wrong
+	var $container = $('.masonry');
+		// initialize
+		$container.masonry({
+		  itemSelector: '.col-sm-8',
+		  columnWidth: '.col-sm-8',
+		  gutter: 0
+		});
+		*/ 
 });
 
 

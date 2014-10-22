@@ -538,12 +538,17 @@ if( !function_exists( "theme_js" ) ) {
       array('jquery'),
 		'3.1.3',
 		false);
-	  
+  
+  wp_register_script( 'masonry', 
+      get_template_directory_uri() . '/library/js/masonry.pkgd.min.js', 
+      array('jquery'),
+		'3.1.5',
+		true);
   wp_register_script( 'datatables', 
      '//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js', 
       array('jquery'),
 		'1.10.2',
-		false);
+		true);
 
       
 	add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
@@ -552,7 +557,7 @@ if( !function_exists( "theme_js" ) ) {
     wp_enqueue_script('bootstrap');
 	wp_enqueue_script('jansy-bootstrap');
     wp_enqueue_script('modernizr');
-    wp_enqueue_script('headroom');
+   // wp_enqueue_script('masonry');
     wp_enqueue_script('swiper'); 
     wp_enqueue_script('fancySelect');
 	wp_enqueue_script('datatables');
